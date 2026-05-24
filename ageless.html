@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ageless — The Anti-Aging Course by Dr. Niia Bishop</title>
+<meta name="description" content="Ageless: a 5-module online course for women 40+ on facial release, jaw & cranial decompression, platysma work, face yoga, and the anti-aging practice nobody is teaching.">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Ageless-specific overrides */
+  body { background: var(--ageless-dark); }
+  .ageless-page { background: var(--ageless-dark); color: #e8dfc8; }
+  .ageless-section { padding: 96px 0; background: var(--ageless-dark); }
+  .ageless-section-light { padding: 96px 0; background: var(--ageless-cream); }
+  .ageless-section-mid { padding: 96px 0; background: #231f18; }
+  .ageless-nav { background: rgba(26,21,16,0.97); border-bottom: 1px solid rgba(201,168,76,0.2); }
+  .ageless-nav .nav-links a { color: #c8bfa8; }
+  .ageless-nav .nav-links a:hover { color: var(--ageless-gold); }
+  .ageless-nav .nav-links a::after { background: var(--ageless-gold); }
+  .ageless-nav .logo-mark { border-color: rgba(201,168,76,0.5); }
+  .ageless-nav .logo-mark .lg-get { color: rgba(201,168,76,0.8); }
+  .ageless-nav .logo-mark .lg-better { color: #e8dfc8; }
+  .ageless-nav .logo-mark .lg-with { color: rgba(201,168,76,0.4); }
+  .ageless-nav .btn-primary { background: var(--ageless-gold); border-color: var(--ageless-gold); color: var(--ageless-dark); }
+  .ageless-nav .btn-primary:hover { background: #b8943e; border-color: #b8943e; }
+  .ageless-mobile { background: #1a1510; border-color: rgba(201,168,76,0.15); }
+  .ageless-mobile a { color: #c8bfa8; border-color: rgba(201,168,76,0.15); }
+  .gold-text { color: var(--ageless-gold); }
+  .ageless-footer { background: #0e0c09; padding: 64px 0 32px; color: #c8bfa8; }
+  .ageless-footer .footer-grid { margin-bottom: 48px; }
+  .ageless-footer .footer-col h4 { color: var(--ageless-gold); }
+  .ageless-footer .footer-col ul a { color: rgba(200,191,168,0.55); }
+  .ageless-footer .footer-col ul a:hover { color: #e8dfc8; }
+  .ageless-footer .footer-bottom { border-color: rgba(255,255,255,0.06); }
+  .ageless-footer .footer-bottom p { color: rgba(200,191,168,0.3); }
+  .price-box {
+    background: linear-gradient(135deg, #1a1510, #231f18);
+    border: 1px solid var(--ageless-gold);
+    border-radius: 4px;
+    padding: 48px;
+    text-align: center;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .price-amount {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--ageless-gold);
+    line-height: 1;
+  }
+  .price-label { color: rgba(200,191,168,0.55); font-size: 0.82rem; margin-top: 6px; margin-bottom: 32px; }
+  .included-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(201,168,76,0.12);
+    text-align: left;
+    font-size: 0.9rem;
+    color: #c8bfa8;
+  }
+  .included-item::before { content: '✦'; color: var(--ageless-gold); font-size: 0.7rem; flex-shrink: 0; }
+  .who-item {
+    padding: 32px;
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 4px;
+    background: rgba(255,255,255,0.03);
+  }
+  .who-item h4 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 10px; color: #e8dfc8; }
+  .who-item p { color: rgba(200,191,168,0.65); font-size: 0.87rem; line-height: 1.7; }
+</style>
+</head>
+<body class="ageless-page">
+
+<!-- NAV -->
+<nav class="nav ageless-nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="AGELESS.jpg" alt="Ageless" style="height:52px;width:auto;object-fit:contain;">
+    </a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="classes.html">Studio</a></li>
+      <li><a href="challenges.html">Challenges</a></li>
+      <li><a href="plans.html">Plans</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="ageless.html" style="color:var(--ageless-gold);" class="active">Ageless</a></li>
+    </ul>
+    <a href="#enroll" class="btn btn-primary nav-cta" style="background:var(--ageless-gold);border-color:var(--ageless-gold);color:#1a1510;">Enroll Now</a>
+    <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menu" style="color:#c8bfa8;">☰</button>
+  </div>
+  <div class="mobile-menu ageless-mobile" id="mobileMenu">
+    <a href="about.html">About</a>
+    <a href="classes.html">Studio</a>
+    <a href="challenges.html">Challenges</a>
+    <a href="plans.html">Plans</a>
+    <a href="contact.html">Contact</a>
+    <a href="#enroll" class="btn btn-primary" style="background:var(--ageless-gold);border-color:var(--ageless-gold);color:#1a1510;">Enroll Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="ageless-hero">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+      <div>
+        <p class="eyebrow ageless-eyebrow" style="margin-bottom:20px;">A Course by Dr. Niia Bishop</p>
+        <img src="AGELESS.jpg" alt="Ageless" style="height:140px;width:auto;object-fit:contain;margin-bottom:20px;display:block;">
+
+        <p style="font-family:var(--font-display);font-size:1.2rem;color:rgba(232,223,200,0.7);line-height:1.6;margin-bottom:16px;">The anti-aging practice nobody taught you — written in the muscles, fascia, and bones of your face.</p>
+        <div style="width:48px;height:1px;background:var(--ageless-gold);margin:28px 0;"></div>
+        <p style="color:rgba(200,191,168,0.65);font-size:0.95rem;line-height:1.8;margin-bottom:40px;">A 5-module online course for women 40+ that goes deeper than serums and further than face yoga. Learn the structural release, cranial decompression, jaw work, and movement practices that actually change the face from the inside out.</p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;">
+          <a href="#enroll" class="btn" style="background:var(--ageless-gold);border:2px solid var(--ageless-gold);color:#1a1510;font-weight:700;">Enroll Now</a>
+          <a href="#curriculum" class="btn btn-outline-white">See the Curriculum</a>
+        </div>
+        <p style="color:rgba(200,191,168,0.35);font-size:0.78rem;margin-top:20px;letter-spacing:0.05em;">Women 40+ · 5 Modules · Self-Paced · Lifetime Access</p>
+      </div>
+      <div>
+        <div class="img-block img-tall" style="border-radius:2px;">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80&auto=format&fit=crop" alt="Ageless wellness" style="filter:grayscale(30%) contrast(1.1) brightness(0.7) sepia(20%);">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IT IS -->
+<section class="ageless-section-mid">
+  <div class="container">
+    <div style="max-width:720px;margin:0 auto;text-align:center;">
+      <p class="eyebrow ageless-eyebrow" style="margin-bottom:16px;">The Truth About Aging</p>
+      <h2 style="color:#e8dfc8;font-weight:300;margin-bottom:24px;">Your face doesn't age.<br>It <em>braces.</em></h2>
+      <div style="width:48px;height:1px;background:var(--ageless-gold);margin:0 auto 32px;"></div>
+      <p style="color:rgba(200,191,168,0.7);font-size:1.05rem;line-height:1.9;margin-bottom:20px;">The jaw clenches. The platysma shortens. The cranial fascia grips. The muscles of the face hold decades of tension, stress, and unprocessed emotion — and we can see it. Every line, every droop, every asymmetry tells a story of repetition and holding.</p>
+      <p style="color:rgba(200,191,168,0.7);font-size:1.05rem;line-height:1.9;">Ageless teaches you to release it. Not by fighting gravity — but by restoring mobility, circulation, and length to the structures that time and tension have slowly shortened.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section class="ageless-section" id="curriculum">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="eyebrow ageless-eyebrow">The Course</p>
+      <h2 style="color:#e8dfc8;font-weight:300;">5 Modules. Sequenced with intention.</h2>
+      <div style="width:48px;height:1px;background:var(--ageless-gold);margin:20px auto 0;"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:56px;">
+
+      <div class="module-card">
+        <div class="module-num">01</div>
+        <p class="eyebrow" style="margin-bottom:10px;font-size:0.65rem;">Foundation</p>
+        <h3>The Map of Your Face</h3>
+        <p>Before you can release anything, you need to understand the architecture underneath. Module 1 covers the anatomy of the facial and cranial structures — the muscles, fascia, and bones that determine how your face looks and moves.</p>
+        <ul>
+          <li>Facial muscle anatomy for non-clinicians</li>
+          <li>Understanding fascia and why it grips</li>
+          <li>The connection between posture and the face</li>
+          <li>Your personal facial pattern assessment</li>
+        </ul>
+      </div>
+
+      <div class="module-card">
+        <div class="module-num">02</div>
+        <p class="eyebrow" style="margin-bottom:10px;font-size:0.65rem;">Cranial & Jaw Release</p>
+        <h3>Skull, Jaw & Cranial Decompression</h3>
+        <p>This is where most face work never goes. Module 2 addresses the jaw, temporomandibular joint, and cranial fascia — the structural roots of tension that show up on the surface as lines, asymmetry, and fatigue.</p>
+        <ul>
+          <li>Masseter and temporalis release</li>
+          <li>Jaw decompression technique</li>
+          <li>Cranial fascia unwinding</li>
+          <li>Trigger point work with ball tools*</li>
+        </ul>
+        <p style="font-size:0.75rem;color:var(--ageless-gold);margin-top:12px;">* Recommended tools linked via Amazon affiliate</p>
+      </div>
+
+      <div class="module-card">
+        <div class="module-num">03</div>
+        <p class="eyebrow" style="margin-bottom:10px;font-size:0.65rem;">Neck & Décolletage</p>
+        <h3>The Platysma Protocol</h3>
+        <p>The platysma is the thin muscle of the neck that most women feel pulling — and most practitioners ignore. Module 3 is a dedicated platysma and neck protocol that addresses the front-of-body tension that ages the lower face and neck faster than almost anything else.</p>
+        <ul>
+          <li>Platysma anatomy and release sequence</li>
+          <li>Front-of-body lengthening stretches</li>
+          <li>Neck and décolletage fascial work</li>
+          <li>Throat and voice release techniques</li>
+        </ul>
+      </div>
+
+      <div class="module-card">
+        <div class="module-num">04</div>
+        <p class="eyebrow" style="margin-bottom:10px;font-size:0.65rem;">Activation & Toning</p>
+        <h3>Face Yoga & Facial Exercises</h3>
+        <p>Now that the tissue is released and the fascia is mobile, Module 4 introduces targeted facial exercises and face yoga — but in the correct sequence. Activation after release, not before. This is what makes the results last.</p>
+        <ul>
+          <li>Face yoga fundamentals</li>
+          <li>Cheek, brow, and eye activation</li>
+          <li>Lip and perioral toning</li>
+          <li>Symmetry correction exercises</li>
+        </ul>
+      </div>
+
+      <div class="module-card" style="grid-column:1 / -1;max-width:680px;margin:0 auto;width:100%;">
+        <div class="module-num">05</div>
+        <p class="eyebrow" style="margin-bottom:10px;font-size:0.65rem;">Integration</p>
+        <h3>Your Daily Ageless Practice</h3>
+        <p>The final module brings everything together into a sustainable daily ritual — one you can actually maintain. You'll leave with a personalized 10-minute morning protocol and a longer weekly practice built from the tools you've learned throughout the course.</p>
+        <ul>
+          <li>The 10-minute morning face sequence</li>
+          <li>Weekly deep release protocol</li>
+          <li>Breathing and nervous system integration</li>
+          <li>Long-term maintenance and progression</li>
+          <li>Recommended tools and affiliate links</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="ageless-section-light">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="eyebrow" style="color:var(--navy);">Who This Is For</p>
+      <h2 style="color:var(--black);">Made for women who are done with surface-level solutions.</h2>
+      <div class="divider divider-center" style="background:var(--ageless-gold);"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <div class="who-item">
+        <div style="font-size:1.8rem;margin-bottom:14px;">🌿</div>
+        <h4>Women 40+</h4>
+        <p>Noticing changes in your face and neck and wanting to understand what's actually happening — and what you can do about it that goes beyond topical products.</p>
+      </div>
+      <div class="who-item">
+        <div style="font-size:1.8rem;margin-bottom:14px;">💆</div>
+        <h4>Tension Carriers</h4>
+        <p>If you clench your jaw, hold stress in your neck and shoulders, or see asymmetry and tension in your face — this course was designed around your exact pattern.</p>
+      </div>
+      <div class="who-item">
+        <div style="font-size:1.8rem;margin-bottom:14px;">🧬</div>
+        <h4>Wellness-Minded Movers</h4>
+        <p>You already care about your body — yoga, Pilates, strength training. Ageless extends that practice to the face, neck, and cranial structures most wellness disciplines completely ignore.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTRUCTOR -->
+<section class="ageless-section-mid">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+      <div class="img-block img-tall">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=900&q=80&auto=format&fit=crop" alt="Dr. Niia Bishop" style="filter:grayscale(20%) contrast(1.1) brightness(0.8) sepia(15%);">
+      </div>
+      <div>
+        <p class="eyebrow ageless-eyebrow" style="margin-bottom:16px;">Your Instructor</p>
+        <h2 style="color:#e8dfc8;font-weight:300;margin-bottom:8px;">Dr. Niia Bishop</h2>
+        <p style="color:var(--ageless-gold);font-family:var(--font-display);font-size:1.05rem;margin-bottom:24px;">Dr. B</p>
+        <div style="width:48px;height:1px;background:var(--ageless-gold);margin-bottom:28px;"></div>
+        <p style="color:rgba(200,191,168,0.7);line-height:1.9;margin-bottom:18px;">Dr. Niia Bishop is a certified fitness trainer, Gyrotonic specialist, and movement educator with deep expertise in structural bodywork and fascial release. She founded Better at the Barn — Columbia, SC's only Gyrotonic studio — and has spent years working with bodies across the full spectrum: athletes, post-surgical clients, seniors, and women navigating the physical changes of midlife.</p>
+        <p style="color:rgba(200,191,168,0.7);line-height:1.9;margin-bottom:28px;">Ageless comes from her clinical observation that the face ages structurally, not just cosmetically — and that the most powerful anti-aging interventions are the ones that work with the body's own intelligence. This course distills that expertise into a practice any woman can build at home.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;">
+          <span style="padding:7px 16px;border:1px solid rgba(201,168,76,0.3);border-radius:20px;font-size:0.75rem;color:rgba(200,191,168,0.7);">Certified Trainer</span>
+          <span style="padding:7px 16px;border:1px solid rgba(201,168,76,0.3);border-radius:20px;font-size:0.75rem;color:rgba(200,191,168,0.7);">Gyrotonic Specialist</span>
+          <span style="padding:7px 16px;border:1px solid rgba(201,168,76,0.3);border-radius:20px;font-size:0.75rem;color:rgba(200,191,168,0.7);">Fascial Release</span>
+          <span style="padding:7px 16px;border:1px solid rgba(201,168,76,0.3);border-radius:20px;font-size:0.75rem;color:rgba(200,191,168,0.7);">Structural Bodywork</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENROLL -->
+<section class="ageless-section" id="enroll">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:64px;">
+      <p class="eyebrow ageless-eyebrow" style="margin-bottom:16px;">Ready to Begin</p>
+      <h2 style="color:#e8dfc8;font-weight:300;">Enroll in Ageless</h2>
+      <div style="width:48px;height:1px;background:var(--ageless-gold);margin:20px auto;"></div>
+      <p style="color:rgba(200,191,168,0.6);max-width:480px;margin:0 auto;line-height:1.7;">Self-paced. Lifetime access. Everything you need to begin your practice today.</p>
+    </div>
+    <div class="price-box">
+      <p style="font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--ageless-gold);margin-bottom:16px;">Full Course</p>
+      <div class="price-amount">$147</div>
+      <p class="price-label">One-time payment · Lifetime access</p>
+      <div style="margin-bottom:28px;">
+        <div class="included-item">5 video modules — full curriculum</div>
+        <div class="included-item">Downloadable practice guides</div>
+        <div class="included-item">Daily 10-minute protocol PDF</div>
+        <div class="included-item">Curated tool recommendations (Amazon affiliate)</div>
+        <div class="included-item">Lifetime access + all future updates</div>
+      </div>
+      <a href="contact.html" class="btn" style="width:100%;justify-content:center;background:var(--ageless-gold);border:2px solid var(--ageless-gold);color:#1a1510;font-weight:700;font-size:0.85rem;">Enroll Now →</a>
+      <p style="color:rgba(200,191,168,0.3);font-size:0.75rem;margin-top:16px;">Questions? DM <a href="https://instagram.com/betterwithniia" target="_blank" style="color:var(--ageless-gold);">@betterwithniia</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="ageless-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-logo">
+        <div class="logo-mark" style="border-color:rgba(201,168,76,0.4);margin-bottom:20px;">
+          <span class="lg-get" style="color:rgba(201,168,76,0.7);">Get</span>
+          <span class="lg-better" style="color:#e8dfc8;">BETTER</span>
+          <span class="lg-with" style="color:rgba(201,168,76,0.4);">WITH NIIA</span>
+        </div>
+        <p class="footer-tagline" style="color:rgba(200,191,168,0.4);">Better at the Barn · Columbia, SC<br>Ageless course by Dr. Niia Bishop</p>
+        <div class="social-links" style="margin-top:16px;">
+          <a href="https://instagram.com/betterwithniia" target="_blank" class="social-link" style="border-color:rgba(201,168,76,0.3);color:rgba(201,168,76,0.6);" aria-label="Instagram">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>The Course</h4>
+        <ul>
+          <li><a href="ageless.html#curriculum">Curriculum</a></li>
+          <li><a href="ageless.html#enroll">Enroll</a></li>
+          <li><a href="ageless.html">About Ageless</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>The Studio</h4>
+        <ul>
+          <li><a href="index.html">Better at the Barn</a></li>
+          <li><a href="classes.html">Classes & Sessions</a></li>
+          <li><a href="plans.html">Membership Plans</a></li>
+          <li><a href="contact.html">Book a Session</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <div class="footer-address" style="color:rgba(200,191,168,0.45);">
+          Columbia, SC 29203<br>
+          <a href="tel:+18038816626" style="color:rgba(200,191,168,0.45);">1 (803) 881-6626</a><br><br>
+          <a href="https://instagram.com/betterwithniia" target="_blank" style="color:rgba(201,168,76,0.7);">@betterwithniia</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Get Better with Niia · Ageless. All rights reserved.</p>
+      <p>Dr. Niia Bishop · Columbia, SC</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+});
+</script>
+</body>
+</html>

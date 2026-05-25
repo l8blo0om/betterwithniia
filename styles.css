@@ -197,24 +197,77 @@ h4 { font-size: 1.2rem; }
   border-top: 1px solid rgba(201,168,76,0.25);
   transition: transform 0.35s ease;
 }
-.music-player.hidden { transform: translateY(100%); }
-.music-player-toggle {
-  position: absolute;
-  top: -36px; right: 24px;
-  background: #0e0c09;
-  border: 1px solid rgba(201,168,76,0.25);
-  border-bottom: none;
-  color: #BFA05A;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 8px 16px;
-  cursor: pointer;
-  border-radius: 4px 4px 0 0;
-  font-family: var(--font-body);
+.music-player-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 48px;
 }
-.music-player-toggle:hover { color: white; }
+.music-player-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+.music-player-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.music-player-logo .mp-get {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 7px;
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 0;
+}
+.music-player-logo .mp-better {
+  font-family: var(--font-body);
+  font-weight: 900;
+  font-size: 7.5px;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+.music-player-name {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+.music-player-toggle {
+  background: none;
+  border: 1px solid rgba(201,168,76,0.4);
+  color: #BFA05A;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  white-space: nowrap;
+  transition: color 0.15s, border-color 0.15s;
+}
+.music-player-toggle:hover { color: white; border-color: rgba(201,168,76,0.8); }
+.music-player-iframe-wrap {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.35s ease;
+}
+.music-player-iframe-wrap.open {
+  max-height: 110px;
+}
 .music-player iframe {
   display: block;
   width: 100%;

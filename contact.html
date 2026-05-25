@@ -15,6 +15,20 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<!-- LANGUAGE BAR -->
+<div class="lang-bar" id="langBar">
+  <button onclick="setLang('en')" title="English" class="active">🇺🇸</button>
+  <button onclick="setLang('es')" title="Español">🇪🇸</button>
+  <button onclick="setLang('pt')" title="Português">🇵🇹</button>
+  <button onclick="setLang('fr')" title="Français">🇫🇷</button>
+  <button onclick="setLang('de')" title="Deutsch">🇩🇪</button>
+  <button onclick="setLang('zh-CN')" title="中文">🇨🇳</button>
+  <button onclick="setLang('ja')" title="日本語">🇯🇵</button>
+  <button onclick="setLang('hi')" title="हिन्दी">🇮🇳</button>
+  <button onclick="setLang('ko')" title="한국어">🇰🇷</button>
+  <button onclick="setLang('ar')" title="العربية">🇸🇦</button>
+</div>
+<div id="google_translate_element"></div>
 
 <!-- NAV -->
 <nav class="nav" id="nav">
@@ -332,5 +346,19 @@ async function handleSubmit(e) {
   }
 }
 </script>
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({ pageLanguage: "en", includedLanguages: "es,fr,pt,de,zh-CN,ja,hi,ko,ar", autoDisplay: false }, "google_translate_element");
+}
+function setLang(lang) {
+  document.querySelectorAll(".lang-bar button").forEach(function(b){ b.classList.remove("active"); });
+  if(window.event && window.event.target) window.event.target.classList.add("active");
+  if (lang === "en") { document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"; location.reload(); return; }
+  var sel = document.querySelector(".goog-te-combo");
+  if (sel) { sel.value = lang; sel.dispatchEvent(new Event("change")); }
+  else { setTimeout(function(){ setLang(lang); }, 600); }
+}
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>

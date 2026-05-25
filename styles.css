@@ -188,10 +188,43 @@ h4 { font-size: 1.2rem; }
 .logo-mark-light .lg-better { color: var(--white); }
 .logo-mark-light .lg-with { color: rgba(255,255,255,0.45); }
 
+/* ─── LANGUAGE BAR ─── */
+.lang-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1001;
+  background: var(--navy);
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 32px;
+  gap: 4px;
+}
+.lang-bar button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 3px;
+  opacity: 0.65;
+  transition: opacity 0.15s, transform 0.15s;
+  line-height: 1;
+}
+.lang-bar button:hover { opacity: 1; transform: scale(1.15); }
+.lang-bar button.active { opacity: 1; outline: 1px solid rgba(255,255,255,0.4); }
+
+/* Hide Google Translate UI — keep only the functionality */
+.goog-te-banner-frame, .goog-te-gadget { display: none !important; }
+body { top: 0 !important; }
+.skiptranslate { display: none !important; }
+#google_translate_element { display: none !important; }
+
 /* ─── NAV ─── */
 .nav {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 32px; left: 0; right: 0;
   z-index: 1000;
   background: rgba(255,255,255,0.97);
   backdrop-filter: blur(12px);

@@ -321,5 +321,18 @@ function setLang(lang) {
 }
 </script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!-- MUSIC PLAYER -->
+<div class="music-player" id="musicPlayer">
+  <button class="music-player-toggle" onclick="togglePlayer()">♫ Touché Pussycat ▾</button>
+  <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/touch%C3%A9-pussycat-vol-1/1889648702"></iframe>
+</div>
+<script>
+function togglePlayer() {
+  var p = document.getElementById("musicPlayer");
+  var b = document.querySelector(".music-player-toggle");
+  p.classList.toggle("hidden");
+  b.textContent = p.classList.contains("hidden") ? "♫ Touché Pussycat ▴" : "♫ Touché Pussycat ▾";
+}
+</script>
 </body>
 </html>

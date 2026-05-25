@@ -347,16 +347,16 @@ h4 { font-size: 1.2rem; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0;
-  opacity: 0.45;
+  z-index: 1;
+  opacity: 1;
 }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, #0a1432, #1E3870, #0d2050, #152b58, #0a1432);
+  background: linear-gradient(160deg, rgba(10,20,50,0.72), rgba(30,56,112,0.6), rgba(13,32,80,0.72), rgba(21,43,88,0.68));
   background-size: 300% 300%;
   animation: heroShift 12s ease-in-out infinite;
-  z-index: 1;
+  z-index: 2;
 }
 @keyframes heroShift {
   0%   { background-position: 0% 50%; }
@@ -368,7 +368,7 @@ h4 { font-size: 1.2rem; }
   position: absolute;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.015'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  z-index: 0;
+  z-index: 3;
 }
 .hero-content {
   position: relative;

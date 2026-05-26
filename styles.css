@@ -378,9 +378,9 @@ body { top: 0 !important; }
 
 /* Ageless brand accent colors */
 :root {
-  --ageless-gold: #C9A84C;
+  --ageless-gold: #BFA05A;
   --ageless-cream: #F5F0E8;
-  --ageless-dark: #1A1510;
+  --ageless-dark: #0e1c3a;
 }
 .ageless-hero {
   background: var(--ageless-dark);

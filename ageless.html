@@ -16,32 +16,32 @@
 <style>
   /* Ageless-specific overrides */
   body { background: var(--ageless-dark); }
-  .ageless-page { background: var(--ageless-dark); color: #e8dfc8; }
+  .ageless-page { background: var(--ageless-dark); color: #dde4f0; }
   .ageless-section { padding: 96px 0; background: var(--ageless-dark); }
   .ageless-section-light { padding: 96px 0; background: var(--ageless-cream); }
-  .ageless-section-mid { padding: 96px 0; background: #231f18; }
-  .ageless-nav { background: rgba(26,21,16,0.97); border-bottom: 1px solid rgba(201,168,76,0.2); }
-  .ageless-nav .nav-links a { color: #c8bfa8; }
+  .ageless-section-mid { padding: 96px 0; background: #0a1628; }
+  .ageless-nav { background: rgba(14,28,58,0.97); border-bottom: 1px solid rgba(191,160,90,0.2); }
+  .ageless-nav .nav-links a { color: rgba(221,228,240,0.75); }
   .ageless-nav .nav-links a:hover { color: var(--ageless-gold); }
   .ageless-nav .nav-links a::after { background: var(--ageless-gold); }
-  .ageless-nav .logo-mark { border-color: rgba(201,168,76,0.5); }
-  .ageless-nav .logo-mark .lg-get { color: rgba(201,168,76,0.8); }
-  .ageless-nav .logo-mark .lg-better { color: #e8dfc8; }
-  .ageless-nav .logo-mark .lg-with { color: rgba(201,168,76,0.4); }
-  .ageless-nav .btn-primary { background: var(--ageless-gold); border-color: var(--ageless-gold); color: var(--ageless-dark); }
-  .ageless-nav .btn-primary:hover { background: #b8943e; border-color: #b8943e; }
-  .ageless-mobile { background: #1a1510; border-color: rgba(201,168,76,0.15); }
-  .ageless-mobile a { color: #c8bfa8; border-color: rgba(201,168,76,0.15); }
+  .ageless-nav .logo-mark { border-color: rgba(191,160,90,0.5); }
+  .ageless-nav .logo-mark .lg-get { color: rgba(191,160,90,0.8); }
+  .ageless-nav .logo-mark .lg-better { color: #dde4f0; }
+  .ageless-nav .logo-mark .lg-with { color: rgba(191,160,90,0.4); }
+  .ageless-nav .btn-primary { background: var(--ageless-gold); border-color: var(--ageless-gold); color: #0e1c3a; }
+  .ageless-nav .btn-primary:hover { background: #a88c4a; border-color: #a88c4a; }
+  .ageless-mobile { background: #0a1628; border-color: rgba(191,160,90,0.15); }
+  .ageless-mobile a { color: rgba(221,228,240,0.75); border-color: rgba(191,160,90,0.15); }
   .gold-text { color: var(--ageless-gold); }
-  .ageless-footer { background: #0e0c09; padding: 64px 0 32px; color: #c8bfa8; }
+  .ageless-footer { background: #070f1e; padding: 64px 0 32px; color: rgba(221,228,240,0.65); }
   .ageless-footer .footer-grid { margin-bottom: 48px; }
   .ageless-footer .footer-col h4 { color: var(--ageless-gold); }
-  .ageless-footer .footer-col ul a { color: rgba(200,191,168,0.55); }
-  .ageless-footer .footer-col ul a:hover { color: #e8dfc8; }
+  .ageless-footer .footer-col ul a { color: rgba(221,228,240,0.45); }
+  .ageless-footer .footer-col ul a:hover { color: #dde4f0; }
   .ageless-footer .footer-bottom { border-color: rgba(255,255,255,0.06); }
-  .ageless-footer .footer-bottom p { color: rgba(200,191,168,0.3); }
+  .ageless-footer .footer-bottom p { color: rgba(221,228,240,0.25); }
   .price-box {
-    background: linear-gradient(135deg, #1a1510, #231f18);
+    background: linear-gradient(135deg, #0a1628, #0e1c3a);
     border: 1px solid var(--ageless-gold);
     border-radius: 4px;
     padding: 48px;
@@ -56,26 +56,26 @@
     color: var(--ageless-gold);
     line-height: 1;
   }
-  .price-label { color: rgba(200,191,168,0.55); font-size: 0.82rem; margin-top: 6px; margin-bottom: 32px; }
+  .price-label { color: rgba(221,228,240,0.45); font-size: 0.82rem; margin-top: 6px; margin-bottom: 32px; }
   .included-item {
     display: flex;
     align-items: center;
     gap: 12px;
     padding: 12px 0;
-    border-bottom: 1px solid rgba(201,168,76,0.12);
+    border-bottom: 1px solid rgba(191,160,90,0.12);
     text-align: left;
     font-size: 0.9rem;
-    color: #c8bfa8;
+    color: rgba(221,228,240,0.75);
   }
   .included-item::before { content: '✦'; color: var(--ageless-gold); font-size: 0.7rem; flex-shrink: 0; }
   .who-item {
     padding: 32px;
-    border: 1px solid rgba(201,168,76,0.15);
+    border: 1px solid rgba(191,160,90,0.15);
     border-radius: 4px;
     background: rgba(255,255,255,0.03);
   }
-  .who-item h4 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 10px; color: #e8dfc8; }
-  .who-item p { color: rgba(200,191,168,0.65); font-size: 0.87rem; line-height: 1.7; }
+  .who-item h4 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 10px; color: #dde4f0; }
+  .who-item p { color: rgba(221,228,240,0.55); font-size: 0.87rem; line-height: 1.7; }
 </style>
 </head>
 <body class="ageless-page">
@@ -84,7 +84,7 @@
 <nav class="nav ageless-nav" id="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <img src="AGELESS.jpg" alt="Ageless" style="height:52px;width:auto;object-fit:contain;">
+      <div class="logo-mark"><span class="lg-get">Get</span><span class="lg-better">BETTER</span><span class="lg-with">WITH NIIA</span></div>
     </a>
     <ul class="nav-links">
       <li><a href="about.html">About</a></li>
@@ -94,7 +94,7 @@
       <li><a href="contact.html">Contact</a></li>
       <li><a href="ageless.html" style="color:var(--ageless-gold);" class="active">Ageless</a></li>
     </ul>
-    <a href="#enroll" class="btn btn-primary nav-cta" style="background:var(--ageless-gold);border-color:var(--ageless-gold);color:#1a1510;">Enroll Now</a>
+    <a href="#enroll" class="btn btn-primary nav-cta" style="background:var(--ageless-gold);border-color:var(--ageless-gold);color:#0e1c3a;">Enroll Now</a>
     <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menu" style="color:#c8bfa8;">☰</button>
   </div>
   <div class="mobile-menu ageless-mobile" id="mobileMenu">
@@ -103,32 +103,24 @@
     <a href="challenges.html">Challenges</a>
     <a href="plans.html">Plans</a>
     <a href="contact.html">Contact</a>
-    <a href="#enroll" class="btn btn-primary" style="background:var(--ageless-gold);border-color:var(--ageless-gold);color:#1a1510;">Enroll Now</a>
+    <a href="#enroll" class="btn btn-primary" style="background:var(--ageless-gold);border-color:var(--ageless-gold);color:#0e1c3a;">Enroll Now</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="ageless-hero">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
-      <div>
-        <p class="eyebrow ageless-eyebrow" style="margin-bottom:20px;">A Course by Dr. Niia Bishop</p>
-        <img src="AGELESS.jpg" alt="Ageless" style="height:140px;width:auto;object-fit:contain;margin-bottom:20px;display:block;">
-
-        <p style="font-family:var(--font-display);font-size:1.2rem;color:rgba(232,223,200,0.7);line-height:1.6;margin-bottom:16px;">The anti-aging practice nobody taught you — written in the muscles, fascia, and bones of your face.</p>
-        <div style="width:48px;height:1px;background:var(--ageless-gold);margin:28px 0;"></div>
-        <p style="color:rgba(200,191,168,0.65);font-size:0.95rem;line-height:1.8;margin-bottom:40px;">A 5-module online course for women 40+ that goes deeper than serums and further than face yoga. Learn the structural release, cranial decompression, jaw work, and movement practices that actually change the face from the inside out.</p>
-        <div style="display:flex;gap:16px;flex-wrap:wrap;">
-          <a href="#enroll" class="btn" style="background:var(--ageless-gold);border:2px solid var(--ageless-gold);color:#1a1510;font-weight:700;">Enroll Now</a>
-          <a href="#curriculum" class="btn btn-outline-white">See the Curriculum</a>
-        </div>
-        <p style="color:rgba(200,191,168,0.35);font-size:0.78rem;margin-top:20px;letter-spacing:0.05em;">Women 40+ · 5 Modules · Self-Paced · Lifetime Access</p>
+    <div style="max-width:680px;">
+      <p class="eyebrow ageless-eyebrow" style="margin-bottom:20px;">A Course by Dr. Niia Bishop</p>
+      <h1 style="font-family:var(--font-display);font-size:clamp(3rem,7vw,5.5rem);font-weight:300;color:#dde4f0;line-height:1.05;margin-bottom:8px;">AGELESS</h1>
+      <p style="font-family:var(--font-display);font-style:italic;font-size:1.25rem;color:var(--ageless-gold);margin-bottom:32px;">The anti-aging practice nobody taught you.</p>
+      <div style="width:48px;height:1px;background:var(--ageless-gold);margin-bottom:32px;"></div>
+      <p style="color:rgba(221,228,240,0.65);font-size:0.95rem;line-height:1.9;margin-bottom:40px;">A 5-module online course for women 40+ that goes deeper than serums and further than face yoga. Learn the structural release, cranial decompression, jaw work, and movement practices that actually change the face from the inside out.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <a href="#enroll" class="btn" style="background:var(--ageless-gold);border:2px solid var(--ageless-gold);color:#0e1c3a;font-weight:700;">Enroll Now</a>
+        <a href="#curriculum" class="btn btn-outline-white">See the Curriculum</a>
       </div>
-      <div>
-        <div class="img-block img-tall" style="border-radius:2px;">
-          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80&auto=format&fit=crop" alt="Ageless wellness" style="filter:grayscale(30%) contrast(1.1) brightness(0.7) sepia(20%);">
-        </div>
-      </div>
+      <p style="color:rgba(221,228,240,0.25);font-size:0.78rem;margin-top:24px;letter-spacing:0.08em;text-transform:uppercase;">Women 40+ · 5 Modules · Self-Paced · Lifetime Access</p>
     </div>
   </div>
 </section>
@@ -140,8 +132,8 @@
       <p class="eyebrow ageless-eyebrow" style="margin-bottom:16px;">The Truth About Aging</p>
       <h2 style="color:#e8dfc8;font-weight:300;margin-bottom:24px;">Your face doesn't age.<br>It <em>braces.</em></h2>
       <div style="width:48px;height:1px;background:var(--ageless-gold);margin:0 auto 32px;"></div>
-      <p style="color:rgba(200,191,168,0.7);font-size:1.05rem;line-height:1.9;margin-bottom:20px;">The jaw clenches. The platysma shortens. The cranial fascia grips. The muscles of the face hold decades of tension, stress, and unprocessed emotion — and we can see it. Every line, every droop, every asymmetry tells a story of repetition and holding.</p>
-      <p style="color:rgba(200,191,168,0.7);font-size:1.05rem;line-height:1.9;">Ageless teaches you to release it. Not by fighting gravity — but by restoring mobility, circulation, and length to the structures that time and tension have slowly shortened.</p>
+      <p style="color:rgba(221,228,240,0.65);font-size:1.05rem;line-height:1.9;margin-bottom:20px;">The jaw clenches. The platysma shortens. The cranial fascia grips. The muscles of the face hold decades of tension, stress, and unprocessed emotion — and we can see it. Every line, every droop, every asymmetry tells a story of repetition and holding.</p>
+      <p style="color:rgba(221,228,240,0.65);font-size:1.05rem;line-height:1.9;">Ageless teaches you to release it. Not by fighting gravity — but by restoring mobility, circulation, and length to the structures that time and tension have slowly shortened.</p>
     </div>
   </div>
 </section>
@@ -259,16 +251,21 @@
 <section class="ageless-section-mid">
   <div class="container">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
-      <div class="img-block img-tall">
-        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=900&q=80&auto=format&fit=crop" alt="Dr. Niia Bishop" style="filter:grayscale(20%) contrast(1.1) brightness(0.8) sepia(15%);">
+      <div style="padding:56px 48px;border:1px solid rgba(191,160,90,0.2);border-radius:4px;text-align:center;">
+        <div style="width:80px;height:80px;border-radius:50%;border:1px solid rgba(191,160,90,0.4);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;flex-direction:column;line-height:1;">
+          <span style="font-family:var(--font-display);font-style:italic;font-size:11px;color:rgba(191,160,90,0.7);">Get</span>
+          <span style="font-family:var(--font-body);font-weight:900;font-size:12px;color:#dde4f0;letter-spacing:-0.02em;">BETTER</span>
+        </div>
+        <p style="font-family:var(--font-display);font-size:1.5rem;color:#dde4f0;margin-bottom:6px;">Dr. Niia Bishop</p>
+        <p style="font-family:var(--font-display);font-style:italic;color:var(--ageless-gold);font-size:0.95rem;">Dr. B</p>
       </div>
       <div>
         <p class="eyebrow ageless-eyebrow" style="margin-bottom:16px;">Your Instructor</p>
-        <h2 style="color:#e8dfc8;font-weight:300;margin-bottom:8px;">Dr. Niia Bishop</h2>
+        <h2 style="color:#dde4f0;font-weight:300;margin-bottom:8px;">Dr. Niia Bishop</h2>
         <p style="color:var(--ageless-gold);font-family:var(--font-display);font-size:1.05rem;margin-bottom:24px;">Dr. B</p>
         <div style="width:48px;height:1px;background:var(--ageless-gold);margin-bottom:28px;"></div>
-        <p style="color:rgba(200,191,168,0.7);line-height:1.9;margin-bottom:18px;">Dr. Niia Bishop is a certified fitness trainer, Gyrotonic specialist, and movement educator with deep expertise in structural bodywork and fascial release. She runs Get Better with Niia — her boutique Gyrotonic studio on Farrow Road in Columbia, SC — and has spent years working with bodies across the full spectrum: athletes, post-surgical clients, seniors, and women navigating the physical changes of midlife.</p>
-        <p style="color:rgba(200,191,168,0.7);line-height:1.9;margin-bottom:28px;">Ageless comes from her clinical observation that the face ages structurally, not just cosmetically — and that the most powerful anti-aging interventions are the ones that work with the body's own intelligence. This course distills that expertise into a practice any woman can build at home.</p>
+        <p style="color:rgba(221,228,240,0.65);line-height:1.9;margin-bottom:18px;">Dr. Niia Bishop is a certified fitness trainer, Gyrotonic specialist, and movement educator with deep expertise in structural bodywork and fascial release. She runs Get Better with Niia — her boutique Gyrotonic studio on Farrow Road in Columbia, SC — and has spent years working with bodies across the full spectrum: athletes, post-surgical clients, seniors, and women navigating the physical changes of midlife.</p>
+        <p style="color:rgba(221,228,240,0.65);line-height:1.9;margin-bottom:28px;">Ageless comes from her clinical observation that the face ages structurally, not just cosmetically — and that the most powerful anti-aging interventions are the ones that work with the body's own intelligence. This course distills that expertise into a practice any woman can build at home.</p>
         <div style="display:flex;flex-wrap:wrap;gap:10px;">
           <span style="padding:7px 16px;border:1px solid rgba(201,168,76,0.3);border-radius:20px;font-size:0.75rem;color:rgba(200,191,168,0.7);">Certified Trainer</span>
           <span style="padding:7px 16px;border:1px solid rgba(201,168,76,0.3);border-radius:20px;font-size:0.75rem;color:rgba(200,191,168,0.7);">Gyrotonic Specialist</span>
@@ -300,7 +297,7 @@
         <div class="included-item">Curated tool recommendations (Amazon affiliate)</div>
         <div class="included-item">Lifetime access + all future updates</div>
       </div>
-      <a href="mailto:l8blo0om@gmail.com?subject=Ageless%20Course%20%E2%80%94%20I%27m%20ready%20to%20enroll&body=Hi%20Dr.%20B%2C%0A%0AI%27d%20like%20to%20enroll%20in%20the%20Ageless%20course.%20Please%20send%20me%20next%20steps." class="btn" style="width:100%;justify-content:center;background:var(--ageless-gold);border:2px solid var(--ageless-gold);color:#1a1510;font-weight:700;font-size:0.85rem;">Enroll Now →</a>
+      <a href="mailto:l8blo0om@gmail.com?subject=Ageless%20Course%20%E2%80%94%20I%27m%20ready%20to%20enroll&body=Hi%20Dr.%20B%2C%0A%0AI%27d%20like%20to%20enroll%20in%20the%20Ageless%20course.%20Please%20send%20me%20next%20steps." class="btn" style="width:100%;justify-content:center;background:var(--ageless-gold);border:2px solid var(--ageless-gold);color:#0e1c3a;font-weight:700;font-size:0.85rem;">Enroll Now →</a>
       <p style="color:rgba(200,191,168,0.3);font-size:0.75rem;margin-top:16px;">Questions? DM <a href="https://instagram.com/betterwithniia" target="_blank" style="color:var(--ageless-gold);">@betterwithniia</a></p>
     </div>
   </div>

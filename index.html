@@ -15,6 +15,89 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<!-- SPLASH SCREEN -->
+<div id="splash" style="
+  position:fixed;inset:0;z-index:9999;
+  background:#0e1c3a;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:40px 24px;
+  transition:opacity 0.7s ease;
+">
+  <div style="margin-bottom:32px;">
+    <div style="
+      width:72px;height:72px;border-radius:50%;
+      border:1px solid rgba(191,160,90,0.5);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      margin:0 auto 24px;line-height:1;
+    ">
+      <span style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:11px;color:rgba(191,160,90,0.8);">Get</span>
+      <span style="font-family:'Inter',sans-serif;font-weight:900;font-size:13px;color:#fff;letter-spacing:-0.02em;">BETTER</span>
+      <span style="font-family:'Inter',sans-serif;font-size:7px;font-weight:600;letter-spacing:0.1em;color:rgba(191,160,90,0.5);text-transform:uppercase;">WITH NIIA</span>
+    </div>
+    <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.1rem;color:rgba(221,228,240,0.5);letter-spacing:0.04em;margin-bottom:4px;">welcome to</p>
+    <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.2rem,6vw,3.8rem);color:#dde4f0;line-height:1.1;margin-bottom:8px;">Get Better with Niia</h1>
+    <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1rem;color:rgba(191,160,90,0.7);">Gyrotonic · Pilates · Personal Training · Columbia, SC</p>
+  </div>
+
+  <div style="width:48px;height:1px;background:rgba(191,160,90,0.4);margin:0 auto 36px;"></div>
+
+  <div style="display:flex;flex-direction:column;gap:14px;width:100%;max-width:320px;">
+    <button onclick="enterWithMusic()" style="
+      background:var(--ageless-gold,#BFA05A);border:2px solid #BFA05A;
+      color:#0e1c3a;font-family:'Inter',sans-serif;font-weight:700;
+      font-size:0.85rem;letter-spacing:0.12em;text-transform:uppercase;
+      padding:16px 32px;cursor:pointer;border-radius:4px;
+      transition:all 0.2s;
+    ">♫ Enter with Music</button>
+    <button onclick="enterSilent()" style="
+      background:none;border:1px solid rgba(221,228,240,0.2);
+      color:rgba(221,228,240,0.45);font-family:'Inter',sans-serif;
+      font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;
+      padding:12px 32px;cursor:pointer;border-radius:4px;
+      transition:all 0.2s;
+    ">Enter quietly →</button>
+  </div>
+
+  <!-- Hidden Spotify embed, activated on music entry -->
+  <div id="splash-player" style="display:none;margin-top:32px;width:100%;max-width:380px;">
+    <iframe id="spotify-frame"
+      src="https://open.spotify.com/embed/album/3CGev6tR6bTQakJfLLsTHV?utm_source=generator&theme=0"
+      width="100%" height="80" frameBorder="0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy" style="border-radius:8px;">
+    </iframe>
+  </div>
+</div>
+
+<script>
+function enterWithMusic() {
+  document.getElementById('splash-player').style.display = 'block';
+  // Short pause so player loads, then fade out
+  setTimeout(function() { dismissSplash(true); }, 1800);
+}
+function enterSilent() { dismissSplash(false); }
+function dismissSplash(withMusic) {
+  var s = document.getElementById('splash');
+  s.style.opacity = '0';
+  setTimeout(function() {
+    s.style.display = 'none';
+    if (withMusic) {
+      // Show the bottom music bar expanded
+      var wrap = document.getElementById('musicIframe');
+      if (wrap) wrap.classList.add('open');
+      var btn = document.querySelector('.music-player-toggle');
+      if (btn) btn.textContent = '✕';
+    }
+  }, 700);
+  sessionStorage.setItem('splashSeen', '1');
+}
+// Skip splash if already seen this session
+if (sessionStorage.getItem('splashSeen')) {
+  document.getElementById('splash').style.display = 'none';
+}
+</script>
+
 <!-- LANGUAGE BAR -->
 <div class="lang-bar" id="langBar">
   <button onclick="setLang('en')" title="English" class="active">🇺🇸</button>
@@ -139,7 +222,7 @@
         <h2 style="color:white;">The Gyrotonic Method — rare in Columbia. Powerful everywhere.</h2>
         <div class="divider divider-gold"></div>
         <p style="color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:16px;">The Gyrotonic Method is a movement system built on circular, spiraling patterns — the way your body actually wants to move. It strengthens, stretches, and mobilizes simultaneously, targeting the spine, joints, and fascia in ways traditional exercise can't reach.</p>
-        <p style="color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:28px;">Better at the Barn is one of the only places in Columbia where you can experience it. Chronic pain, limited mobility, a body in recovery — or simply ready to move differently. This is your method.</p>
+        <p style="color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:28px;">Get Better with Niia is one of Columbia's premier destinations for Gyrotonic and Pilates. Chronic pain, limited mobility, a body in recovery — or simply ready to move differently. This is your method.</p>
         <a href="classes.html" class="btn btn-white">Book a Session</a>
       </div>
       <div class="intro-image-block">
@@ -313,7 +396,7 @@
         </div>
       </div>
       <div class="testimonial">
-        <div class="testimonial-text">The Barn is unlike anything I've experienced. It's peaceful, it's personal, and it actually works. My back pain is gone for the first time in years.</div>
+        <div class="testimonial-text">It's unlike anything I've experienced. It's peaceful, it's personal, and it actually works. My back pain is gone for the first time in years.</div>
         <div class="testimonial-author">
           <div class="author-avatar">R</div>
           <div>
@@ -408,7 +491,7 @@
     </div>
     <div class="footer-bottom">
       <p>© 2025 Get Better with Niia. All rights reserved.</p>
-      <p>Better at the Barn · Columbia, SC</p>
+      <p>Get Better with Niia · Columbia, SC</p>
     </div>
   </div>
 </footer>
@@ -442,7 +525,7 @@ function setLang(lang) {
     <button class="music-player-toggle" onclick="togglePlayer()" title="Play ambient music">♫</button>
   </div>
   <div class="music-player-iframe-wrap" id="musicIframe">
-    <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/touch%C3%A9-pussycat-vol-1/1889648702"></iframe>
+    <iframe src="https://open.spotify.com/embed/album/3CGev6tR6bTQakJfLLsTHV?utm_source=generator&theme=0" width="100%" height="100" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="border-radius:0;"></iframe>
   </div>
 </div>
 <script>

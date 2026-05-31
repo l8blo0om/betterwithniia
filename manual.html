@@ -95,7 +95,7 @@
         <button class="clearx" id="clearx" aria-label="clear">×</button>
         <button class="gobtn" id="go">Search</button>
       </div>
-      <div class="hint">Spelling is forgiven. Try "frog", "cross grip", "jackknife", "spiral", "unwinding".</div>
+      <div class="hint">Spelling is forgiven. Try “frog”, “cross grip”, “jackknife”, “spiral”, “unwinding”.</div>
     </div>
   </div>
 
@@ -105,6 +105,9 @@
 
 <script>
 // ===== GYROTONIC LOOKUP — DATA =====
+// Seven series. New three (Abdominal, Upper Body Openings, Unwinding) are sourced from the manual pages.
+// Earlier three (Arch & Curl, Hamstring, Upper Body) carried from prior build; reconstructed entries tagged.
+
 const SERIES = [
   /* ============== SERIES 1 — ARCH AND CURL ============== */
   {
@@ -159,6 +162,7 @@ const SERIES = [
         benefits: "Trains smooth, even, continuous articulation of the whole spine; integrates breath with motion.",
         errors: ["Hinging instead of rolling → keep it continuous and even."],
         mods: "Open the knee angle more for comfort.", reps: "placeholder", recon: true },
+      // Final Format descendants
       { name: "Arch and Curl: extroverted", g: "Arch and Curl extroverted (Final Format)", lineage: "Handle-unit version of the pole Arch and Curl.",
         setup: "Straddle facing the handle unit, hands at the grips, spine long.",
         movement: "Curl and arch through the full range on the handles, the open/extroverted emphasis reaching outward through the arms as the spine articulates.",
@@ -247,14 +251,30 @@ const SERIES = [
         benefits: "Hamstring length and hip coordination; reciprocal leg control.",
         errors: ["Pelvis rocking with the legs → keep it quiet."],
         mods: "Smaller range, slower.", reps: "placeholder", recon: true },
-      { name: "Frog", g: "Frog", lineage: "Hamstring Final Format; Progression 2 adds Frog preps.",
-        setup: "Seated facing the tower, back supported, feet in the cables, knees open.",
-        movement: "Draw the heels in toward the seat with knees opening outward, then press the legs long and away, opening and closing like a frog kick.",
-        breath: "Inhale to draw in, exhale to press long.",
-        teaching: "Hip opening with hamstring and inner-thigh length, legs symmetrical.",
+      { name: "Frog Preparation 1", g: "Frog prep 1 (Hamstring, on the bench, upper straps on feet)", lineage: "Hamstring Series; Progression 2 new exercise (p129). First of two preps building toward the Frog.",
+        setup: "Lying on the bench facing away from the tower, upper straps on the feet. Starting position: extended legs in parallel, together, pointed feet.",
+        movement: "Double knee bend (as in double leg pump), shinbone parallel to the cable line, pointed feet; open the legs into a diamond shape, finding the individual diamond-shape position — if possible shinbone parallel to the floor, initiating by narrowing of the pelvis with the sit bones reaching forward; then extend the legs following the cable line diagonally down, from turned-out into parallel on the way.",
+        breath: "Exhale into the opening and the extension.",
+        teaching: "Finding the diamond shape and the narrowing-led opening of the legs before the full Frog.",
+        benefits: "Opens the hips into the diamond; trains the narrowing-led leg opening; prepares the Frog kick.",
+        errors: ["Losing the narrowing as the legs open → initiate from the pelvis.","Knees collapsing rather than tracking into the diamond."],
+        mods: "Hands-on: same as double leg pump; support the narrowing — Grip 1 traction and open the knees, Grip 2 guiding from the ankle (wrapping around the ankle).", reps: "placeholder", recon: false },
+      { name: "Frog Preparation 2", g: "Frog prep 2 (Hamstring, on the bench, upper straps on feet)", lineage: "Hamstring Series; Progression 2 new exercise (p129). Second of two preps building toward the Frog.",
+        setup: "Lying on the bench facing away from the tower, upper straps on the feet. Starting position: extended legs, turned out, pointed feet.",
+        movement: "Move directly into the diamond shape; extend the legs following the cable line, pointed feet; flexed feet, open the legs to the side into a V-position; then close the legs to the starting position.",
+        breath: "Exhale into the extension and the opening to V.",
+        teaching: "Linking the diamond, the extended V-opening, and the flex/close into one continuous prep.",
+        benefits: "Trains the V-opening with flexed feet; coordinates the diamond-to-extension-to-close path of the Frog.",
+        errors: ["Pelvis tilting as the legs open to V → keep it stable.","Losing the turn-out on the way out."],
+        mods: "Hands-on: palms wrapping around the ankles plus traction; give a slight resistance so the client pulls the legs into the diamond shape; arrange the feet into flex and guide; brush the inside of the legs to close.", reps: "placeholder", recon: false },
+      { name: "Frog", g: "Frog", lineage: "Hamstring Series; confirmed Progression 2 (pp129–130), preceded by Frog preps 1 and 2.",
+        setup: "Lying on the bench facing away from the tower, upper straps on the feet. Parallel legs, pointed feet, turned out.",
+        movement: "From parallel pointed turned-out legs, move into the diamond shape; open the legs to the side with the knees staying in the same position as in the diamond shape, pointed feet; flexed feet in the maximum opened position; then turn the legs out and close together. Final Frog: double breath for the slower version, single breath for the continuous version.",
+        breath: "Double breath (slower version) or single breath (continuous version).",
+        teaching: "Hip opening with hamstring and inner-thigh length, legs symmetrical, through the diamond-to-V path.",
         benefits: "Opens the hips; lengthens hamstrings and inner thighs; symmetrical leg coordination.",
-        errors: ["Knees collapsing in → keep them tracking open.","Low back arching on the press."],
-        mods: "Smaller range; Frog preps first.", reps: "placeholder", recon: true },
+        errors: ["Knees collapsing in → keep them tracking open.","Low back arching on the press → keep the force out of the upper body."],
+        mods: "Frog preps 1 and 2 first. Hands-on: palms wrapping around the ankle plus traction; guide legs (pulling action from the legs), check the position of shinbone, ankles, pelvis; traction on the knees with the knees staying in place; brush along the shinbones; arrange the feet, brush along the inside of the legs.", reps: "Mini-series: connect Frog prep 1, Frog prep 2, and Frog.", recon: false },
       { name: "Quad Stretches: introverted", g: "Quad Stretches introverted", lineage: "Hamstring Final Format; layered at Progression 3.",
         setup: "Seated facing the tower, back supported, feet in cables.",
         movement: "Lengthen the front of the thigh through the cable line with an inward/introverted emphasis, balancing the hamstring work with quad length.",
@@ -319,14 +339,14 @@ const SERIES = [
         benefits: "Articulates the lower spine and hips; deep abdominal-to-leg connection.",
         errors: ["Jamming the low back instead of articulating."],
         mods: "Smaller range.", reps: "placeholder", recon: true },
-      { name: "Combination (Full Circles and…)", g: "Combination — Full Circles and [second element to confirm]", lineage: "Hamstring Final Format combination.",
+      { name: "Combination (Full Circles and Lobster Tail)", g: "Combination — Full Circles and Lobster Tail", lineage: "Hamstring Final Format combination.",
         setup: "Seated/lying facing the tower, back supported, feet in cables.",
-        movement: "Combines Full Circles with a second element. The source line ran off the photographed page — second element to be confirmed.",
+        movement: "Combines Full Circles with Lobster Tail — run the complete leg circle, then fold into the tucking, tail-like curl of the lower body, linked in sequence.",
         breath: "Exhale to the extremes, inhale through center.",
-        teaching: "Linking circular leg work with a second pattern in sequence.",
-        benefits: "Integrated leg control across two patterns.",
-        errors: ["Losing the transition between the two elements."],
-        mods: "Run the two elements separately first.", reps: "placeholder", recon: true },
+        teaching: "Linking circular leg work into the Lobster Tail fold in sequence.",
+        benefits: "Integrated leg control across the circle and the fold.",
+        errors: ["Losing the transition between the circle and the tail-fold."],
+        mods: "Run Full Circles and Lobster Tail separately first.", reps: "placeholder", recon: true },
       { name: "Leg Circles in 45 degree", g: "Leg Circles in 45°", lineage: "Hamstring Final Format.",
         setup: "Seated/lying facing the tower, back supported, feet in cables, legs lifted to a 45° line.",
         movement: "Circle the legs at a 45-degree line from the body, controlled and even, both directions.",
@@ -359,14 +379,14 @@ const SERIES = [
         benefits: "Back and arm strength with rotational control.",
         errors: ["Collapsing the chest on the pull."],
         mods: "Less lean, lighter pull.", reps: "placeholder", recon: true },
-      { name: "Canoeing", g: "Canoeing (simple variation)", lineage: "Upper-straps sequence.",
-        setup: "Sitting on the bench facing the tower, straps in hands.",
-        movement: "Paddle the arms in a canoeing pattern, reaching and pulling on alternating diagonals.",
-        breath: "Exhale on each pull.",
-        teaching: "Rhythmic diagonal pulling through the arms and torso.",
-        benefits: "Upper-body endurance and diagonal coordination.",
-        errors: ["Moving only the arms → bring the torso in."],
-        mods: "Smaller stroke.", reps: "placeholder", recon: true },
+      { name: "Canoeing", g: "Canoeing (Upper Body Series, upper straps; new exercise p136)", lineage: "Upper Body Series; Progression 3 new exercise (p136), built with two preps. Five-position continuous movement.",
+        setup: "Sitting on the bench facing the tower, upper straps in the hands.",
+        movement: "Five linked positions: (1) Scooping into arch toward the tower, scooping the arms, arch the spine, look up; (2) spiraling twist in bowed curl position, body initiates and the arms follow with delay, ribcage connected, leading arm placed as in simple twist next to the bench top (no need to touch), second arm follows the guiding arm; (3) MODERATE side shift of the ribcage, leading arm scooping sideways, look up and over the leading arm, second arm follows, weight shift of the body to the scooping side (accommodating shift); (4) long bowed position, unwind into facing the tower, fingers pointing forward and down = “dracula position,” arms parallel with elbows bent, look slightly up toward the hands; (5) diving down, palms brushing in front of the knees, transition into scooping up into arch.",
+        breath: "Add the breathing last — teacher breathes with the student. Counting in 4s: and down – and shift – and center – and dive.",
+        teaching: "The body guides and the arms follow with delay throughout — a continuous canoe-paddle of the whole torso through arch, twist, side shift, unwind, and dive.",
+        benefits: "Whole-torso diagonal coordination; spiraling and side-shift control with arm delay; links arch, curl, twist and dive into one flowing upper-body sequence.",
+        errors: ["Arms leading instead of the body → body guides, arms follow with delay.", "Losing the ribcage connection in the twist.", "Head out of position in the side shift."],
+        mods: "Five teaching steps: (1) learn each position of the spine with the leading arm; (2) learn the spiraling twist in the bowl curl position, one arm guiding and one following — attention to hand placement, body guiding, head position; (3) learn the side-shift position — attention to head position; (4) entire movement in slow motion in 4 counts; (5) add the breathing. Hands-on: standing next to the student support the leading arm; sitting behind, palms next to the bench, instruct the student to touch the palm for placement of the leading arm; then guide the ribcage / support the scoop / support the unwinding into center / support the diving.", reps: "placeholder", recon: false },
       { name: "Swimming", g: "Swimming (breaststroke)", lineage: "Upper-straps sequence.",
         setup: "Sitting on the bench facing the tower, straps in hands.",
         movement: "Move the arms through a breaststroke pattern — reach forward, sweep wide, draw back in.",
@@ -466,11 +486,12 @@ const SERIES = [
     ]
   },
 
-  /* ============== SERIES 4 — ABDOMINAL ============== */
+  /* ============== SERIES 4 — ABDOMINAL (NEW, SOURCED) ============== */
   {
     id: "s4", name: "Abdominal Series",
     intro: "Strengthening the midsection without restricting flexibility — three groups on the Pulley Tower Combination Unit: Curl Ups, Jackknife, and Psoas Abdominals. Keep the force in the diaphragm, not in the shoulders; effort, not wrestling; squeezing breath throughout.",
     ex: [
+      // ---- Curl Ups group ----
       { name: "Curl Ups: Preparation on the floor", g: "Curl Ups — Preparation (floor)", lineage: "Curl Ups group — preparatory work.",
         setup: "On the floor, learning the curl-up action and the squeezing breath before moving to the bench.",
         movement: "Curl the upper spine up and off the floor with a squeezing breath, then lower with control.",
@@ -487,7 +508,7 @@ const SERIES = [
         benefits: "Deep abdominal connection without strain.",
         errors: ["Gripping the hip flexors instead of the deep abdominals."],
         mods: "Smaller range.", reps: "placeholder", recon: true },
-      { name: "Standing on all fours", g: "Standing on all fours (Abdominal prep)", lineage: "Curl Ups group — preparation.",
+      { name: "Standing on all fours", g: "Standing on all fours (Abdominal prep)", lineage: "Curl Ups group — preparation; also a version 'upside down'.",
         setup: "On all fours, finding the midsection support against gravity.",
         movement: "Engage and hollow the midsection on all fours; the 'upside down' version reverses the relationship to gravity.",
         breath: "Squeezing breath.",
@@ -521,28 +542,28 @@ const SERIES = [
         mods: "Bend the legs to reduce load.", reps: "placeholder" },
       { name: "Simple Curl Ups crossing over", g: "Simple Curl Ups crossing over", lineage: "Curl Ups group.",
         setup: "Lying on the back on the bench facing the tower, upper straps on the upper arms.",
-        movement: "Curl up with a rotation, crossing one shoulder toward the opposite side, then the other.",
+        movement: "From a connected starting position (long neck, sit bones reaching forward, narrowing of the pelvis, inner thighs squeezing, feet pressing down and heels pulling): initiate the cross-over and immediately cross over, shoulder toward the opposite knee, legs moving in opposition, long neck, elongate the back side, keep the elbows open. Roll up all the way into balanced curl position.",
         breath: "Squeezing breath on the cross.",
-        teaching: "Adding rotation to the curl — the oblique connection.",
+        teaching: "Adding rotation to the curl — the oblique connection — with the legs moving in opposition to the crossing shoulder.",
         benefits: "Strengthens the obliques and the rotational midsection.",
         errors: ["Pulling on the neck to twist → rotate from the ribs."],
-        mods: "Smaller rotation.", reps: "placeholder" },
+        mods: "Up to the balanced curl = simple curl up. Hands-on standing next to the student: support the ribcage cradle; V-grip to support and guide.", reps: "Mini-series: 8 curl ups – 8 chest-pelvis lift with kidney curl-release." },
       { name: "Curl Ups crossing over into Arch: bent legs", g: "Curl Ups crossing over into Arch (bent legs)", lineage: "Curl Ups group (p73).",
         setup: "Lying on the back on the bench facing the tower, upper straps on the upper arms, legs bent.",
-        movement: "Curl with a cross-over rotation, then carry it into an arch, legs bent, then reverse to the other side.",
+        movement: "Initiate and immediately cross over, shoulder toward the opposite knee, legs in opposition, long neck, elbows open; roll up into balanced curl, then scoop forward with the spine into balanced arch position, look diagonal up with elbows open; transition through elevation of the spine into upright, starting from the solar plexus to roll back into curl and down; roll back and unwind to center. Legs stay bent.",
         breath: "Squeezing breath on the curl-and-cross; open into the arch.",
-        teaching: "Rotation + flexion flowing into extension.",
+        teaching: "Rotation + flexion flowing into extension and back, legs bent, with the cross-over led from the shoulder toward the opposite knee.",
         benefits: "Oblique strength integrated with spinal extension.",
         errors: ["Low-back dump on the arch; neck-pulling on the twist."],
-        mods: "Reduce arch and rotation.", reps: "placeholder" },
+        mods: "Hands-on: ribcage cradle for the curl; V-grip of the hands and forearms to support the scoop into arch (teacher elbows between the shoulder blades in V-position); same V-grip to support the return into elevation; cradle grip to support the rolling down; brushing down the back.", reps: "placeholder" },
       { name: "Curl Ups crossing over into Arch: extended legs", g: "Curl Ups crossing over into Arch (extended legs)", lineage: "Curl Ups group (p74).",
         setup: "Lying on the back on the bench facing the tower, upper straps on the upper arms, legs extended.",
-        movement: "Cross-over curl into an arch with the legs extended — the longest-lever, most demanding curl-up, then reverse.",
+        movement: "Same cross-over curl into arch as the bent-leg version but with the legs extended (longest lever): legs extended if needed at the roll-up, transition through the spine into balanced arch, look diagonal up; elevation from the solar plexus to roll back into curl and down; if the legs have been extended, start bending them to keep the curl-cradle position on the way to center.",
         breath: "Squeezing breath on the curl-and-cross; open into the arch.",
-        teaching: "The most loaded curl-up: rotation, flexion and extension with a long lever.",
+        teaching: "The most loaded crossing-over curl: rotation, flexion and extension with a long lever, opening to extended legs and returning to the cradle.",
         benefits: "Maximal oblique and midsection strength with full extension and length.",
         errors: ["Pelvis dumping; shoulders taking the force."],
-        mods: "Bend the legs; reduce range.", reps: "placeholder" },
+        mods: "Bend the legs to reduce load. Hands-on: ribcage cradle for the curl; V-grip to support the scoop into arch and the return to elevation; cradle grip for rolling down; brushing down the back.", reps: "placeholder" },
       { name: "Curl Ups with Leg Combination", g: "Curl Ups with Leg Combination", lineage: "Curl Ups group.",
         setup: "Lying on the back on the bench facing the tower, upper straps on the upper arms.",
         movement: "Combine the curl-up action with leg movements, coordinating upper and lower body against the straps.",
@@ -551,7 +572,8 @@ const SERIES = [
         benefits: "Integrates the deep midsection with the legs; whole-body control.",
         errors: ["Losing the curl when the legs move."],
         mods: "Simplify the leg pattern.", reps: "placeholder", recon: true },
-      { name: "Jackknife: Preparation", g: "Jackknife — Preparation", lineage: "Jackknife group — lying on the back on the bench, facing the tower, upper straps in the hands.",
+      // ---- Jackknife group ----
+      { name: "Jackknife: Preparation", g: "Jackknife — Preparation / softening of the sternum / arm movements / connect arm movement and head lift", lineage: "Jackknife group — lying on the back on the bench, facing the tower, upper straps in the hands.",
         setup: "Lying on the back on the bench, facing the tower, upper straps in the hands.",
         movement: "Preparatory work: softening of the sternum, arm movements, and connecting the arm movement with the head lift before the full jackknife.",
         breath: "Squeezing breath.",
@@ -577,12 +599,13 @@ const SERIES = [
         mods: "Return to feet-on-the-bench version.", reps: "placeholder" },
       { name: "Chest - Pelvis Lift: arms on the side", g: "Chest–Pelvis Lift (arms on the side)", lineage: "Finishes both the Curl Ups and Jackknife groups (p77).",
         setup: "Lying on the back on the bench facing the tower, arms on the side.",
-        movement: "Lift the pelvis and articulate up into a chest–pelvis lift, then roll down through the spine.",
+        movement: "Lift the pelvis and articulate up into a chest–pelvis lift (bridge-like), then roll down through the spine — the finishing release for the group.",
         breath: "Exhale to roll up, inhale at the top, exhale to roll down.",
         teaching: "A closing articulation that lengthens the front body after the curl work.",
         benefits: "Releases and lengthens the front of the body; articulates the spine to finish.",
         errors: ["Pushing into the low back → roll up segment by segment."],
         mods: "Smaller lift.", reps: "placeholder" },
+      // ---- Psoas Abdominals group ----
       { name: "Psoas Abdominals: Knee to forehead Combination", g: "Psoas Abdominals — Knee to forehead Combination", lineage: "Psoas group — lying on the back on the bench, facing the tower, lower straps on the feet (p78).",
         setup: "Lying on the back on the bench, facing the tower, lower straps on the feet.",
         movement: "Draw the knee toward the forehead through the lower-strap line, combining the leg-in action with the curl, then extend long, in sequence.",
@@ -602,30 +625,30 @@ const SERIES = [
     ]
   },
 
-  /* ============== SERIES 5 — UPPER BODY OPENINGS ============== */
+  /* ============== SERIES 5 — UPPER BODY OPENINGS (NEW, SOURCED) ============== */
   {
     id: "s5", name: "Upper Body Openings",
-    intro: "Sitting with back support, facing AWAY from the tower, upper straps around the upper arms or in the hands. Releasing and lubricating the shoulder joint, opening the upper chest, connecting the arms to the heart center. Attention: delightful, free execution; closing of the ribcage; narrowing of the pelvis.",
+    intro: "Sitting with back support, facing AWAY from the tower, upper straps around the upper arms or in the hands. Releasing and lubricating the shoulder joint, opening the upper chest, connecting the arms to the heart center and the heart center to the seed center/yoke. Attention: delightful, free execution; closing of the ribcage; narrowing of the pelvis.",
     ex: [
       { name: "Shoulder Mobilization: frontal plane", g: "Shoulder Mobilization (frontal plane)", lineage: "Opening of the series (p81).",
         setup: "Sitting with back support, facing away from the tower, upper straps around the upper arms or in the hands.",
-        movement: "Open and circle the arms in the frontal plane, mobilizing the shoulder joint through that plane.",
+        movement: "Open and circle the arms in the frontal plane (out to the sides and overhead), mobilizing the shoulder joint through that plane.",
         breath: "Inhale to open, exhale to gather.",
         teaching: "Lubricating the shoulder joint in the frontal plane.",
         benefits: "Releases and lubricates the shoulder joint; opens the upper chest.",
-        errors: ["Shoulders hiking → keep them settling.","Ribcage flaring → keep it closing."],
+        errors: ["Shoulders hiking toward the ears → keep them settling.","Ribcage flaring → keep it closing."],
         mods: "Straps on the upper arms for more support.", reps: "placeholder" },
       { name: "Shoulder Mobilization: sagittal plane", g: "Shoulder Mobilization (sagittal plane)", lineage: "Series (p82).",
         setup: "Sitting with back support, facing away from the tower, upper straps around the upper arms or in the hands.",
-        movement: "Move the arms in the sagittal plane, mobilizing the shoulder through front-to-back motion.",
+        movement: "Move the arms in the sagittal plane (forward and up, back and down), mobilizing the shoulder through front-to-back motion.",
         breath: "Inhale forward/up, exhale back/down.",
         teaching: "Lubricating the shoulder joint in the sagittal plane.",
         benefits: "Frees the shoulder front-to-back; opens the chest.",
-        errors: ["Arching the low back → keep the pelvis narrowing.","Ribs flaring."],
+        errors: ["Arching the low back to reach up → keep the pelvis narrowing.","Ribs flaring."],
         mods: "Smaller range.", reps: "placeholder" },
       { name: "Overhead Circles: arms", g: "Overhead Circles (arms)", lineage: "Series (p83).",
         setup: "Sitting with back support, facing away from the tower, upper straps engaged.",
-        movement: "Circle the arms overhead through a full continuous loop, both directions.",
+        movement: "Circle the arms overhead through a full continuous loop, both directions, the shoulders moving freely under the straps.",
         breath: "Exhale to the far reach, inhale through the top.",
         teaching: "Full circular mobility of the shoulder joint overhead.",
         benefits: "Lubricates the shoulders through a full overhead circle; opens the chest.",
@@ -633,7 +656,7 @@ const SERIES = [
         mods: "Smaller circle.", reps: "placeholder" },
       { name: "Overhead Circles: arms plus torso", g: "Overhead Circles (arms plus torso)", lineage: "Series (p84).",
         setup: "Sitting with back support, facing away from the tower, upper straps engaged.",
-        movement: "Take the overhead arm circle and let the torso join the circle for a fuller opening.",
+        movement: "Take the overhead arm circle and let the torso join — the spine following the arms into the circle for a fuller opening.",
         breath: "Exhale to the far reach, inhale through center.",
         teaching: "Overhead shoulder circle integrated with torso motion.",
         benefits: "Opens the chest and shoulders with spinal participation.",
@@ -641,7 +664,7 @@ const SERIES = [
         mods: "Arms only first.", reps: "placeholder" },
       { name: "Arm Circles in High V", g: "Arm Circles in High V", lineage: "Series (p85).",
         setup: "Sitting with back support, facing away from the tower, arms held in a high V overhead.",
-        movement: "From a high-V position, circle the arms in small controlled loops.",
+        movement: "From a high-V position, circle the arms in small controlled loops, keeping the V and the open chest.",
         breath: "Even breath; exhale to the far point.",
         teaching: "Shoulder control and endurance in an open overhead position.",
         benefits: "Opens the upper chest; builds shoulder endurance and the arm/heart-center connection.",
@@ -649,7 +672,7 @@ const SERIES = [
         mods: "Lower the V slightly.", reps: "placeholder" },
       { name: "Figure Eights (Upper Body Openings)", g: "Figure Eights (Upper Body Openings)", lineage: "Series (p86).",
         setup: "Sitting with back support, facing away from the tower, upper straps engaged.",
-        movement: "Trace figure-eights with the arms and torso, looping through the shoulder's range in a continuous infinity pattern.",
+        movement: "Trace figure-eights with the arms (and torso joining), looping through the shoulder's range in a continuous infinity pattern.",
         breath: "Breath follows the loop — exhale to the extremes.",
         teaching: "Multi-directional continuous shoulder and torso mobility.",
         benefits: "Frees the shoulders through a continuous multi-plane path; opens the chest.",
@@ -657,23 +680,23 @@ const SERIES = [
         mods: "Smaller figure-eight.", reps: "placeholder" },
       { name: "Simple Reaching Behind: single arm", g: "Simple Reaching Behind (single arm)", lineage: "Series (p87).",
         setup: "Sitting with back support, facing away from the tower, one strap in the hand.",
-        movement: "Reach one arm up and behind, opening the front of the shoulder and chest as the arm travels back.",
+        movement: "Reach one arm up and behind, opening the front of the shoulder and chest as the arm travels back through the strap line.",
         breath: "Inhale to reach behind, exhale to return.",
         teaching: "Opening one shoulder and the front of the chest into reaching behind.",
         benefits: "Opens the front of the shoulder and chest; mobilizes reaching back.",
-        errors: ["Arching the low back → keep the pelvis narrowing and ribs closing."],
+        errors: ["Arching the low back to reach → keep the pelvis narrowing and ribs closing."],
         mods: "Smaller reach.", reps: "placeholder" },
       { name: "Simple Reaching Behind: double arms", g: "Simple Reaching Behind (double arms)", lineage: "Series (p88).",
         setup: "Sitting with back support, facing away from the tower, both straps in the hands.",
-        movement: "Reach both arms up and behind together, opening the whole front of the chest and shoulders.",
+        movement: "Reach both arms up and behind together, opening the whole front of the chest and shoulders through the strap line.",
         breath: "Inhale to reach behind, exhale to return.",
         teaching: "Bilateral chest and shoulder opening into reaching behind.",
         benefits: "Opens the full upper chest; mobilizes both shoulders into extension/reach.",
         errors: ["Ribcage flaring and low back arching → keep ribs closing, pelvis narrowing."],
         mods: "Single arm first; smaller reach.", reps: "placeholder" },
-      { name: "Milking: alternating", g: "Milking (alternating)", lineage: "Series.",
+      { name: "Milking: alternating", g: "Milking (alternating)", lineage: "Series (named on overview p80).",
         setup: "Sitting with back support, facing away from the tower, straps in the hands.",
-        movement: "Alternate the arms in a milking, drawing-down pattern in a continuous rhythm.",
+        movement: "Alternate the arms in a milking, drawing-down pattern, one then the other in a continuous rhythm.",
         breath: "Exhale on each draw-down.",
         teaching: "Rhythmic alternating arm action connecting arms to the heart center.",
         benefits: "Conditions the shoulders and connects the arms to the center in a steady rhythm.",
@@ -689,7 +712,7 @@ const SERIES = [
         mods: "Smaller circle; arms only.", reps: "placeholder" },
       { name: "Double Arm Circles: reverse", g: "Double Arm Circles (reverse)", lineage: "Series (p90).",
         setup: "Sitting with back support, facing away from the tower, both straps in the hands.",
-        movement: "Circle both arms in reverse through a full loop, torso joining.",
+        movement: "Circle both arms in reverse through a full loop, torso joining, mirroring the forward version.",
         breath: "Exhale to the far reach, inhale through the top.",
         teaching: "Bilateral reverse shoulder circle with torso participation.",
         benefits: "Opens the chest; lubricates both shoulders through a full reverse circle.",
@@ -697,7 +720,7 @@ const SERIES = [
         mods: "Smaller circle; arms only.", reps: "placeholder" },
       { name: "Eagle Combination", g: "Eagle Combination (2 pages)", lineage: "Series — the culminating combination (p91–92).",
         setup: "Sitting with back support, facing away from the tower, straps in the hands.",
-        movement: "A two-part combination weaving the openings together — reaching, opening wide, circling and spiraling the arms and torso like an eagle spreading and gathering its wings.",
+        movement: "A two-part combination weaving the openings together — reaching, opening wide, circling and spiraling the arms and torso like an eagle spreading and gathering its wings, across the full sequence.",
         breath: "Inhale to open wide, exhale to gather.",
         teaching: "Integrating the whole Upper Body Openings vocabulary into one flowing combination.",
         benefits: "Integrates shoulder freedom, chest opening, and the arm–heart–seed-center connection into a harmonious whole.",
@@ -706,14 +729,14 @@ const SERIES = [
     ]
   },
 
-  /* ============== SERIES 6 — UNWINDING ============== */
+  /* ============== SERIES 6 — UNWINDING (NEW, SOURCED) ============== */
   {
     id: "s6", name: "Unwinding",
     intro: "The closing series. Five sequences that keep the energy flow continuous, guide it back to the origin/root, and settle the body through balance — so the client stays composed and together for whatever comes after the session.",
     ex: [
       { name: "Sequence 1: Running / Standing on all fours / Sitting with weight on head", g: "Unwinding — Sequence 1", lineage: "Unwinding (p93).",
-        setup: "Begins running with the upper straps on the knees, then standing on all fours, then sitting with weight on top of the head.",
-        movement: "Run with the upper straps on the knees; move to standing on all fours; then sit with weight balanced on top of the head, observing the inner flow.",
+        setup: "Begins running with the upper straps on the knees (and standing), then standing on all fours, then sitting with weight on top of the head.",
+        movement: "Run with the upper straps on the knees and standing; move to standing on all fours; then sit with weight balanced on top of the head, observing the inner flow and promoting uprightness/balance.",
         breath: "Easy continuous breath, following the inner flow.",
         teaching: "Keeping the energy continuous and finding uprightness through balance.",
         benefits: "Keeps the energy flowing; promotes uprightness and balance to settle the session.",
@@ -721,7 +744,7 @@ const SERIES = [
         mods: "Stay with the gentler stages.", reps: "placeholder" },
       { name: "Sequence 2: Iron Bridge / Sitting with weight on head", g: "Unwinding — Sequence 2", lineage: "Unwinding (p93).",
         setup: "Iron Bridge, then sitting with weight on top of the head.",
-        movement: "Move through the Iron Bridge, then sit with weight balanced on top of the head.",
+        movement: "Move through the Iron Bridge, then sit with weight balanced on top of the head, observing the inner flow and promoting uprightness/balance.",
         breath: "Continuous easy breath.",
         teaching: "Strength-into-stillness, returning to uprightness and balance.",
         benefits: "Settles the body through balance after stronger work.",
@@ -753,34 +776,261 @@ const SERIES = [
         mods: "Smaller, slower movements.", reps: "placeholder" },
     ]
   },
+  /* ============== SERIES 7 — LEGWORK (NEW, SOURCED pp.57–69) ============== */
+  {
+    id: "s7", name: "Legwork Series",
+    intro: "Pulley Tower Combination Unit leg work in three position-groups — Seated, Floor, and the Patella–Quadriceps Series. Connects the lower body to the upper, builds coordinated strength and suppleness, and reaches the hard-to-reach, frequently unused parts of the leg that cause most injuries. Keep the force out of the upper body, work from the yoke/seed center, articulate the joints clearly, breathe with the movement, and stay correctly positioned in relation to the straps.",
+    ex: [
+      /* ---- Seated leg work ---- */
+      { name: "Leg Lifts into Extension", g: "Leg Lifts into extension (seated, facing tower)", lineage: "Legwork — Seated leg work; upper or lower straps on the feet, sitting on the bench facing the tower.",
+        setup: "Sitting on the bench facing the tower, upper or lower straps on the feet, spine long.",
+        movement: "Lift the legs and reach them out into extension through the strap line, then return, the pelvis quiet and the work coming from the leg.",
+        breath: "Exhale into the extension, inhale to return.",
+        teaching: "Connecting the lower body to the upper through a clean leg extension from a stable seat.",
+        benefits: "Strengthens and lengthens the legs; connects leg to center; reaches the under-used parts of the leg.",
+        errors: ["Force going into the upper body \u2192 keep it in the legs.", "Low back arching as the legs lift."],
+        mods: "Smaller range; lower straps for more support.", reps: "placeholder", recon: true },
+      { name: "Circles: forward and reverse (seated)", g: "Circles forward & reverse (seated, facing tower)", lineage: "Legwork — Seated leg work, facing the tower.",
+        setup: "Sitting on the bench facing the tower, straps on the feet.",
+        movement: "Circle the legs through a full even path, forward and then reverse, from a quiet pelvis.",
+        breath: "Exhale to the far reach, inhale through the top.",
+        teaching: "Circular leg control facing the tower with the center stable.",
+        benefits: "Hip mobility and leg control; coordinated circular strength.",
+        errors: ["Pelvis tipping with the circle."],
+        mods: "Smaller circle.", reps: "placeholder", recon: true },
+      { name: "Figure Eights (Legwork)", g: "Figure Eights (seated leg work)", lineage: "Legwork — Seated leg work.",
+        setup: "Sitting on the bench facing the tower, straps on the feet.",
+        movement: "Trace a figure-eight path with the legs, blending the circle directions into a continuous looping pattern.",
+        breath: "Breath follows the loop \u2014 exhale to the extremes.",
+        teaching: "Multi-directional continuous leg control.",
+        benefits: "Integrates circular leg directions; supple, coordinated hip motion.",
+        errors: ["Letting the eight flatten into one plane."],
+        mods: "Smaller figure-eight.", reps: "placeholder", recon: true },
+      { name: "Slalom", g: "Slalom (seated leg work)", lineage: "Legwork — Seated leg work; named at Progression 2 as Figure Eights Slalom.",
+        setup: "Sitting on the bench facing the tower, straps on the feet.",
+        movement: "Sweep the legs side to side in a slaloming pattern through the strap line, continuous and even.",
+        breath: "Even breath; exhale through each sweep.",
+        teaching: "Lateral, rhythmic leg control from a stable center.",
+        benefits: "Lateral hip mobility and coordinated leg control.",
+        errors: ["Pelvis sliding with the legs \u2192 keep it quiet."],
+        mods: "Smaller range, slower.", reps: "placeholder", recon: true },
+      { name: "Hip-Knee-Mobilization: forward and reverse (seated)", g: "Hip-Knee Joint Mobilization (Legwork, on the chair; new exercise p137)", lineage: "Legwork — Seated leg work; Progression 3 new exercise on the chair (p137). Diamond/x-position spiraling sequence.",
+        setup: "On the chair (seated leg work); progresses to upper straps, sitting higher up, not leaning back too much, toes almost touching the floor.",
+        movement: "Learn the diamond-shape position alternating with the x-position (internal spiraling) = spiraling in to spiraling out. Full movement: extended legs parallel – x-position / spiraling in – spiraling out / diamond shape – extended legs – repeat; then reverse the movement. Connect all movements of the sequence.",
+        breath: "Even breath through the spiraling in and out.",
+        teaching: "Coordinated hip-and-knee mobility through the spiral: in to the x-position, out to the diamond, framed by the extended parallel legs.",
+        benefits: "Mobilizes and lubricates the hip and knee through internal/external spiraling; coordinated diamond-to-x control; connects the leg to the seed center.",
+        errors: ["Blurring the spiral → keep the in (x) and out (diamond) distinct.", "Leaning back too far on the upper-strap version → sit higher up."],
+        mods: "Four steps: (1) learn diamond alternating with x-position; (2) connect to the full movement; (3) reverse it; (4) apply to upper straps. Hands-on: kneeling next to the student, guide the legs into spiraling in and spiraling out with brushing from top of thigh to the knee + traction on the feet.", reps: "placeholder", recon: false },
+      { name: "Leg Lifts into Extension: sideways", g: "Leg lifts into extension (lower straps, sitting sideways)", lineage: "Legwork — Seated leg work; lower straps on the feet, sitting sideways to the tower.",
+        setup: "Sitting sideways to the tower, lower straps on the feet.",
+        movement: "Lift and extend the legs through the sideways strap line, the pelvis stable, then return.",
+        breath: "Exhale into the extension, inhale to return.",
+        teaching: "Leg extension with a lateral orientation to the tower.",
+        benefits: "Lateral leg strength and length; hip control off the central line.",
+        errors: ["Twisting the pelvis instead of keeping it stable."],
+        mods: "Smaller range.", reps: "placeholder", recon: true },
+      { name: "Pendulum", g: "Pendulum (lower straps, sitting sideways)", lineage: "Legwork — Seated leg work, sitting sideways to the tower.",
+        setup: "Sitting sideways to the tower, lower straps on the feet.",
+        movement: "Swing the legs through a pendulum arc side to side, even and controlled, from a quiet pelvis.",
+        breath: "Even breath through the swing.",
+        teaching: "Controlled lateral leg swing from a stable center.",
+        benefits: "Lateral hip mobility and control; coordinated swing.",
+        errors: ["Letting momentum take over \u2192 stay controlled."],
+        mods: "Smaller arc.", reps: "placeholder", recon: true },
+      { name: "Knee Circles (Legwork)", g: "Knee Circles (lower straps, sitting sideways)", lineage: "Legwork — Seated leg work, sitting sideways to the tower.",
+        setup: "Sitting sideways to the tower, lower straps on the feet.",
+        movement: "Circle the knee through a controlled loop, both directions, from a stable pelvis.",
+        breath: "Even breath; exhale to the far point.",
+        teaching: "Knee-joint mobility in a controlled circular path.",
+        benefits: "Lubricates and mobilizes the knee; coordinated circular control.",
+        errors: ["Pelvis tipping with the circle."],
+        mods: "Smaller circle.", reps: "placeholder", recon: true },
+      { name: "Double Knee Circles (Legwork)", g: "Double Knee Circles (lower straps, sitting sideways)", lineage: "Legwork — Seated leg work, sitting sideways to the tower.",
+        setup: "Sitting sideways to the tower, lower straps on the feet, knees together.",
+        movement: "Circle both knees together in a continuous loop, both directions, from a stable pelvis.",
+        breath: "Even breath; exhale to the far point of the circle.",
+        teaching: "Bilateral knee-joint mobility in a controlled circle.",
+        benefits: "Mobilizes both knees together; coordinated circular control.",
+        errors: ["Pelvis tipping with the circle."],
+        mods: "Smaller circle.", reps: "placeholder", recon: true },
+      { name: "Circles: forward and reverse (finish)", g: "Circles forward & reverse (finish, sitting on the bench facing the tower)", lineage: "Legwork — Seated leg work; the finish, sitting on the bench facing the tower.",
+        setup: "Sitting on the bench facing the tower, straps on the feet.",
+        movement: "Close the seated work with full leg circles forward and reverse, even and controlled.",
+        breath: "Exhale to the far reach, inhale through the top.",
+        teaching: "A circular close that returns the legs to the central facing line.",
+        benefits: "Integrates the seated leg work; even circular control to finish.",
+        errors: ["Rushing the circle; pelvis tipping."],
+        mods: "Smaller circle.", reps: "placeholder", recon: true },
+      /* ---- Floor work ---- */
+      { name: "Knee to Forehead Combination (Legwork)", g: "Knee to Forehead Combination (floor work, upper straps around the knee)", lineage: "Legwork — Floor work; upper straps around the knee, sitting on the floor facing the tower. Cousin of the Abdominal series Psoas Abdominals: Knee to forehead Combination.",
+        setup: "Sitting on the floor facing the tower, upper straps around the knee. Cross-reference: see Psoas Abdominals: Knee to forehead Combination in the Abdominal series for the curl-linked version on the bench.",
+        movement: "Part 2 floor sequence: small cradle \u00d74 (look diagonal up), large cradle \u00d74 (look diagonal up); shivering and kneading of the legs \u2014 keep the neck long, shivering like raindrops for a minimum of 1 minute, repeat 2 times; large cradle with knee to forehead, leg parallel, open into diamond, extend to the front \u00d74, reverse the movement (diamond \u2013 legs parallel \u2013 extend to the front) \u00d74, keeping the neck long; hip-knee joint mobilization 4 forward and 4 reverse (prep with folded chair under the sacrum); repeat knee-to-forehead combination and hip-knee joint mobilization; standing on all 4's \u2014 eventually this prep is replaced by standing on all 4's upside down (balanced effort from the legs and arms, initiating from the seed center); on the floor, standing on all 4's upside down, sacrum off the floor if possible; flowing directly into Taming of the Tiger \u2014 sit bones reaching forward, look toward the ceiling, slow release.",
+        breath: "Squeezing breath drawing the knee in; long even breath through the cradles and shivering.",
+        teaching: "Deep lower-abdominal and psoas connection coordinating leg and curl on the floor, building toward standing on all 4's and Taming of the Tiger.",
+        benefits: "Strengthens the deep psoas and lower abdominals; connects the legs to the seed center; builds toward the upside-down all-4's and Taming of the Tiger.",
+        errors: ["Gripping the hip flexor and losing the deep abdominal \u2192 draw from the center.", "Shortening the neck \u2192 keep it long through the cradles.", "Low back arching as the leg extends."],
+        mods: "Stay in the cradle and shivering stages; prep with a folded chair under the sacrum; keep the standing-on-all-4's right-side-up before the upside-down version.", reps: "Cradles \u00d74 each; shivering min. 1 minute \u00d72; knee-to-forehead \u00d74 and \u00d74 reverse; hip-knee mobilization 4 forward / 4 reverse.", recon: false },
+      { name: "Hip-Knee-Mobilization: forward and reverse (floor)", g: "Hip-Knee-Mobilization forward & reverse (floor work)", lineage: "Legwork — Floor work; sitting on the floor facing the tower (photographed p59).",
+        setup: "Sitting on the floor facing the tower, upper straps around the knee, hands resting on the floor behind.",
+        movement: "Fold and extend the hip and knee through the strap line \u2014 leg long and low, then drawing the knee in and the hip folding \u2014 forward through the sequence and then reverse, articulating each joint clearly.",
+        breath: "Exhale on the fold, inhale on the extension.",
+        teaching: "Clear floor articulation of the hip and knee joints, forward and reverse.",
+        benefits: "Mobilizes and lubricates the hip and knee; coordinated joint control connecting leg to center.",
+        errors: ["Force going into the upper body \u2192 keep it in the legs and center.", "Blurring the joints together."],
+        mods: "Smaller range; prep with a folded chair under the sacrum.", reps: "placeholder", recon: false },
+      { name: "Frog (Legwork)", g: "Frog (floor work)", lineage: "Legwork — Floor work; lying on the back facing the tower (photographed p60).",
+        setup: "Lying on the back facing the tower, upper straps on the feet, arms resting on the floor.",
+        movement: "Draw the heels in with the knees opening outward, then press the legs long and away, opening and closing like a frog kick through the strap line.",
+        breath: "Inhale to draw in, exhale to press long.",
+        teaching: "Hip opening with hamstring and inner-thigh length, legs symmetrical, from a stable center.",
+        benefits: "Opens the hips; lengthens hamstrings and inner thighs; symmetrical leg coordination.",
+        errors: ["Knees collapsing in \u2192 keep them tracking open.", "Low back arching on the press \u2192 keep the force out of the upper body."],
+        mods: "Smaller range.", reps: "placeholder", recon: false },
+      { name: "Leg Beats", g: "Leg Beats (floor work)", lineage: "Legwork — Floor work; lying on the back facing the tower (photographed p61).",
+        setup: "Lying on the back facing the tower, upper straps on the feet, legs long.",
+        movement: "Beat the legs together and apart (or crossing) in a quick rhythmic pattern through the strap line, the pelvis quiet.",
+        breath: "Even rhythmic breath through the beats.",
+        teaching: "Quick reciprocal inner/outer-thigh control from a stable center.",
+        benefits: "Inner and outer thigh strength and control; reciprocal coordination.",
+        errors: ["Pelvis rocking with the beats \u2192 keep it quiet."],
+        mods: "Slower, smaller beats.", reps: "placeholder", recon: false },
+      { name: "Sciatica Combination", g: "Sciatica Combination (left leg / right leg)", lineage: "Legwork — Floor work; upper straps on the feet, lying on the back sideways to the tower (photographed p62 left leg, p63 right leg).",
+        setup: "Lying on the back, sideways to the tower, upper strap on one foot, the other arm reaching long along the floor. Work the left leg, then the right.",
+        movement: "Take the strapped leg through a combination of reaches and openings on the diagonal \u2014 lowering and lengthening, then lifting and opening across the body \u2014 lengthening the sciatic line through the back of the leg, one side and then the other.",
+        breath: "Exhale into the lengthening reach, inhale to return.",
+        teaching: "Lengthening and decompressing the sciatic line through the back of the leg, working each side.",
+        benefits: "Lengthens the back of the leg and the sciatic line; opens the hip on the diagonal; lateral leg control.",
+        errors: ["Twisting the pelvis \u2192 keep it stable as the leg travels.", "Force going into the upper body."],
+        mods: "Smaller range; keep the leg lower.", reps: "Work left leg, then right leg.", recon: false },
+      { name: "Leg Circle (Legwork)", g: "Leg Circle (floor work, lying sideways facing the tower)", lineage: "Legwork — Floor work; upper straps on the feet, lying sideways facing the tower (photographed p64).",
+        setup: "Lying on the side facing the tower, upper strap on the top foot, bottom arm supporting.",
+        movement: "Circle the top leg through a full even path in the side-lying position, both directions, the pelvis stable.",
+        breath: "Exhale to the far reach, inhale through the top.",
+        teaching: "Side-lying circular hip control from a stable base.",
+        benefits: "Hip mobility through a full side-lying circle; lateral pelvic control.",
+        errors: ["Pelvis rolling with the leg \u2192 keep it stacked and stable."],
+        mods: "Smaller circle.", reps: "placeholder", recon: false },
+      /* ---- Patella-Quadriceps Series ---- */
+      { name: "Leg Curls: alternating", g: "Leg Curls alternating (Patella-Quadriceps Series)", lineage: "Legwork — Patella-Quadriceps Series; lying on the stomach facing the tower (photographed p65).",
+        setup: "Lying on the floor on the stomach facing the tower, straps on the feet, arms reaching forward along the floor.",
+        movement: "Curl one heel toward the seat against the strap line, then the other, alternating, the front of the thigh and the patella tracking cleanly.",
+        breath: "Exhale on each curl.",
+        teaching: "Reciprocal hamstring curl with clean patella and quadriceps tracking, prone.",
+        benefits: "Strengthens the hamstrings and supports the patella-quadriceps mechanism; reciprocal leg control.",
+        errors: ["Low back arching to curl \u2192 keep the belly drawing up.", "Force going into the upper body."],
+        mods: "Smaller range; one leg at a time.", reps: "placeholder", recon: false },
+      { name: "Circles in Opposition", g: "Circles in Opposition (Patella-Quadriceps Series)", lineage: "Legwork — Patella-Quadriceps Series; prone facing the tower (photographed p66).",
+        setup: "Lying prone facing the tower, straps on the feet, arms reaching forward.",
+        movement: "Circle the legs in opposition \u2014 one leg circling one direction as the other circles the opposite \u2014 continuous and even, the pelvis quiet.",
+        breath: "Even breath; exhale to the far reach.",
+        teaching: "Opposing circular leg control with patella-quadriceps tracking, prone.",
+        benefits: "Hip and knee mobility with reciprocal opposition; clean joint tracking.",
+        errors: ["Pelvis rocking \u2192 keep it quiet.", "Low back taking the work."],
+        mods: "Smaller circles; same-direction first.", reps: "placeholder", recon: false },
+      { name: "Full Circles (Patella-Quadriceps)", g: "Full Circles (Patella-Quadriceps Series)", lineage: "Legwork — Patella-Quadriceps Series; prone facing the tower (photographed pp.67–68, two pages).",
+        setup: "Lying prone facing the tower, straps on the feet, arms reaching forward along the floor.",
+        movement: "Take both legs through a complete circular path, large and even, both directions, the patella and quadriceps tracking cleanly and the pelvis stable.",
+        breath: "Exhale to the far reach, inhale through the top.",
+        teaching: "Complete prone circular leg control with clean patella-quadriceps tracking.",
+        benefits: "Full hip-circle mobility with quadriceps and patella support; pelvic stability prone.",
+        errors: ["Pelvis tipping or low back arching \u2192 keep the belly drawing up.", "Force going into the upper body."],
+        mods: "Smaller circle.", reps: "placeholder", recon: false },
+      { name: "Flipper", g: "Flipper (Patella-Quadriceps Series)", lineage: "Legwork — Patella-Quadriceps Series; prone facing the tower (photographed p69).",
+        setup: "Lying prone facing the tower, straps on the feet, arms reaching forward.",
+        movement: "Flip the lower legs through a flippering pattern against the strap line \u2014 the feet and lower legs beating and folding like a flipper \u2014 the patella tracking cleanly.",
+        breath: "Even rhythmic breath through the flipper.",
+        teaching: "Quick lower-leg control with clean patella-quadriceps tracking, prone.",
+        benefits: "Hamstring and quadriceps control; clean patella tracking; reciprocal lower-leg coordination.",
+        errors: ["Low back arching \u2192 keep the belly up.", "Force into the upper body."],
+        mods: "Slower, smaller flips.", reps: "placeholder", recon: false },
+      { name: "Standing on all fours (Legwork finish)", g: "Standing on all fours \u2014 finish (Patella-Quadriceps Series)", lineage: "Legwork — Patella-Quadriceps Series; the finish of the Legwork series. Cousin of the Abdominal prep Standing on all fours.",
+        setup: "On all fours facing the tower, straps engaged, finding the midsection support against gravity. Cross-reference: see Standing on all fours in the Abdominal series.",
+        movement: "Engage and support from the seed center on all fours to finish the leg work; eventually progresses to the upside-down version with the sacrum lifting off the floor, balanced effort from the legs and arms.",
+        breath: "Squeezing breath; easy even breath settling into the finish.",
+        teaching: "Connecting upper and lower extremity to the seed center to close the leg work.",
+        benefits: "Integrates the leg series through a supported, stable midsection; connects upper and lower body.",
+        errors: ["Letting the belly drop \u2192 keep it drawn up and in."],
+        mods: "Right-side-up all-4's before the upside-down version.", reps: "placeholder", recon: false },
+    ]
+  },
 ];
 
 // ===== VOCABULARY =====
+// Plain definitions + 'used in' (curated names + auto-scan of all card text).
 const VOCAB = [
   { term: "Arch", aliases:["extension","arching"], def: "Extending the spine backward — opening the chest and lengthening the front of the body, leading from the breastbone rather than cranking the low back. Balanced Arch checkpoint: back of head over the sacrum.", curated:["Arch and Curl","Sideways Arch","Curl Ups into Arch: bent legs","Curl Ups into Arch: extended legs"] },
   { term: "Curl", aliases:["flexion","rounding","curling"], def: "Rounding the spine forward from the top down, vertebra by vertebra, drawing the belly back. Balanced Curl checkpoint: throat center over the pubic bone.", curated:["Arch and Curl","Simple Curl Ups","Curl Ups with Leg Combination"] },
   { term: "Articulation", aliases:["segmental","vertebra by vertebra"], def: "Moving the spine one vertebra at a time so the motion looks like a wave rather than a fold — even distribution through all the segments.", curated:["Arch and Curl","Chest - Pelvis Lift: arms on the side"] },
   { term: "Wave", aliases:["rolling"], def: "Continuous, fluid, full-spine articulation rolling through the segments rather than hinging at a few points.", curated:["Wave","Wave (Upper Body)"] },
-  { term: "Spiral / Spiraling", aliases:["rotation","twist","twisting","rotate"], def: "Axial rotation around the central plumbline with length — turning segment by segment without collapsing. Balanced Spiral checkpoint: whole spine aligned and upright.", curated:["Twist","Single Spiral","Double Spiral","Cross Grip Stretch into Spiral","Twist and Curl Over"] },
+  { term: "Spiral / Spiraling", aliases:["rotation","twist","twisting","rotate"], def: "Axial rotation around the central plumbline with length — turning segment by segment without collapsing. Balanced Spiral checkpoint: whole spine aligned and upright. Common attention: start and return to upright; inhale toward upright, exhale to the extremes; rhythm 'and 1, 2, 3'; crave space between the vertebrae; even distribution.", curated:["Twist","Single Spiral","Double Spiral","Cross Grip Stretch into Spiral","Twist and Curl Over"] },
   { term: "Sideways Arch", aliases:["lateral arch","side bend"], def: "Even lateral extension of the whole spine into a long C, not a crease at the waist. Balanced checkpoint: side of neck over the pubic bone.", curated:["Sideways Arch","Seated Sideways Arch"] },
-  { term: "Narrowing of the pelvis", aliases:["narrow the pelvis","pelvic narrowing"], def: "Drawing the pelvis in and together — a foundational principle that supports the spine from the base and recurs through the upper-body and abdominal work.", curated:["Eagle Combination","Arm Circles in High V","Simple Reaching Behind: double arms","Shoulder Mobilization: sagittal plane"] },
+  { term: "Narrowing of the pelvis", aliases:["narrow the pelvis","pelvic narrowing"], def: "Drawing the pelvis in and together — black thin arrows are the action, gray thick arrows the reaction (shown standing and sitting in the manual). A foundational principle that supports the spine from the base and recurs through the upper-body and abdominal work.", curated:["Eagle Combination","Arm Circles in High V","Simple Reaching Behind: double arms","Shoulder Mobilization: sagittal plane"] },
   { term: "Closing of the ribcage", aliases:["close the ribs","ribcage close"], def: "Keeping the front ribs knitting down and in rather than flaring open — especially as the arms travel overhead in the openings.", curated:["Overhead Circles: arms","Double Arm Circles: forward","Arm Circles in High V"] },
   { term: "Squeezing breath", aliases:["squeeze breath"], def: "The abdominal breath that powers the Curl Up and Jackknife work — a squeezing exhale that hollows and lifts the midsection while the force stays in the diaphragm, not the shoulders.", curated:["Simple Curl Ups","Jackknife with feet on the bench","Psoas Abdominals: Single leg changes"] },
   { term: "Seed center / Yoke", aliases:["yoke","seed center"], def: "The deep central core of the body that movements initiate from and connect back to — the arms and legs linking through it to the torso.", curated:["Curl Ups with Leg Combination","Eagle Combination"] },
-  { term: "Heart center", aliases:["arms to the heart"], def: "The center of the chest; the openings connect the arms to it and it to the seed center.", curated:["Eagle Combination","Milking: alternating"] },
+  { term: "Heart center", aliases:["arms to the heart"], def: "The center of the chest; the openings connect the arms to it and it to the seed center and the center of the forehead for a more total being.", curated:["Eagle Combination","Milking: alternating"] },
   { term: "Decompression", aliases:["space between vertebrae","craving space"], def: "Creating and maintaining space between the vertebrae throughout the spinal motions — even distribution, never jamming.", curated:["Arch and Curl","Cross Grip Stretch","Single Spiral"] },
   { term: "Extroverted / Introverted", aliases:["extroverted","introverted","inward","outward"], def: "Directional emphasis: extroverted reaches outward through the arms; introverted gathers inward toward center.", curated:["Arch and Curl: extroverted","Arch and Curl: introverted","Quad Stretches: introverted"] },
-  { term: "Pelvis flat", aliases:["flat pelvis"], def: "Keeping the pelvis quiet and grounded while the legs circle — the printed Double Leg Circles version.", curated:["Double Leg Circles: pelvis flat"] },
+  { term: "Pelvis flat", aliases:["flat pelvis"], def: "Keeping the pelvis quiet and grounded while the legs circle — the printed Double Leg Circles version (A/B: a 'feet stay even, pelvis moves' variation exists).", curated:["Double Leg Circles: pelvis flat"] },
   { term: "Forward & Reverse", aliases:["forward","reverse"], def: "Most named exercises carry orientation states — the same shape run in one direction (forward) and the other (reverse).", curated:["Dolphin","Single Spiral","Harvesting","Double Arm Circles: forward","Double Arm Circles: reverse","Sailor"] },
   { term: "Effort versus wrestling", aliases:["wrestling","effort"], def: "Working with internalized, dignified effort rather than straining or fighting the movement — a key attention in the abdominal series.", curated:["Simple Curl Ups","Jackknife with feet off the bench"] },
   { term: "Iron Bridge", aliases:["bridge"], def: "A strong bridging shape used in the Unwinding series before returning to sitting with weight on the head.", curated:["Sequence 2: Iron Bridge / Sitting with weight on head"] },
   { term: "Inner flow / Uprightness", aliases:["inner flow","uprightness","balance"], def: "Observing the body's inner flow and promoting upright balance — the settling aim of the Unwinding sequences as energy returns to the root.", curated:["Sequence 1: Running / Standing on all fours / Sitting with weight on head","Sequence 5: Twirling / Balancing"] },
 ];
+
+// ===== PROGRESSIONS — nine levels (Foundation, 1–7, Creative) =====
+// The ladder that grows a client over time. Level summaries from the progression sheet;
+// precise per-series "Add:" cells live in full in the manual document.
+const PROG = [
+  { level:"Foundation — overview", gist:"The beginner course, built session by session as STEP 1 through STEP 6 \u201ctowards Progression 1.\u201d Each step carries a theme and layers the base vocabulary across all seven series. Completing Step 6 IS the completion of Progression 1 \u2014 Foundation and Progression 1 are the same arc, not two separate tiers.",
+    adds:"Step 1 (the base), Step 2 (Breath), Step 3 (Legs / engagement), Step 4 (Details / vocabulary), Step 5 (Narrowing of the pelvis), Step 6 (Break it down + put it together \u2014 completion of Progression 1).",
+    note:"The six steps are the Foundation course; finishing them completes Progression 1. Confirmed against the manual pages 98\u2013125." },
+  { level:"Foundation Step 1", gist:"The base. Establishes the beginner vocabulary across the series sitting and on the unit.",
+    adds:"Spinal Motions (Arch\u2013Curl, Spiral, Sideways Arch, Wave forward) sitting on a chair. Arch & Curl: Preparation with the handle unit, Articulating one arm, Stirring. Hamstrings: Preparation on the floor (alignment, 5th line, single leg pump, shivering, kneading in 3s), then Double leg pump, Single leg pump, Dolphin forward, Single leg bicycle forward. Upper Body: Turtle combination dissected in 4 steps. Unwinding: Weight shift side to side." },
+  { level:"Foundation Step 2", gist:"Breath. Adds the corresponding breathing pattern to the Step 1 vocabulary.",
+    adds:"Spinal Motions: add the breathing pattern (inhale nose to center, exhale mouth into the position; arch HA, curl HO, wave long cleansing HO). Arch & Curl (articulation one arm, Stirring): corresponding breath \u2014 half circle exhale each extension, full circle long cleansing exhale, double arms introverted + extroverted. Hamstrings (shivering and kneading; double/single leg pump, dolphin, single leg bicycle): corresponding breath, double breath, sniff and exhale toward \u201cho.\u201d Upper Body (Turtle): corresponding breath. Unwinding: Twirling Prep \u2014 slow small turn with change of directions." },
+  { level:"Foundation Step 3", gist:"Legs. Adds the engagement of the legs and the first leg-driven new exercises.",
+    adds:"Spinal Motions: ADD engagement of the legs; NEW \u2014 Shifting the ribcage, Spiral with curl over. Arch & Curl: NEW \u2014 Arch and curl articulating both arms (repeat Stirring). Hamstrings: NEW \u2014 Single leg pump alternating one leg at a time (8-8-4-4-singles), small Bicycles in rhythm; repeat double/single leg pump flex-point, dolphin flex-point, single leg bicycle flex-point." },
+  { level:"Foundation Step 4", gist:"Details. Introduces the specific order of the spinal motions and the vocabulary of each movement; the Abdominal series and Upper Body Openings enter.",
+    adds:"Spinal Motions: ADD details of each movement + order of the series (balanced arch, balanced curl, even spiraling twist, balanced sideways arch, balanced curl in cross-over). Hamstrings: overhead arm position prep. NEW \u2014 ABDOMINAL Series: squeezing breath, Simple cradle, Large cradle, Taming of the tiger; then Standing on all fours and Standing on all fours upside down. NEW \u2014 UPPER BODY OPENINGS: Shoulder Mobilization (frontal + sagittal plane), Overhead circles arms. Unwinding: Twirling Prep, turning with change of direction." },
+  { level:"Foundation Step 5", gist:"Narrowing. The narrowing of the pelvis becomes the organizing principle \u2014 stabilization through contrast, internal symmetry, seed center.",
+    adds:"Basic Principle: Narrowing of the pelvis (Internal Figure 8\u2019s prep, Shoulder lift series prep, movements 1\u20137 building narrowing into arch-curl, spiral, and wave). Spinal Motions: NEW Wave reverse; ADD narrowing of the pelvis to all exercises (can use upper straps around the pole, pole around the midback). Arch & Curl: NEW Arch & Curl introverted, 4 steps dissected (4 handle positions matched to 4 spine positions). Hamstrings: Single leg pump alternating, connect all movements. Upper Body: Turtle fluid in counts of 3. Legwork (Seated): Leg lifts into extension, Circles both directions. Abdominal: NEW Simple curl ups. Upper Body Openings: repeat Shoulder Mobilization + Overhead circles. Unwinding: Twirling." },
+  { level:"Foundation Step 6", gist:"Break it down + put it together \u2014 completion of Progression 1. Additions to Step 5 consolidate the whole into flowing mini-series.",
+    adds:"Arch & Curl: NEW Preparation with the pole around the midback or on top of the scapulae (Arch\u2013Curl, Spiral, Shifting the ribcage, Sideways Arch, Spiral with curl over, Wave forward and reverse); Arch & Curl extroverted dissected, fluid. Hamstrings: NEW From small to large bicycles (single leg pump continuous, dolphin, small bicycles flex-point). Upper Body: repeat. Legwork: repeat seated leg work. Abdominal: NEW Curls up into Arch legs bent \u00d74, Chest-pelvis lift \u00d74 (small curl ups for release). Upper Body Openings: repeat Shoulder Mobilization both variations, Overhead circles arms + torso. Unwinding: Twirling with balancing steps." },
+  { level:"Progression 1", gist:"Reached on completion of Foundation Step 6. The client holds the full beginner vocabulary across all seven series and runs it cleanly with breath, leg engagement, narrowing, and the dissected 4-step arch & curl.",
+    adds:"No separate adds \u2014 Progression 1 is the sum of Foundation Steps 1\u20136.",
+    note:"Confirmed: Step 6 = \u201ccompletion of Progression 1\u201d in the manual." },
+  { level:"Progression 2", gist:"The first true variations enter, across three steps. Homework principle: Stimulation of the biological pump (narrowing-of-pelvis sequence plus rocking pulsations on the chair).",
+    adds:"Step 1 \u2014 A&C: Cross grip stretch forward; Hamstring: Frog prep 1, Frog prep 2, Frog. Step 2 \u2014 Upper Body: Twist & Pull with leaning back; Legwork: Figure Eights, Slalom. Step 3 \u2014 Abdominal: Curl ups into arch, legs extended; Upper Body Openings: Arm circles in high V, Simple reaching behind. (All other series: repeat.)",
+    note:"Source: Progression 2 grid, manual page 127." },
+  { level:"Progression 3", gist:"Rotation, looping, and crossing-over deepen, across three steps. Completes the Basic Homework Sequence (narrowing + shivering/kneading + abdominal prep), plus the 2008 Pulsation Sequence with the handle unit.",
+    adds:"Step 1 \u2014 A&C: Cross grip stretch into spiral; Hamstring: Quad stretches (internal rotation). Step 2 \u2014 Upper Body: Canoeing (2 preps); Legwork: Hip-Knee Joint Mobilization. Step 3 \u2014 Abdominal: Curl ups with crossing over, Curl up with crossing over into arch (legs bent / legs extended); Upper Body Openings: Figure 8\u2019s. (All other series: repeat.)",
+    note:"Source: Progression 3 grid, manual page 133." },
+  { level:"Progression 4", gist:"Not present in this manual. Placeholder from an earlier draft \u2014 not sourced from your Foundation manual, which ends at Progression 3.",
+    adds:"Earlier-draft inference (unverified): single spirals, leg circles and knee circles, breaststroke.",
+    note:"NOT IN THIS MANUAL \u2014 placeholder only. Verify against a higher-progression source before teaching." },
+  { level:"Progression 5", gist:"Not present in this manual. Placeholder from an earlier draft \u2014 not sourced from your Foundation manual.",
+    adds:"Earlier-draft inference (unverified): diving patterns, continuous twist-and-pull, harvesting, Eagle Combination part one.",
+    note:"NOT IN THIS MANUAL \u2014 placeholder only." },
+  { level:"Progression 6", gist:"Not present in this manual. Placeholder from an earlier draft \u2014 not sourced from your Foundation manual.",
+    adds:"Earlier-draft inference (unverified): double spiral figure-eights, scissors and full circles, shoulder release, psoas work, Eagle Combination part two.",
+    note:"NOT IN THIS MANUAL \u2014 placeholder only." },
+  { level:"Progression 7", gist:"Not present in this manual. Placeholder from an earlier draft \u2014 not sourced from your Foundation manual.",
+    adds:"Earlier-draft inference (unverified): client-directed selection across the series on the final versions.",
+    note:"NOT IN THIS MANUAL \u2014 placeholder only." },
+  { level:"Creative Series", gist:"Certified-trainers-only \u2014 free composition on the final versions of the exercises.",
+    adds:"Open composition; no fixed adds.",
+    note:"Sits beyond the sourced ladder." },
+];
+
 </script>
 <script>
+/* ---------- index build ---------- */
 const ALLEX = [];
 SERIES.forEach(s => s.ex.forEach(e => ALLEX.push(Object.assign({series:s.name, seriesId:s.id}, e))));
 
+// auto-scan: for each vocab term, gather exercises whose text mentions the term or an alias
 function scanUses(v){
   const needles = [v.term.toLowerCase()].concat((v.aliases||[]).map(a=>a.toLowerCase()))
      .map(n=>n.replace(/[^a-z ]/g,'').trim()).filter(n=>n.length>3);
@@ -793,6 +1043,7 @@ function scanUses(v){
   return Array.from(hits);
 }
 
+/* ---------- fuzzy match ---------- */
 function norm(s){return (s||'').toLowerCase().replace(/[^a-z0-9 ]/g,'').replace(/\s+/g,' ').trim();}
 function lev(a,b){
   const m=a.length,n=b.length; if(!m)return n; if(!n)return m;
@@ -802,13 +1053,19 @@ function lev(a,b){
     d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));
   return d[m][n];
 }
+// does query token approx-match any word/phrase token?
 function tokenMatch(qt, hay){
   if(qt.length<2) return false;
   if(hay.indexOf(qt)>=0) return true;
+  // word-level fuzzy
   const words = hay.split(' ');
   const tol = qt.length<=4?1:2;
-  return words.some(w=>{ if(Math.abs(w.length-qt.length)>tol) return false; return lev(qt,w)<=tol; });
+  return words.some(w=>{
+    if(Math.abs(w.length-qt.length)>tol) return false;
+    return lev(qt,w)<=tol;
+  });
 }
+
 function exHay(e){return norm([e.name,e.g,e.alias,e.lineage].join(' '));}
 function exBodyHay(e){return norm([e.setup,e.movement,e.breath,e.teaching,e.benefits,(e.errors||[]).join(' '),e.mods].join(' '));}
 
@@ -819,17 +1076,36 @@ function matchExercises(q){
   ALLEX.forEach(e=>{
     const name=exHay(e), body=exBodyHay(e), series=norm(e.series);
     let score=0;
+    // whole-query name hit
     if(name.indexOf(nq)>=0) score+=100;
     if(series.indexOf(nq)>=0) score+=60;
+    // token hits weighted to name
     toks.forEach(t=>{
       if(tokenMatch(t,name)) score+=20;
       else if(tokenMatch(t,series)) score+=14;
-      else if(t.length>=4 && body.indexOf(t)>=0) score+=4;
+      else if(t.length>=4 && body.indexOf(t)>=0) score+=4; // body = exact substring only, no fuzzy noise
     });
     if(score>0) scored.push({e,score});
   });
   scored.sort((a,b)=>b.score-a.score);
   return scored.map(s=>s.e);
+}
+
+function matchProg(q){
+  const nq=norm(q); if(!nq) return [];
+  const toks=nq.split(' ').filter(Boolean);
+  const out=[];
+  PROG.forEach(p=>{
+    const head=norm([p.level,'progression','foundation','creative','level'].join(' '));
+    const body=norm([p.gist,p.adds,p.note].join(' '));
+    let score=0;
+    if(norm(p.level).indexOf(nq)>=0) score+=80;
+    if(head.indexOf(nq)>=0) score+=40;
+    toks.forEach(t=>{ if(tokenMatch(t,head)) score+=18; else if(t.length>=4 && body.indexOf(t)>=0) score+=4; });
+    if(score>0) out.push({p,score});
+  });
+  out.sort((a,b)=>b.score-a.score);
+  return out.map(o=>o.p);
 }
 
 function matchVocab(q){
@@ -848,8 +1124,11 @@ function matchVocab(q){
   return out.map(o=>o.v);
 }
 
+/* ---------- render ---------- */
 const results=document.getElementById('results');
 const esc=s=>(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
+function exFind(name){return ALLEX.find(e=>e.name===name);}
 
 function cardHTML(e){
   const errs=(e.errors||[]).map(x=>`<li>${esc(x)}</li>`).join('');
@@ -873,6 +1152,15 @@ function cardHTML(e){
   </div>`;
 }
 
+function progHTML(p){
+  return `<div class="card">
+    <p class="vterm">${esc(p.level)}</p>
+    <div class="row"><div class="lab">What this develops</div><div class="val">${esc(p.gist)}</div></div>
+    ${p.adds?`<div class="row"><div class="lab">Adds at this level</div><div class="val">${esc(p.adds)}</div></div>`:''}
+    ${p.note?`<div class="benefit"><div class="lab">Verify</div><div class="val">${esc(p.note)}</div></div>`:''}
+  </div>`;
+}
+
 function vocabHTML(v){
   const uses=scanUses(v).map(n=>`<span class="usedchip" data-go="${esc(n)}">${esc(n)}</span>`).join('');
   return `<div class="card">
@@ -889,6 +1177,8 @@ function renderChips(){
     html+=`<div class="chipgroup-title">${esc(s.name)}</div>`;
     s.ex.forEach(e=>{ html+=`<span class="chip" data-go="${esc(e.name)}">${esc(e.name)}</span>`; });
   });
+  html+=`<div class="chipgroup-title">Progressions</div>`;
+  PROG.forEach(p=>{ html+=`<span class="chip" data-go="${esc(p.level)}">${esc(p.level)}</span>`; });
   html+=`<div class="chipgroup-title">Vocabulary</div>`;
   VOCAB.forEach(v=>{ html+=`<span class="chip" data-go="${esc(v.term)}">${esc(v.term)}</span>`; });
   html+='</div>';
@@ -897,9 +1187,10 @@ function renderChips(){
 }
 
 function renderSearch(q){
-  const ex=matchExercises(q), vo=matchVocab(q);
-  if(!ex.length && !vo.length){ results.innerHTML=`<p class="empty">Nothing matched "${esc(q)}". Try a looser word or tap a name above.</p>`; return; }
+  const ex=matchExercises(q), pr=matchProg(q), vo=matchVocab(q);
+  if(!ex.length && !pr.length && !vo.length){ results.innerHTML=`<p class="empty">Nothing matched “${esc(q)}”. Try a looser word or tap a name above.</p>`; return; }
   let html='';
+  if(pr.length){ html+=`<div class="sectlabel">Progressions</div>`; pr.forEach(p=>html+=progHTML(p)); }
   if(ex.length){ html+=`<div class="sectlabel">Exercises</div>`; ex.forEach(e=>html+=cardHTML(e)); }
   if(vo.length){ html+=`<div class="sectlabel">Vocabulary</div>`; vo.forEach(v=>html+=vocabHTML(v)); }
   results.innerHTML=html;
@@ -912,13 +1203,14 @@ function wireGo(){
   });
 }
 
+/* ---------- controls ---------- */
 const q=document.getElementById('q'), go=document.getElementById('go'), clearx=document.getElementById('clearx');
 function doSearch(){
   const val=q.value.trim();
   clearx.style.display=val?'block':'none';
   if(!val){ renderChips(); return; }
   renderSearch(val);
-  q.blur();
+  q.blur(); // dismiss keyboard
   window.scrollTo({top:document.querySelector('.searchbar').offsetHeight+10,behavior:'smooth'});
 }
 go.addEventListener('click',doSearch);

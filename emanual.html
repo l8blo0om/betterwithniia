@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gyrotonic Teaching Manual — Get Better with Niia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1E3870;
+    --navy-dark: #152B58;
+    --cream: #F7F4EF;
+    --cream-warm: #EDE8DF;
+    --gold: #BFA05A;
+    --black: #1A1A1A;
+    --gray: #4a4a4a;
+    --gray-light: #888;
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--black);
+    background: var(--cream);
+  }
+
+  /* TOP BAR */
+  .emanual-topbar {
+    background: var(--navy);
+    padding: 14px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(191,160,90,0.3);
+  }
+  .emanual-topbar .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+    border: 1px solid rgba(191,160,90,0.5);
+    border-radius: 50%;
+    width: 36px; height: 36px;
+    justify-content: center;
+    text-decoration: none;
+  }
+  .emanual-topbar .logo .get { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 8px; color: rgba(191,160,90,0.9); }
+  .emanual-topbar .logo .better { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 8px; color: #fff; letter-spacing: -0.02em; }
+  .emanual-topbar .doc-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+  }
+  .emanual-topbar .print-btn {
+    background: none;
+    border: 1px solid rgba(191,160,90,0.4);
+    color: var(--gold);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s;
+  }
+  .emanual-topbar .print-btn:hover { color: #fff; border-color: rgba(191,160,90,0.8); }
+
+  /* CONTENT */
+  .emanual-wrap {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 56px 32px 120px;
+  }
+
+  /* Override LibreOffice styles with site-consistent ones */
+  .emanual-wrap h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--navy);
+    line-height: 1.15;
+    margin: 48px 0 12px;
+  }
+  .emanual-wrap h1:first-of-type { margin-top: 0; }
+  .emanual-wrap h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--navy);
+    margin: 36px 0 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--cream-warm);
+  }
+  .emanual-wrap h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 28px 0 8px;
+  }
+  .emanual-wrap p {
+    color: var(--gray);
+    margin-bottom: 14px;
+    font-size: 0.95rem;
+    line-height: 1.85;
+  }
+  .emanual-wrap ul, .emanual-wrap ol {
+    padding-left: 20px;
+    margin-bottom: 16px;
+  }
+  .emanual-wrap li {
+    color: var(--gray);
+    margin-bottom: 6px;
+    font-size: 0.93rem;
+    line-height: 1.75;
+  }
+  .emanual-wrap b, .emanual-wrap strong {
+    color: var(--black);
+    font-weight: 600;
+  }
+  .emanual-wrap i, .emanual-wrap em {
+    color: var(--gray-light);
+  }
+  .emanual-wrap [align="center"] {
+    text-align: center;
+  }
+  .emanual-wrap table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 0.88rem;
+  }
+  .emanual-wrap td, .emanual-wrap th {
+    padding: 10px 14px;
+    border: 1px solid var(--cream-warm);
+    color: var(--gray);
+  }
+  .emanual-wrap th {
+    background: var(--navy);
+    color: #fff;
+    font-weight: 600;
+    text-align: left;
+  }
+  .emanual-wrap tr:nth-child(even) { background: #faf8f4; }
+
+  /* Print */
+  @media print {
+    .emanual-topbar { display: none; }
+    .emanual-wrap { padding: 24px; }
+    body { background: #fff; }
+  }
+  @media (max-width: 600px) {
+    .emanual-wrap { padding: 32px 20px 80px; }
+    .emanual-topbar { padding: 12px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="emanual-topbar">
+  <a href="index.html" class="logo">
+    <span class="get">Get</span>
+    <span class="better">BETTER</span>
+  </a>
+  <span class="doc-title">Gyrotonic Teaching Manual</span>
+  <button class="print-btn" onclick="window.print()">⎙ Print / Save PDF</button>
+</div>
+
+<div class="emanual-wrap">
+<p align="center" style="margin-top: 1.67in; margin-bottom: 0.08in; line-height: 100%">
+<font size="6" style="font-size: 26pt"><b>GYROTONIC TEACHING MANUAL</b></font></p>
+<p align="center" style="margin-bottom: 0.06in; line-height: 100%"><font size="4" style="font-size: 14pt">Pulley
+Tower Combination Unit</font></p>
+<p align="center" style="margin-bottom: 0.06in; line-height: 100%"><font size="3" style="font-size: 12pt"><i>A
+working teaching document — plain-language rebuild</i></font></p>
+<p align="center" style="margin-bottom: 0.06in; line-height: 100%"><font size="3" style="font-size: 12pt">Prepared
+for Better with Niia</font></p>
+<p align="center" style="margin-bottom: 0in; line-height: 100%"><font color="#666666"><font size="2" style="font-size: 11pt">Full
+capture — Foundation build (Steps 1–5), Progressions 1–7,
+Homework Sequence, Exercise Library</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<h1 class="western" style="margin-top: 0in; page-break-before: always">
+How to use this manual</h1>
+<p style="margin-bottom: 0.08in; line-height: 100%">This is a
+teaching document, not a marketing brochure. Every exercise is
+written so that opening to any page tells you what the body is doing,
+how to set it up, how it breathes, what you are actually teaching,
+and what tends to go wrong — in plain language first, with the
+official Gyrotonic name attached so the certification vocabulary
+stays intact.</p>
+<p style="margin-bottom: 0.08in; line-height: 100%">Each exercise
+leads with everyday language describing what the body does, then
+names it. After the name is introduced once, that name is used going
+forward. The aim is that the plain language teaches and the Gyrotonic
+name files it.</p>
+<p style="margin-bottom: 0.08in; line-height: 100%">Movement
+descriptions are drawn together from the photographs in the source
+manual, the Main Characteristics and Important Attention notes for
+each series, standard Gyrotonic methodology, and the handwritten
+notes already in the binder. This is a working draft meant to be
+checked against what you know from your training and refined as you
+teach from it — the value here is a consistent, scannable structure
+that the original lacks, with room built in for the cues that were
+living in the margins.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h1 class="western">The template</h1>
+<p style="margin-bottom: 0.08in; line-height: 100%">Every exercise in
+this manual is run through the same fields, in the same order, so the
+document is predictable and scans fast:</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Lineage. 
+</b>Where this exercise comes from — for example, the handle-unit
+version of a pole exercise, or a member of a Final Format family —
+so the learning version and the finished version are never held apart
+in your head. Used where it applies.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Setup.  </b>The
+starting position: where the body sits, what the hands hold, how the
+equipment is arranged.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>The movement. 
+</b>What the body does, step by step, in plain language.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Breath.  </b>How
+the movement breathes. The working default follows the Gyrotonic
+principle — exhale as the body narrows, curls, or flexes; inhale as
+it opens, arches, or extends — unless the source or your notes
+specify something else, such as a double breath or a sniffing breath.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>What you're
+teaching.  </b>The actual point of the exercise — the named
+characteristic it develops and the quality you are watching for.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Common errors
+&amp; corrections.  </b>What tends to go wrong and the cue that fixes
+it.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Modifications.
+ </b>Adaptations for client limitations, and any A/B variation where
+the source prints only one option. (Added field — not in the
+original; fill in from your own teaching.)</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Reps / tempo. 
+</b>How many cycles and at what pace. (Added field — not in the
+original; a placeholder for you to set.)</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h1 class="western">The system, in plain language</h1>
+<p style="margin-bottom: 0.08in; line-height: 100%">The Gyrotonic
+Expansion System trains the muscles while mobilizing and articulating
+the joints. Its distinguishing feature is that it stretches and
+strengthens at the same time and with little strain, building range
+of motion and coordination together rather than one at the expense of
+the other.</p>
+<p style="margin-bottom: 0.08in; line-height: 100%">The equipment is
+built around the way the human body actually moves. It allows freedom
+through a full range and a full speed, supporting movement rather
+than fighting it. Where conventional machines tend to work in
+straight lines or isolate a single joint — which can build strength
+that does not coordinate well — this system works multiple joints
+at once through circular and spiraling patterns, which also
+conditions the surrounding ligaments and their attachments.</p>
+<p style="margin-bottom: 0.08in; line-height: 100%">The movement
+patterns are meant to be smooth, continuous, and uninterrupted,
+bridging contraction and extension so there is no hard stop between
+them. The rotating patterns of the joints build balanced support
+around the skeleton. Movement is organized through spherical
+awareness — a sense of the body moving in all directions around its
+own center — and circularity, carried on continuous guidance and
+adjustable resistance. Because the resistance stays even through
+every change of direction and around the central axis, the work
+distributes evenly between a muscle and its opposite, lengthening one
+while the other contracts.</p>
+<p style="margin-bottom: 0.08in; line-height: 100%">Each exercise is
+paired with a breathing pattern and a rhythm, so the work can be
+gentle or vigorous depending on speed and intensity. Particular
+attention goes to the spine: improving how freely and capably it
+moves, which reduces wear over time. The resistance has been
+described as feeling like moving through water — full, smooth, and
+adjustable. The method is used by dancers and athletes, in
+rehabilitation settings, and across a wide range of people from
+children to seniors.</p>
+<p style="margin-bottom: 0.08in; line-height: 100%"><i>Source:
+Gyrotonic Expansion System, Juliu Horvath. Gyrotonic International
+Headquarters, Dingmans Ferry, PA — www.gyrotonic.com. Retained for
+context; not intended for teaching from directly.</i></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<h1 class="western" style="margin-top: 0in; page-break-before: always">
+The two ladders — how this manual is organized</h1>
+<p style="margin-bottom: 0.08in; line-height: 100%">The Pulley Tower
+material runs on two progression systems stacked on top of each
+other, and keeping them apart is what makes the whole thing legible.
+Naming them up front so the rest of the manual reads cleanly:</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Ladder one —
+building a client into Foundation.  </b>This is taught in five steps,
+written in the source as “Step 1 toward Progression 1” through
+“Step 5 toward Progression 1.” Each step revisits every series
+and layers one new thing onto it: Step 1 establishes the shapes, Step
+2 adds the breathing pattern, Step 3 adds the engagement of the legs,
+Step 4 adds the detailed positions and order, and Step 5 adds the
+narrowing of the pelvis. When all five steps are in the body, the
+client has Foundation — which the progression grid calls
+Progression 1.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Ladder two —
+growing a client beyond Foundation.  </b>This is the progression
+grid: Progression 1 (Foundation) through Progression 7, plus the
+Creative Series. Here each step adds a named exercise into a column —
+a new arch-and-curl variation, a new hamstring, a new opening —
+while everything already learned repeats. This ladder assumes
+Foundation is already in place.</p>
+<p style="margin-bottom: 0.08in; line-height: 100%">So the same word
+“Foundation” sits at the top of one ladder and the bottom of the
+other. Steps 1–5 grow someone up into it; Progressions 1–7 grow
+them up out of it. The manual below holds ladder one first
+(Foundation, taught step by step), then ladder two (the progression
+grid), then the homework sequence, then the exercise library that
+both ladders point into.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<h1 class="western" style="margin-top: 0in; page-break-before: always">
+Foundation, taught step by step (Steps 1–5 toward Progression 1)</h1>
+<p style="margin-bottom: 0.08in; line-height: 100%">The five-step
+build of Foundation. Each step is taught with the same hands-on
+teaching method — the teacher shows and names the movement, then
+teacher and client move together, then the client moves alone while
+the teacher observes — and each step keeps everything from the
+steps before it. What changes step to step is the one new layer named
+at the top of each.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h2 class="western">Step 1 — Establish the shapes</h2>
+<p style="margin-bottom: 0.08in; line-height: 100%"><i>First contact.
+Establish the spinal-motion vocabulary on the pole and chairs,
+introduce the handle-unit Arch and Curl through one-arm articulation
+and Stirring, and lay the hamstring floor preparation.</i></p>
+<h3 class="western">Gyrokinesis Spinal Motions (pole, on chairs)</h3>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Position. 
+</b>Teacher and student sit on chairs at a 90-degree angle to each
+other.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>The movement. 
+</b>In counts of 3. Four repetitions of each: arch into curl; spiral
+right into sideways arch left; sideways arch right into sideways arch
+left — holding each position about three seconds with the hands
+resting on top of the thighs. Finish with small waves forward, hands
+on the thighs. Repeat the whole sequence two to three times.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Attention. 
+</b>Always initiate each movement from the elevation of the spine —
+the “And…” before the move. Keep it slow enough that the
+student can follow, which is what the counts of 3 are for. Sideways
+arch: the palms support the opposite side of the head, the throat
+soft and in, fingertips hooked into the “dimple” behind the ear.
+Wave: walk the legs a little forward and open the angle of the knees;
+long, deep exhalation.</p>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Hands on — the four cycles</b></i></p>
+<ul>
+	<li value="1"><p style="margin-bottom: 0.03in; line-height: 100%">Cycle
+	1: teacher shows all the movements and names them.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Cycle 2:
+	teacher and client move together.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Cycle 3:
+	together again, naming it as the homework.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Cycle 4:
+	client moves alone, teacher observes. Focus on rhythm and fluidity.</p></li>
+</ul>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Breath.  </b>No
+special attention at this stage; eventually a double breath, with a
+cleansing breath on the wave.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Notes. 
+</b>Homework for the client — the spinal-motions sequence.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h3 class="western">Arch and Curl Series — preparation with the
+handle unit</h3>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Position. 
+</b>Straddle, facing the handle unit.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>The movement. 
+</b>Step 1: articulate one arm at a time through a half circle —
+center, inward, center, outward — the spine following with a
+spiraling quality. Step 2: one arm at a time through a full circle,
+introverted and extroverted, the spine following. The same arm
+articulation is also done forward and back.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Attention. 
+</b>Stay in the student’s comfort zone; keep the movement
+continuous; keep the attention on the spiraling of the arm and always
+look toward the reaching, spiraling arm. In the center position,
+elevate the spine; with the arm extended, look over the hand and let
+the spine reach slightly forward; the bent elbows reach sideways.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Hands on. 
+</b>Step 1: teacher shows all the exercises (full arch and curl,
+forward and reverse) with simplicity, refers back to the wave forward
+on the chair, and explains the names. Step 2: student follows while
+the teacher applies hands on, standing alongside — one hand on top
+of the shoulder as the friendly and diagnostic hand, the other
+supporting the spiraling articulation of the arm: hooking around the
+crease of the elbow on the open-arm position, then brushing from the
+top of the elbow out to the hand to give extra reach at the end. Step
+3: student repeats each movement without hands on; teacher observes;
+hold each position at least three seconds.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Breath. 
+</b>Double breath, exhaling with each extension.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h3 class="western">Arch and Curl Series — Stirring</h3>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Position. 
+</b>Straddle, facing the handle unit.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>The movement. 
+</b>Circle the arms around with a transition through the high-V
+position of the handles; free and fluid.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Attention. 
+</b>Look up — slight arch; look down — slight curl; a yawning
+sensation through the spine.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Hands on. 
+</b>Teacher stands in front. Support the upright position (ask to
+elevate the spine); support the arch in high V (ask to reach from the
+sternum); support the curl (slight resistance to the handles, explain
+the rolling-back of the spine); support the elevation (slight pull to
+open the elbows). Show the handle positions — elevation, spiral the
+arms, arch (high V), curl (low V) — and teach the transition
+positions. Then the student repeats.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Breath.  </b>No
+special attention; eventually an ocean / cleansing breath.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h3 class="western">Hamstrings Series — preparation on the floor</h3>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Position. 
+</b>Sitting on the floor.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>The movement. 
+</b>Step 1: explain the concept of the 5th line. Step 2: a scooping
+grip to arrange the flexed-foot position. Step 3: arrange and correct
+the alignment of the whole leg; check the strength point in flex and
+in point; transition from flex to point by grabbing the teacher’s
+fingers with the toes, moving up and over into the point. Then the
+kneading and shivering work: Step 4 — kneading one leg at a time,
+the heel pressing on the floor, keep the alignment, then add the
+kneading of the legs. Step 5 — kneading with alternating legs;
+learn the rocking movement of the upper body in the bowl-curl
+position, then add the kneading. Step 6 — learn the shivering
+point; let the student rest on the forearms. Step 7 — shivering
+with both legs for 20 seconds, then kneading with alternating legs
+for 20 seconds (energetic awakening).</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Attention. 
+</b>Alignment of the legs — create space in the ankle, knee, and
+hip joint; keep the position of the flexed foot and move through the
+5th line; full muscular contraction; keep the neck long.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Hands on.  </b>For
+the kneading, kneel behind the student and alternate a cradle grip of
+the ribcage, guiding the rocking movement of the body, head and
+shoulder dimple down. Kneeling sideways, cradle the ribcage and
+elongate the spine; alternate by supporting the legs — touch the
+strength point of the heels and ask to reach. Support the kneading by
+using a towel for the cradle position.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Breath. 
+</b>Kneading: exhale with each extension of the leg; eventually a
+sniffing breath.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Notes. 
+</b>Homework for the client — shivering with both legs for 20
+seconds, kneading with alternating legs for 20 seconds, alternating
+for two minutes.</p>
+<p style="margin-bottom: 0.08in; line-height: 100%"><i>The hamstring
+exercises themselves — double leg pump, single leg pump, dolphin
+forward, single leg bicycle forward — are introduced here lying on
+the bench facing away from the tower, upper straps on the feet, and
+are detailed in the Exercise Library.</i></p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<h2 class="western" style="margin-top: 0in; page-break-before: always">
+Step 2 — Add the breathing pattern</h2>
+<p style="margin-bottom: 0.08in; line-height: 100%"><i>Everything
+from Step 1 continues. Step 2 lays the corresponding breathing
+pattern onto the spinal motions, introduces the Upper Body turtle
+combination, and brings in Unwinding.</i></p>
+<h3 class="western">Gyrokinesis Spinal Motions — add the breathing
+pattern</h3>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>The movement. 
+</b>Same as Step 1, in counts of 3.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Breath. 
+</b>Inhale through the nose with the elevation of the spine and
+toward the center position, restraining the nostrils while inhaling.
+Exhale through the mouth while moving into the spinal position —
+arch and curl on a HO sound, toward a HO sound everywhere else. Wave
+forward: a long, expelling, cleansing exhalation on a HO sound.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Attention. 
+</b>Synchronize movement and breath — exhale and move continuously,
+inhale and move toward the center position. A short pause between
+inhalation and exhalation; a sound of satisfaction.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Hands on.  </b>Set
+1: teacher performs the movement with the client, breathing together,
+slowing down to focus on the breath. Set 2: teacher and student move
+in rhythm with the breathing pattern. Set 3: student moves, teacher
+observes.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Notes. 
+</b>Homework — the spinal-motions sequence.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h3 class="western">Arch and Curl Series — preparation with the
+handle unit</h3>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>The movement. 
+</b>Same as Step 1, now with the breathing corresponding to the
+movement.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Hands on. 
+</b>Same as Step 1; breathe together with the client.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h3 class="western">Upper Body Series — Turtle combination
+(dissected in 4 steps)</h3>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Position. 
+</b>Sitting on the bench in straddle, facing the tower, upper straps
+in the hands.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>The movement. 
+</b>The full movement is a bow curl reaching forward toward the
+pulley tower, in four phases: reach — narrow the pelvis — turtle
+(curl) — elongate the cervical spine, shoulders down, reach down
+through the palms. Taught in four steps: Step 1, teacher shows and
+explains the four phases sitting on a chair; Step 2, teacher moves
+with the student, verbalizing, on a chair; Step 3, massage the area
+around cervical 7, hands on with the student on a chair; Step 4,
+teacher shows the movement with the cables.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Attention. 
+</b>All four exact positions dissected — reach, narrow, squeeze,
+elongate.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Hands on. 
+</b>Place the palms at the final position for the elbows and ask the
+student to touch them; in the final position support the extra
+squeeze of the elbows; support the elongation of the cervical spine
+by hooking up to the “dimple” behind the ear; support the
+shoulders down with the palms on top of the shoulders; support the
+reach through the 5th line of the palm.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Breath.  </b>One
+exhalation with each position.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h3 class="western">Unwinding — Weight shift side to side</h3>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Position. 
+</b>Standing with the legs slightly opened.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>The movement. 
+</b>Vacuum — suction of the feet, equal weight distribution,
+shifting the weight through the 5th line from side to side.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Attention. 
+</b>Demonstrate the suction / vacuum of the palms of the hands as an
+example for the feeling in the soles of the feet; little toe scooping
+up; the image of standing “without bones”; strengthen the leg
+underneath — do not extend it right away, but more and more.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Breath.  </b>With
+each step, continuous.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Notes.  </b>Give
+as homework to the client.</p>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Twirling prep — add a slow, small turn with change of
+directions</b></i></p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>The movement. 
+</b>Slow turns, legs close together.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Attention. 
+</b>The importance of the movement of the supporting leg; maintain
+all aspects learned in the weight-shift movement.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Breath. 
+</b>Exhale with each step.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<h2 class="western" style="margin-top: 0in; page-break-before: always">
+Step 3 — Add the engagement of the legs</h2>
+<p style="margin-bottom: 0.08in; line-height: 100%"><i>Everything
+from Steps 1 and 2 continues. Step 3 adds the engagement of the legs
+to the spinal motions and the Arch and Curl, and brings in the
+Legwork and Abdominal series.</i></p>
+<h3 class="western">Gyrokinesis Spinal Motions — add the engagement
+of the legs</h3>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>The movement. 
+</b>Cycle 1: explain and add the engagement of the legs — arch,
+open the legs; curl, legs parallel, pivot on the heel; spiraling
+twist, opposition of the legs; sideways arch, open the legs, pivot on
+the heel, weight on both sit bones; wave forward, arching open the
+legs, curling back parallel (close). Repeat each movement at least
+four times. Cycle 2: details on the breathing — arch exhale on HA,
+curl exhale on HO; sideways arch a sound between ho and ha, more
+toward HO; wave forward HO, long and deep. Cycle 3: add the new
+exercises (learn just the new exercises).</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Attention. 
+</b>For arch-curl, sideways arch, and spiral, introduce some details
+— for example a balanced arch and a balanced curl. Spiral with the
+curl over: the thigh bone stays long, the neck stays long, transition
+to the other side through a MODERATE arch position, shoulders staying
+down, exhale on HO. Side shift: the shoulder axis stays parallel to
+the floor, the “solar plexus” shifting parallel to the floor, a
+MODERATE shift of the ribcage, both sit bones staying on the chair
+while the weight shifts, the head staying slightly toward center.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Hands on. 
+</b>Perform hands on without interrupting the movement and flow; add
+hands on to support the narrowing of the pelvis. For the reverse
+wave: support the curl with the ribcage scoop grip, support the
+elevation by guiding the head into upright. To check the curl:
+“shoulder dimples down.”</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>New this step.
+ </b>Arch and Curl with engagement of the legs; wave reverse; plus
+the Legwork and Abdominal series below.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Breath. 
+</b>Inhale nose, exhale mouth as in Step 2; double breath; a
+cleansing breath on the wave.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Notes. 
+</b>Homework — the spinal motions including the new exercises.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h3 class="western">Legwork Series — Seated Leg Work (new)</h3>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Position. 
+</b>Sitting on a chair; then with the upper straps on the feet,
+sitting on the bench facing the tower.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>The movement. 
+</b>Leg lifts with leaning back, the legs off the floor, a long
+bow-curl position of the spine. Circles in both directions —
+beginner with a slight curl in the lower back, the feet slightly off
+the floor if possible, pointed; progressing to extended legs with
+flexed feet, then bent legs. Leg lifts into extension; circles both
+directions.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Attention. 
+</b>Leg lifts: sit at the edge of the bench and engage the hamstrings
+so the thighs lift slightly off the bench top. Circles: the feet stay
+flat over the floor, the legs parallel or naturally turned out;
+alignment of the foot-knee-thighbone relation; the knee guides the
+movement, not the feet; sit a bit higher and move from the bow-curl
+position toward a straighter spine. One leg reaches forward while one
+leg pulls underneath the bench, knees next to each other; the spine
+in a long bow curl is strong, balanced, connected; look up toward the
+pulley tower; the rhythm continuous, not too slow, playful; the feet
+stay pointed.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h3 class="western">Abdominal Series — introduced</h3>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>The movement. 
+</b>Curl ups; curl ups into arch with the legs bent; chest-pelvis
+lift. The Foundation curl-up material, brought to full form in Step
+5.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<h2 class="western" style="margin-top: 0in; page-break-before: always">
+Step 4 — Add the detailed positions and order</h2>
+<p style="margin-bottom: 0.08in; line-height: 100%"><i>Everything
+continues. Step 4 introduces the specific order of the spinal-motion
+exercises and their detailed vocabulary, and dissects the handle-unit
+Arch and Curl into four steps.</i></p>
+<h3 class="western">Gyrokinesis Spinal Motions — add the details
+and the order</h3>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>The movement. 
+</b>Introduce the specific order of the spinal-motion exercises and
+the vocabulary: balanced arch, balanced curl, even spiraling twist,
+balanced sideways arch, balanced curl in the cross-over position.</p>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Hands on — the detailed positions</b></i></p>
+<p style="margin-bottom: 0.08in; line-height: 100%">In the Foundation
+course only, use the drawings of the spinal motions from the manual
+for the detail of each movement. Where possible, rest the pole across
+the top of the spine at the spine of the scapulae for better
+feedback.</p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Balanced
+	arch position: head and thoracic scoop. Use the movement of the
+	wrist, no fingers in the face; use the forearms to guide the
+	scapulae and thoracic spine; move with the direction of the scoop.
+	(A pencil and a weight plate help the teacher learn the
+	wrist-and-forearm movement.)</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Balanced
+	curl, ribcage scoop: direction diagonally backwards and upwards,
+	creating space between the thoracic and lumbar spine; palming or
+	fingertips on the last two ribs, not the abdomen.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Balanced
+	curl, ilium scoop: direction diagonally backwards and upwards,
+	creating space between the lumbar spine and the sacrum; palming or
+	fingertips around the iliac spine.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Transition
+	arch to curl: always guide the head into the elevated position;
+	order — elevate, arch, elevate, curl.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Spiral:
+	support the elongation in the maximum spiraling position; tap the
+	top of the head and ask to elongate the spine.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Sideways
+	shift: support the shift of the ribcage with direction — shift
+	sideways, one hand lateral on the ribcage with attention to the
+	position of the head, one hand lateral on the neck with direction.</p></li>
+</ul>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h3 class="western">Arch and Curl Series — introverted, dissected
+in 4 steps (new)</h3>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>The movement. 
+</b>Four steps. Start in the high-V position of the handles and the
+arch of the spine; curl back (1) into the upright spine position (2);
+spiral the arms and initiate the arch (3); move into the high-V
+position of the handles (4). Four clear positions of the handles
+corresponding to four positions of the spine; find the position of
+the arms, body, and legs for the individual range of motion.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Hands on. 
+</b>Step 1: teacher shows the movement in four steps and introduces
+the handle positions with their corresponding spine positions. Step
+2: student moves while the teacher applies hands on, synchronizing
+the movement of the legs. Set 1 standard; Set 2 hands on for the
+spine; Set 3 hands on for the legs.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<h2 class="western" style="margin-top: 0in; page-break-before: always">
+Step 5 — Add the narrowing of the pelvis</h2>
+<p style="margin-bottom: 0.08in; line-height: 100%"><i>The central
+principle, applied across all the exercises. When this is in the body
+alongside Steps 1–4, the client has Foundation.</i></p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Basic
+principle.  </b>Narrowing of the pelvis; stabilization through
+contrast; internal symmetry; the seed center.</p>
+<h3 class="western">Gyrokinesis Spinal Motions — the seated
+narrowing sequence</h3>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Teaching. 
+</b>Step 1: explain the basic idea of the narrowing of the pelvis —
+stabilization through contrast, stabilization through the seed
+center. Step 2: apply hands on to create the skeletal uprightness of
+the spine. Step 3: the movement sequence (2010 revision) below.</p>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Preparation</b></i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Internal
+	Figure 8s, sitting upright without too much muscular contraction:
+	Part 1 — both palms on the solar plexus, weight shift forward and
+	back in counts of 4; Part 2 — weight shift side to side in counts
+	of 4; Part 3 — palms on top of the thighs or next to the body,
+	figure 8s along the center line / 5th line; image: a figure 8 around
+	the sit bones, then a figure 8 around the eyeballs.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Shoulder
+	lift series: lift the shoulders all the way up and shorten the neck
+	— hold — slowly bring the shoulders down and elongate the back
+	of the neck — press the shoulders down and move the head side to
+	side — release — repeat; eventually refine it into a
+	disappearing-and-appearing action.</p></li>
+</ul>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Movements</b></i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Movement 1,
+	counts of 3: elevation of the spine + narrow the pelvis + squeeze
+	the inner thighs — release.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Movement 2,
+	counts of 3: narrow + elevate — spiraling twist to one side —
+	back to center — release — repeat to the other side.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Movement 3,
+	counts of 2: the same.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Movement 4,
+	counts of 2: from regular sitting in center, narrow + move directly
+	into the spiraling twist to one side — back to center — release
+	— repeat to the other side.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Movement 5,
+	one count each: narrow + elevate — spiraling twist one side —
+	spiraling twist the other side — back to center — release.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Movement 6,
+	arch-curl, one count each: narrow + elevate — arch — elevate —
+	curl — elevate in the center — release.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Movement 7,
+	wave continuous: narrow + elevate — wave forward — curling back
+	— elevate — repeat. Use the hands to touch the medial side of
+	the legs, the lateral side, and the top of the legs.</p></li>
+</ul>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Attention. 
+</b>Observe the elevation and skeletal uprightness of the spine as
+one effect of the narrowing.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h3 class="western">The narrowing, systematic hands-on</h3>
+<p style="margin-bottom: 0.08in; line-height: 100%">The heart of Step
+5: a fixed order of hands-on cues that build the narrowing in the
+body.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Intention. 
+</b>Decompression of the lumbar spine, creating space between the
+vertebrae; elevation of the entire spine into uprightness, including
+the positioning of the pelvis; placing the legs “underneath the
+body.”</p>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Images</b></i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">The body is
+	like a toothpaste tube open at both ends: squeeze the tube in the
+	middle and the paste spreads out of both ends, up and down.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">A metal belt
+	around the line of the iliac spine.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">A magnet in
+	an egg shape on top of the bladder — the seed center, above the
+	greater trochanter: spread the energy upwards to elevate the spine,
+	and downwards to create space in the hip joint and ground the legs
+	and feet.</p></li>
+</ul>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Systematic hands on, in order</b></i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Elevate the
+	head and elongate the cervical spine: two fingers on the soft part
+	around the processus mastoideus, rather than the edge of the palm —
+	the anticipation of the narrowing.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Shoulder
+	dimple down: in the soft dimple of the acromio-clavicular joint, the
+	soft point in the triangle of clavicle, acromion, and spine of the
+	scapulae; if needed use three fingertips.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Open the
+	shoulders to the side and open the chest: emphasize the opening
+	laterally; a wrapping grip from inside or the top of the humerus
+	head, the thumb on the scapulae, directed toward the ribs on a
+	diagonal.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Synchronize
+	the elevation of the head and the shoulders down with the connection
+	of the ribcage diagonally toward the pubic bone; ask verbally for
+	the quality and guide the ribcage.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Arrange the
+	legs and the angle of the knees and feet: (a) reach out with the
+	thigh bone — the teacher tractions the thigh bone and keeps the
+	pelvis in place; (b) the student squeezes the inner thighs —
+	support with one palm lateral at the femur head and one hand inside
+	the thigh bone at the knee, helping the femur move “underneath the
+	body”; (c) the student supports the squeeze of the inner thighs
+	while the teacher places the palms lateral on the thighs near the
+	knees to encourage the opening.</p></li>
+</ul>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h3 class="western">Abdominal Series — full form (new)</h3>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Position. 
+</b>Preparation on the floor; lying on the back on the floor or on
+the bench.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Exercises. 
+</b>Squeezing breath; simple cradle; large cradle; taming of the
+tiger. Added: standing on all fours, and standing on all fours upside
+down.</p>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>The movement</b></i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Squeezing
+	breath: learn it sitting on a chair — the sound “hoh-h” (a
+	double-h breath) from loud to silent, or a coughing image; exhale
+	all the way; suspend, then exhale three more times, squeezing the
+	golden egg, squeezing the balloon from all sides. The simple cradle
+	position helps find it: create a contraction above the pubic bone.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Simple
+	cradle: legs parallel and bent, ankles squeezed together, knees
+	slightly apart, inner thighs squeezing; bowl-curl spine resting on
+	the palms; roll down all the way to place the lumbar spine and
+	sacrum, feet off the floor, with the squeezing breath; roll up, feet
+	on the floor, squeezing breath; eventually in counts of 3.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Large
+	cradle: legs and spine as before; roll down all the way to the
+	kidney area, supported by the forearms, synchronized with the
+	squeezing-breath exhalation; roll up, the legs staying off the
+	floor, squeezing breath; eventually in counts of 3.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Taming of
+	the tiger: legs and arms soft, as if hanging in the air; the angle
+	between pelvis and legs bigger than 90 degrees; head up, looking
+	between the knees, slightly diagonally up; fast breathing through
+	the nose; finish with a deep exhalation through the mouth, slowly
+	releasing — in the release it feels like fainting, releasing the
+	seed center while keeping psoas control of the legs and arms; keep
+	the area between the lumbar spine and the sacrum connected and on
+	the floor.</p></li>
+</ul>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Attention. 
+</b>Find the weak spot between Lumbar 5 and the sacrum. If possible,
+wrap a pole behind the occiput with the arms around it to ensure the
+elongation of the cervical spine and the decompression of the entire
+spine. For standing on all fours upside down — Grip 1: support the
+narrowing of the pelvis for the reaching of the legs; Grip 2: support
+the reaching of the arms. The work strengthens the weak spot between
+L5 and the sacrum, activates the biological pump of the pelvic
+diaphragm, elongates and decompresses the back of the body, engages
+the abdominals, and gives cranio-sacral stimulation.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h3 class="western">Upper Body Openings — introduced (new)</h3>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Exercise. 
+</b>Shoulder mobilization in the frontal plane and the sagittal
+plane; overhead circles with the arms. Position: sitting on a chair.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>The movement. 
+</b>Shoulder mobilization frontal — the phases of the upper arm:
+shoulders inward and up, spread the elbows to the side (the scoop),
+elbows stay up and shoulders move down. Sagittal — a starting
+position with the arms more in front, continuous, a massaging
+feeling. Overhead circles — palms facing the ceiling, hands close
+to the top of the head, the upper arm moving in-up-out-scoop and
+down, the whole arm synchronized; an even circle
+front-side-back-side.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Attention. 
+</b>Frontal plane: move the head of the humerus in the shoulder
+joint. Sagittal plane: massage the joint. Overhead circles: massage
+the joint while spreading the elbows.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Hands on. 
+</b>Frontal plane: sitting behind the student, guiding the upper arm.
+Sagittal plane: massaging the joint, guiding the shoulders, both
+palms on top. Overhead circles: standing behind the student, guiding
+the arms, or palms on top of the shoulders to keep them down with the
+fingers spread to keep the distance between the neck and the upper
+arm.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Breath. 
+</b>Inhale nose, exhale mouth.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Notes. 
+</b>Homework — the exercises sitting on a chair.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h3 class="western">Unwinding — full form</h3>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>The movement. 
+</b>Turning slowly with a change of direction; look straight forward,
+gazing into space.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Breath. 
+</b>Exhale with each step.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Notes. 
+</b>Homework for the client.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%; page-break-before: always">
+<br/>
+
+</p>
+<h1 class="western" style="margin-top: 0in; page-break-before: always">
+Progressions 1–7 — the grid (growing beyond Foundation)</h1>
+<p style="margin-bottom: 0.08in; line-height: 100%">Once Foundation
+(Progression 1) is in the body, the client grows through Progressions
+2–7 and then the Creative Series. Each step adds one named element
+into a series while everything already learned repeats. The series,
+in column order: Arch and Curl, Hamstring, Upper Body, Legwork,
+Abdominal, Upper Body Openings, Unwinding.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h2 class="western">Progression 1 — Foundation</h2>
+<p style="margin-bottom: 0.08in; line-height: 100%"><i>Her note: 6
+steps. The base everything else is layered onto — this is the whole
+of Steps 1–5 above, gathered as one set of material across every
+series.</i></p>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Foundation establishes</b></i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Arch and
+	Curl: spinal motion with the pole; arch and curl forward, reverse;
+	stirring.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Hamstring:
+	double leg pump; single leg pump; dolphin forward; single leg
+	bicycle; leg pumps alternating; bicycles.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Upper Body:
+	turtle combination.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Legwork:
+	seated — leg lifts; circles both directions.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Abdominal:
+	curl ups; curl ups into arch, legs bent; chest-pelvis lift.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Upper Body
+	Openings: circles frontal; circles sagittal; overhead circles, arms
+	and torso.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Unwinding:
+	twirling; balancing steps.</p></li>
+</ul>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h2 class="western">Progression 2</h2>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Step 1 adds</b></i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Arch and
+	Curl: cross grip stretch forward.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Hamstring:
+	frog prep 1; frog prep 2; frog.</p></li>
+</ul>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Step 2 adds</b></i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Upper Body:
+	simple T&amp;P with leaning back.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Legwork:
+	figure eights slalom.</p></li>
+</ul>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Step 3 adds</b></i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Abdominal:
+	curl ups into arch, legs extended.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Upper Body
+	Openings: arm circles in high V position; simple reaching behind.</p></li>
+</ul>
+<p style="margin-bottom: 0.08in; line-height: 100%"><i>Everything
+else repeats.</i></p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h2 class="western">Progression 3</h2>
+<p style="margin-bottom: 0.08in; line-height: 100%"><i>2010:
+implement the BASIC homework sequence.</i></p>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Step 1 adds</b></i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Arch and
+	Curl: cross grip stretch into spiral.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Hamstring:
+	quad stretches.</p></li>
+</ul>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Step 2 adds</b></i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Upper Body:
+	canoeing, simple.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Legwork:
+	hip-knee joint mobilization.</p></li>
+</ul>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Step 3 adds</b></i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Abdominal:
+	simple curl ups with cross over; simple curl ups with cross over
+	into arch.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Upper Body
+	Openings: figure 8s.</p></li>
+</ul>
+<p style="margin-bottom: 0.08in; line-height: 100%"><i>Everything
+else repeats.</i></p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h2 class="western">Progression 4</h2>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Step 1 adds</b></i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Arch and
+	Curl: single spiral forward; single spiral reverse.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Hamstring:
+	double knee circles; double leg circles, 2 variations.</p></li>
+</ul>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Step 2 adds</b></i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Upper Body:
+	swimming, breaststroke.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Legwork:
+	seated sideways to the tower series.</p></li>
+</ul>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Step 3 adds</b></i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Abdominal:
+	2008 — curl ups with leg combination; jackknife, legs on the
+	bench.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Upper Body
+	Openings: double arm circles, forward, reverse.</p></li>
+</ul>
+<p style="margin-bottom: 0.08in; line-height: 100%"><i>Everything
+else repeats.</i></p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h2 class="western">Progression 5</h2>
+<p style="margin-bottom: 0.08in; line-height: 100%"><i>2010:
+implement the FINAL homework sequence.</i></p>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Step 1 adds</b></i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Arch and
+	Curl: 2008 — arch/curl with diving pattern; single spiral reverse
+	with diving pattern.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Hamstring:
+	dolphin sideways; dolphin reverse.</p></li>
+</ul>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Step 2 adds</b></i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Upper Body:
+	twist and pull continuous; harvesting forward, reverse.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Legwork:
+	upper straps around the knee, facing the tower.</p></li>
+</ul>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Step 3 adds</b></i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Abdominal:
+	jackknife with legs off the bench.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Upper Body
+	Openings: eagle combination part 1.</p></li>
+</ul>
+<p style="margin-bottom: 0.08in; line-height: 100%"><i>Everything
+else repeats.</i></p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h2 class="western">Progression 6</h2>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Step 1 adds</b></i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Arch and
+	Curl: double spiral figure eights.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Hamstring:
+	scissors in pulsations of 3; circles in 45 degree; full circles;
+	windmill.</p></li>
+</ul>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Step 2 adds</b></i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Upper Body:
+	shoulder release.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Legwork:
+	sciatica combination.</p></li>
+</ul>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Step 3 adds</b></i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Abdominal:
+	psoas abdominals.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Upper Body
+	Openings: eagle combination part 2; full combination.</p></li>
+</ul>
+<p style="margin-bottom: 0.08in; line-height: 100%"><i>Everything
+else repeats.</i></p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h2 class="western">Progression 7</h2>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Step 1 adds</b></i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Arch and
+	Curl: single arm spiral, side to side — extroverted; introverted;
+	double arm spiral.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Hamstring:
+	lobster tail; full circles into lobster tail.</p></li>
+</ul>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Step 2 adds</b></i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Upper Body:
+	seated sideways; Laughing Buddha.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Legwork:
+	choose one series.</p></li>
+</ul>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Step 3 adds</b></i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Abdominal:
+	choose exercises.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Upper Body
+	Openings: choose exercises.</p></li>
+</ul>
+<p style="margin-bottom: 0.08in; line-height: 100%"><i>Everything
+else repeats.</i></p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h2 class="western">Creative Series</h2>
+<p style="margin-bottom: 0.08in; line-height: 100%"><i>For certified
+trainers only; presented in special workshops.</i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Arch and
+	Curl: final version.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Hamstring:
+	final version.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Upper Body:
+	introduction — lower straps.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Legwork:
+	introduction — leg pumps with leg circle; back leg pedal;
+	Patella-Quad S; back leg lift S.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Abdominal:
+	choose exercises.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Upper Body
+	Openings: choose exercises.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Unwinding:
+	repeat.</p></li>
+</ul>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<h1 class="western" style="margin-top: 0in; page-break-before: always">
+Gyrotonic Final Homework Sequence</h1>
+<p style="margin-bottom: 0.08in; line-height: 100%">The homework
+sequence reinforces the principle of the narrowing of the pelvis.
+Hands are introduced to support the skeletal uprightness of the spine
+without any compression.</p>
+<p style="margin-bottom: 0.08in; line-height: 100%"><i>Ingredients
+for the narrowing of the pelvis: head reaching up + shoulders down +
+shoulders open to the side + connect the ribcage + squeeze and lift
+at the narrowing area, squeeze and reach down with the legs +
+simultaneously reach forward with the knees + squeeze the inner
+thighs + reach outward with the knees + spread the soles of the feet
+/ suction foot.</i></p>
+<h2 class="western">Part 1 — Seated on a stool</h2>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Preparation</b></i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Alternating
+	shoulder lift-release; advanced version: a quality of appearing and
+	disappearing.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Internal
+	Figure 8s, arms next to the body (rather than palms resting on the
+	thighs): figure 8s in one direction at the level of the sit bones,
+	the seed center, the solar plexus, the sternum, the throat center,
+	the eyeballs, and slightly above the top of the head — then
+	reverse and start from the top of the head down.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">The order of
+	these two exercises can be interchanged.</p></li>
+</ul>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Spinal motions</b></i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Elevation of
+	the spine with narrowing of the pelvis, in counts of 3; palms
+	supporting the intention: palms inside the thighs, palms outside the
+	knees, arms reaching down next to the body.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Elevation of
+	the spine with narrowing of the pelvis, in counts of 2, arms next to
+	the body.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Spiraling to
+	one side at a time, in counts of 2: center — spiral — center —
+	slow release.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Spiraling
+	side to side continuous: center — right — left — center —
+	slow release; center — left — right — center — slow release.
+	(Her note: Double Spiral.)</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Spiraling
+	directly from center to the side, one spiral at a time, in counts of
+	2: spiraling up — slowly return to center; use the hands to
+	indicate the opposition of the leg. (Her note: Staircase.)</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">The last two
+	are interchangeable.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Arch-curl
+	continuous: narrow/elevate — arch — center/elevate — curl —
+	center/elevate — slowly release.</p></li>
+</ul>
+<p style="margin-top: 0.06in; margin-bottom: 0.03in; line-height: 100%">
+<i><b>Stimulation of the biological pump, seated</b></i></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">From slow to
+	faster, a small movement of the pelvis; the accent is at the end of
+	the movement.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Waves
+	forward, from small to bigger: up to the umbilicus, up to the solar
+	plexus, up to the chest, all the way to the head.</p></li>
+</ul>
+<h2 class="western">Part 2 — Floor work</h2>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Small
+	cradle, 4 times. Attention: look diagonally up.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Large
+	cradle, 4 times. Attention: look diagonally up.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Shivering
+	and kneading of the legs. Attention: keep the neck long. Shiver for
+	a minimum of one minute, sounding like raindrops; repeat 2 times.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Large cradle
+	with knee-to-forehead combination: parallel — open into diamond —
+	extend to the front, 4 times; reverse: diamond — legs parallel —
+	extend to the front, 4 times. Attention: keep the neck long. (Prep:
+	a folded chair under the sacrum.)</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Hip-knee
+	joint mobilization: 4 times forward, 4 times reverse.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Repeat the
+	knee-to-forehead combination and the hip-knee joint mobilization.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Standing on
+	all fours. Eventually this preparation is replaced by standing on
+	all fours upside down.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">On the
+	floor: standing on all fours upside down. Attention: balanced effort
+	from the legs and arms, initiating from the seed center; if possible
+	the sacrum comes off the floor.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Directly
+	into Taming of the Tiger. Attention: sit bones reaching forward,
+	look toward the ceiling, slow release.</p></li>
+</ul>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h1 class="western">Exercise Library</h1>
+<p style="margin-bottom: 0.08in; line-height: 100%">The full
+descriptions both ladders point into, run through the same template —
+what the body does in plain language, the Gyrotonic name, the setup,
+the movement, the breath, what you are teaching, the common errors,
+modifications, and a placeholder for reps and tempo.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<h1 class="western" style="margin-top: 0in; page-break-before: always">
+Series 1 — Arch and Curl</h1>
+<p style="margin-bottom: 0.08in; line-height: 100%">A spine series.
+It wakes the spine up segment by segment and moves it through its
+full forward-and-back range, releases the shoulders and arms, begins
+gentle stimulation for the heart and lungs, and brings the nervous
+system online. Across the series you are watching for synchronized
+movement and breath, uninterrupted flow, clear intention in the
+execution, a long pelvis and fully extended spine, and overall
+spherical awareness.</p>
+<p style="margin-bottom: 0.08in; line-height: 100%">The series is
+taught in two stages. The Pole Exercises are the learning versions,
+done seated at the bench holding the pole with the straps, where the
+shape can be felt slowly and clearly. The Final Format versions are
+the grown-up versions of those same shapes on the handle unit, faced
+toward or away from the tower. Each Final Format exercise is the
+refined descendant of a pole exercise, so they are presented
+together.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h2 class="western">Pole Exercises (learning versions)</h2>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Shared setup. 
+</b>Sit straddling the bench facing the tower, with the straps around
+the pole — upper or lower depending on the exercise — and the
+pole carried behind the midback or across the edge of the shoulder
+blades. The pole stays active throughout: pressed in toward the body
+and slightly up, never resting against the body or hanging on the
+cables.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h2 class="western">Final Format (handle-unit versions)</h2>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Shared setup. 
+</b>On the handle unit. The first group is done straddling and facing
+the handle unit; a later group is done straddling and facing away
+from it. Each exercise below names its facing. The series finishes
+with a symmetrical exercise.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><i><b>Facing away
+from the handle unit</b></i></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<h1 class="western" style="margin-top: 0in; page-break-before: always">
+Series 2 — Hamstring</h1>
+<p style="margin-bottom: 0.08in; line-height: 100%">A leg series done
+on the handle unit, with the feet in the cables and the back
+supported, working the hamstrings and the whole leg line through
+circular and reaching patterns. On the session-flow page this is one
+of the series a class draws an exercise from, alongside the spine
+work, the abdominal series, the upper body openings, and the
+unwinding.</p>
+<p style="margin-bottom: 0.08in; line-height: 100%">The source prints
+these as Final Format almost entirely as names and photographs, with
+little or no position text — so the descriptions below lean on the
+photographs, standard Gyrotonic leg-series methodology, and your
+notes. They want checking against your training. The directional
+grammar from the spine series repeats here: forward, reverse, flex,
+introverted, sideways, pelvis-flat. Each named exercise carries its
+orientation variants as states of one entry rather than as separate
+exercises.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<h1 class="western" style="margin-top: 0in; page-break-before: always">
+Series 3 — Upper Body</h1>
+<p style="margin-bottom: 0.08in; line-height: 100%">The upper-body
+series of the Final Format, faced toward the tower with the upper
+straps in the hands. It opens the shoulder girdle and chest, builds
+reach and rotation through the arms and upper back, and carries the
+same spine principles into standing-arm work. Across the series you
+are watching for the shoulders staying down and open, the reach
+traveling through the 5th line of the palm, and the spine elevating
+rather than collapsing into the pull.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h3 class="western">Twist and Pull Leaning Back  —  Twist and Pull,
+leaning back (Final Format)</h3>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Lineage.  </b>The
+Upper Body member of the spine family — the standing-arm cousin of
+the spiraling work introduced in the Arch and Curl series.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Setup. 
+</b>Sitting on the bench in straddle, facing the tower, upper straps
+in the hands.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>The movement. 
+</b>Lean the torso back as a long unit while the arms pull, then add
+a twist: rotate the ribcage over a stable pelvis as one arm reaches
+and the other draws back, the spine staying long through the lean.
+Return through center and repeat to the other side.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Breath. 
+</b>Exhale into the twist and the pull; inhale returning through
+center.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>What you're
+teaching.  </b>Rotation of the upper back over a stable base, with
+the shoulders staying down as the arms work; the lean comes from a
+long spine, not a collapse at the low back.</p>
+<p style="margin-bottom: 0.03in; line-height: 100%"><b>Common errors
+&amp; corrections.</b></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Shrugging
+	the shoulders up into the pull — cue the shoulder dimple down.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Leaning from
+	the low back instead of a long spine — cue reach from the crown,
+	lean as one piece.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Letting the
+	pelvis rotate with the twist — keep both sit bones anchored.</p></li>
+</ul>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Modifications.
+ </b>Smaller lean and smaller twist first; build the range once the
+spine stays long. (Confirm against your training.)</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Reps / tempo. 
+</b>Placeholder — set your standard.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h3 class="western">Harvesting  —  Harvesting (Final Format)</h3>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Lineage. 
+</b>Upper Body series; the forward-and-reverse reaching pattern that
+gathers the arms in toward the body and opens them back out, like
+drawing a harvest in.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Setup. 
+</b>Sitting on the bench in straddle, facing the tower, upper straps
+in the hands.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>The movement. 
+</b>Reach the arms forward and out, then draw them in toward the body
+in a gathering arc, the upper back rounding gently with the gather
+and opening with the reach. Forward version and reverse version.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Breath. 
+</b>Exhale gathering in; inhale reaching out and open.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>What you're
+teaching.  </b>Coordinated opening and closing of the shoulder girdle
+with the breath, the chest opening on the reach and the back widening
+on the gather.</p>
+<p style="margin-bottom: 0.03in; line-height: 100%"><b>Common errors
+&amp; corrections.</b></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Pulling only
+	with the arms — cue the movement to begin from the back and
+	ribcage.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Losing the
+	spine elevation on the gather — keep length even as the back
+	widens.</p></li>
+</ul>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Modifications.
+ </b>Reduce the range of the reach; keep the gather small until the
+shoulder stays settled. (Confirm against your training.)</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Reps / tempo. 
+</b>Placeholder — set your standard.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<h3 class="western">Shoulder Release  —  Shoulder Release (Final
+Format)</h3>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Lineage. 
+</b>Upper Body series; the releasing counterpart to the openings
+work, mobilizing the shoulder joint through its circle.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Setup. 
+</b>Sitting on the bench in straddle, facing the tower, upper straps
+in the hands.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>The movement. 
+</b>Move the head of the upper arm through the shoulder joint in a
+circle — forward, up, out, and around — releasing the joint while
+the spine stays elevated and the shoulders stay set away from the
+ears.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Breath.  </b>A
+continuous, easy breath through the circle; exhale on the downward,
+gathering part of the arc.</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>What you're
+teaching.  </b>Mobility and release in the shoulder joint itself, the
+arm circling freely while the torso stays quiet and tall.</p>
+<p style="margin-bottom: 0.03in; line-height: 100%"><b>Common errors
+&amp; corrections.</b></p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">The ribcage
+	following the arm — keep the torso still and let the joint do the
+	work.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">The shoulder
+	riding up at the top of the circle — keep the dimple down
+	throughout.</p></li>
+</ul>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Modifications.
+ </b>Smaller circles first, then widen; one arm at a time before
+both. (Confirm against your training.)</p>
+<p style="margin-bottom: 0.07in; line-height: 100%"><b>Reps / tempo. 
+</b>Placeholder — set your standard.</p>
+<p style="border-top: none; border-bottom: 1px solid #9b8fb0; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; margin-bottom: 0.11in; line-height: 100%">
+<br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<h1 class="western" style="margin-top: 0in; page-break-before: always">
+What is captured, and what is still open</h1>
+<p style="margin-bottom: 0.08in; line-height: 100%">This document now
+holds the whole of what has been photographed: the two-ladder
+orientation, the five-step Foundation build (Steps 1 through 5 toward
+Progression 1) with the real teaching cues and hands-on for every
+series, the Progressions 1 through 7 grid and Creative Series, the
+Final Homework Sequence, and the Exercise Library for the Arch and
+Curl, Hamstring, and Upper Body series. Order across the document is
+the staging order, not the final teaching order — that gets
+arranged in the interactive HTML version next.</p>
+<p style="margin-bottom: 0.08in; line-height: 100%">Still open, to
+confirm or build on the same template:</p>
+<ul>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Exercise
+	Library entries for the Legwork, Abdominal, Upper Body Openings, and
+	Unwinding series — the teaching detail for these now lives inside
+	the Step 3 and Step 5 pages above, and can be lifted into full
+	library cards once you confirm the mechanics.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Pole or
+	learning versions for the Hamstring series, if they exist separately
+	from the Final Format.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">More Upper
+	Body exercises named in the grid but not yet detailed: Canoeing,
+	Swimming, the Eagle combinations, Laughing Buddha, and the
+	seated-sideways work.</p></li>
+	<li><p style="margin-bottom: 0.03in; line-height: 100%">Source lines
+	to confirm: the second element of the Hamstring Combination, and any
+	breath specifics in the binder margins (double breath, sniffing
+	breath).</p></li>
+</ul>
+<p style="margin-bottom: 0.08in; line-height: 100%">The file stays
+the record: every confirmed addition runs through the same template
+and is appended here.</p>
+</div>
+
+</body>
+</html>

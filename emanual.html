@@ -8,40 +8,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #1E3870;
-    --cream: #F7F4EF;
-    --cream-warm: #EDE8DF;
-    --gold: #BFA05A;
-    --black: #1A1A1A;
-    --gray: #4a4a4a;
-    --gray-light: #888;
+    --navy: #1E3870; --cream: #F7F4EF; --cream-warm: #EDE8DF;
+    --gold: #BFA05A; --black: #1A1A1A; --gray: #4a4a4a; --gray-light: #888;
   }
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
-    line-height: 1.75;
-    color: var(--black);
-    background: var(--cream);
-  }
-  .emanual-topbar {
-    background: var(--navy);
-    padding: 14px 32px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 1px solid rgba(191,160,90,0.3);
-    gap: 16px;
-  }
-  .emanual-topbar .logo {
-    display: flex; flex-direction: column; align-items: center; line-height: 1;
-    border: 1px solid rgba(191,160,90,0.5); border-radius: 50%;
-    width: 36px; height: 36px; justify-content: center; text-decoration: none; flex-shrink: 0;
-  }
+  body { font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.75; color: var(--black); background: var(--cream); }
+  .emanual-topbar { background: var(--navy); padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(191,160,90,0.3); gap: 16px; }
+  .emanual-topbar .logo { display: flex; flex-direction: column; align-items: center; line-height: 1; border: 1px solid rgba(191,160,90,0.5); border-radius: 50%; width: 36px; height: 36px; justify-content: center; text-decoration: none; flex-shrink: 0; }
   .emanual-topbar .logo .get { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 8px; color: rgba(191,160,90,0.9); }
   .emanual-topbar .logo .better { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 8px; color: #fff; letter-spacing: -0.02em; }
   .emanual-topbar .doc-title { font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); flex: 1; }
@@ -69,10 +43,7 @@
 </head>
 <body>
 <div class="emanual-topbar">
-  <a href="index.html" class="logo">
-    <span class="get">Get</span>
-    <span class="better">BETTER</span>
-  </a>
+  <a href="index.html" class="logo"><span class="get">Get</span><span class="better">BETTER</span></a>
   <span class="doc-title">Gyrotonic Teaching Manual</span>
   <button class="print-btn" onclick="window.print()">⎙ Print / Save PDF</button>
 </div>

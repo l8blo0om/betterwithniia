@@ -11,9 +11,9 @@
 
     :root {
       --navy: #1E3870;
-      --navy-deep: #0e1c3a;
+      --navy-deep: #0b1628;
       --cream: #F7F4EF;
-      --cream-dim: #e8e3d8;
+      --cream-dim: #d8d3c8;
       --gold: #BFA05A;
       --gold-light: #d4b877;
     }
@@ -26,26 +26,26 @@
       font-family: 'Inter', system-ui, sans-serif;
       font-weight: 300;
       line-height: 1.7;
+      overflow-x: hidden;
     }
 
     /* ── HERO ─────────────────────────────────────────── */
     .hero {
       position: relative;
       height: 100vh;
-      min-height: 600px;
+      min-height: 640px;
       display: flex;
       align-items: flex-end;
       overflow: hidden;
     }
 
-    .hero-img {
+    .hero-bg {
       position: absolute;
       inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      filter: brightness(0.55);
+      background-image: url('pitch-assets/photos/bg_logo_black.png');
+      background-size: cover;
+      background-position: center 20%;
+      filter: brightness(0.65);
     }
 
     .hero-gradient {
@@ -53,139 +53,129 @@
       inset: 0;
       background: linear-gradient(
         to bottom,
-        transparent 30%,
-        rgba(14,28,58,0.7) 70%,
-        rgba(14,28,58,0.98) 100%
+        rgba(11,22,40,0.2) 0%,
+        transparent 40%,
+        rgba(11,22,40,0.8) 80%,
+        rgba(11,22,40,1) 100%
       );
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-      padding: 0 6vw 5vw;
-      max-width: 900px;
+      padding: 0 8vw 5vw;
+      max-width: 960px;
     }
 
     .hero-eyebrow {
-      font-size: 0.75rem;
-      letter-spacing: 0.25em;
+      font-size: 0.7rem;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
     }
 
     .hero-name {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(3rem, 8vw, 6rem);
+      font-size: clamp(3.2rem, 9vw, 6.5rem);
       font-weight: 300;
-      line-height: 1.0;
+      line-height: 0.95;
       color: var(--cream);
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
     }
 
     .hero-name em {
       font-style: italic;
       color: var(--gold-light);
+      display: block;
     }
 
-    .hero-tagline {
-      font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    .hero-sub {
+      font-size: clamp(0.85rem, 1.4vw, 1rem);
       color: var(--cream-dim);
-      letter-spacing: 0.05em;
-      max-width: 520px;
+      letter-spacing: 0.04em;
+      max-width: 500px;
+      line-height: 1.7;
     }
 
-    .hero-scroll {
-      position: absolute;
-      bottom: 2rem;
-      right: 6vw;
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      writing-mode: vertical-lr;
-      z-index: 2;
-    }
-
-    /* ── SECTIONS ─────────────────────────────────────── */
-    section {
-      padding: 5rem 6vw;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      font-size: 0.7rem;
+    /* ── SECTION SHARED ───────────────────────────────── */
+    .label {
+      font-size: 0.68rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 1.5rem;
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.9rem;
+      margin-bottom: 1.5rem;
     }
-
-    .section-label::after {
+    .label::after {
       content: '';
-      flex: 1;
-      max-width: 60px;
+      width: 40px;
       height: 1px;
       background: var(--gold);
-      opacity: 0.5;
+      opacity: 0.45;
     }
 
     h2 {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-size: clamp(2rem, 5vw, 3.4rem);
       font-weight: 300;
-      line-height: 1.15;
+      line-height: 1.1;
       color: var(--cream);
-      margin-bottom: 2rem;
+      margin-bottom: 1.75rem;
     }
-
     h2 em { font-style: italic; color: var(--gold-light); }
 
-    p {
-      font-size: 1rem;
+    p.body {
+      font-size: 0.97rem;
       color: var(--cream-dim);
-      margin-bottom: 1.25rem;
-      max-width: 660px;
+      max-width: 600px;
+      margin-bottom: 1.1rem;
     }
 
-    .divider {
-      width: 100%;
+    .rule {
       height: 1px;
       background: linear-gradient(to right, transparent, var(--gold), transparent);
-      opacity: 0.25;
-      margin: 0;
+      opacity: 0.18;
     }
 
-    /* ── BIO ──────────────────────────────────────────── */
-    .bio-grid {
+    /* ── BIO SECTION ──────────────────────────────────── */
+    .bio-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bio-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('pitch-assets/photos/bg_sc_living.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.12;
+    }
+
+    .bio-inner {
+      position: relative;
+      z-index: 1;
+      padding: 5rem 8vw;
+      max-width: 1100px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 5rem;
       align-items: start;
-      margin-top: 1rem;
     }
 
-    @media (max-width: 700px) {
-      .bio-grid { grid-template-columns: 1fr; gap: 2rem; }
+    @media (max-width: 720px) {
+      .bio-inner { grid-template-columns: 1fr; gap: 3rem; }
     }
 
-    .bio-photo {
-      width: 100%;
-      aspect-ratio: 3/4;
-      object-fit: cover;
-      object-position: center top;
-      filter: grayscale(20%) contrast(1.05);
-    }
-
-    .bio-stats {
+    .stats {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
-      margin-top: 1rem;
+      gap: 2.5rem;
+      padding-top: 1rem;
     }
 
     .stat {
@@ -193,298 +183,348 @@
       padding-left: 1.25rem;
     }
 
-    .stat-number {
+    .stat-num {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: 300;
       color: var(--gold-light);
       line-height: 1;
     }
 
-    .stat-label {
-      font-size: 0.8rem;
+    .stat-lbl {
+      font-size: 0.75rem;
       letter-spacing: 0.1em;
-      color: var(--cream-dim);
       text-transform: uppercase;
+      color: var(--cream-dim);
+      margin-top: 0.25rem;
     }
 
-    /* ── DIGITAL WORK ─────────────────────────────────── */
-    .tools-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
       margin-top: 2rem;
     }
 
-    @media (max-width: 600px) {
-      .tools-grid { grid-template-columns: 1fr; }
+    .tag {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(191,160,90,0.3);
+      padding: 0.35rem 0.9rem;
     }
 
+    /* ── FULL-BLEED IMAGE BREAK ───────────────────────── */
+    .img-break {
+      width: 100%;
+      height: 55vh;
+      min-height: 360px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .img-break::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom,
+        var(--navy-deep) 0%,
+        transparent 20%,
+        transparent 80%,
+        var(--navy-deep) 100%
+      );
+    }
+
+    /* ── TOOLS ────────────────────────────────────────── */
+    .tools-wrap {
+      padding: 5rem 8vw;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    @media (max-width: 600px) { .tools-grid { grid-template-columns: 1fr; } }
+
     .tool-card {
-      border: 1px solid rgba(191,160,90,0.25);
-      padding: 2rem;
+      border: 1px solid rgba(191,160,90,0.2);
+      padding: 2rem 2rem 1.75rem;
+      text-decoration: none;
+      color: inherit;
+      display: block;
       position: relative;
       overflow: hidden;
-      transition: border-color 0.3s;
-      text-decoration: none;
-      display: block;
-      color: inherit;
+      transition: border-color 0.25s;
     }
 
     .tool-card::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(191,160,90,0.05) 0%, transparent 60%);
+      background: linear-gradient(135deg, rgba(191,160,90,0.06) 0%, transparent 55%);
       pointer-events: none;
     }
 
-    .tool-card:hover {
-      border-color: var(--gold);
-    }
+    .tool-card:hover { border-color: rgba(191,160,90,0.6); }
 
-    .tool-num {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 4rem;
+    .tool-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4.5rem;
       font-weight: 300;
-      color: rgba(191,160,90,0.15);
+      color: rgba(191,160,90,0.1);
       line-height: 1;
       position: absolute;
-      top: 1rem;
-      right: 1.5rem;
+      top: 0.75rem;
+      right: 1.25rem;
     }
 
     .tool-title {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.6rem;
-      font-weight: 400;
+      font-size: 1.5rem;
       color: var(--cream);
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.65rem;
     }
 
     .tool-desc {
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       color: var(--cream-dim);
-      line-height: 1.65;
+      line-height: 1.7;
       margin-bottom: 1.25rem;
     }
 
-    .tool-link {
-      font-size: 0.72rem;
+    .tool-arrow {
+      font-size: 0.68rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--gold);
     }
 
-    /* ── MUSIC PLAYER ─────────────────────────────────── */
-    .music-section {
-      background: rgba(30,56,112,0.3);
-      border-top: 1px solid rgba(191,160,90,0.15);
-      border-bottom: 1px solid rgba(191,160,90,0.15);
-      padding: 5rem 6vw;
+    /* ── MUSIC ────────────────────────────────────────── */
+    .music-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .music-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('pitch-assets/photos/bg_spread.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.09;
     }
 
     .music-inner {
+      position: relative;
+      z-index: 1;
+      padding: 5rem 8vw;
       max-width: 1100px;
       margin: 0 auto;
     }
 
-    .track-list {
+    .track-grid {
       margin-top: 2.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.4rem;
     }
+
+    @media (max-width: 640px) { .track-grid { grid-template-columns: 1fr; } }
 
     .track {
       display: flex;
       align-items: center;
-      gap: 1.25rem;
-      padding: 1rem 1.25rem;
-      border: 1px solid rgba(191,160,90,0.15);
+      gap: 1rem;
+      padding: 0.85rem 1rem;
+      border: 1px solid rgba(191,160,90,0.12);
       cursor: pointer;
       transition: background 0.2s, border-color 0.2s;
+      user-select: none;
     }
 
     .track:hover, .track.active {
-      background: rgba(191,160,90,0.08);
-      border-color: rgba(191,160,90,0.4);
+      background: rgba(191,160,90,0.07);
+      border-color: rgba(191,160,90,0.35);
     }
 
-    .track-play {
-      width: 36px;
-      height: 36px;
+    .play-btn {
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
-      border: 1px solid var(--gold);
+      border: 1px solid rgba(191,160,90,0.5);
       background: transparent;
       color: var(--gold);
-      font-size: 0.9rem;
+      font-size: 0.7rem;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      transition: background 0.2s;
+      transition: background 0.2s, color 0.2s;
+      padding-left: 2px;
     }
 
-    .track-play:hover {
-      background: var(--gold);
-      color: var(--navy-deep);
-    }
-
-    .track-play.playing {
+    .play-btn:hover, .play-btn.playing {
       background: var(--gold);
       color: var(--navy-deep);
     }
 
     .track-name {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.15rem;
+      font-size: 1.05rem;
       color: var(--cream);
       flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-    .track-duration {
-      font-size: 0.78rem;
-      color: var(--cream-dim);
-      font-variant-numeric: tabular-nums;
+    .track-tag {
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.6;
+      flex-shrink: 0;
     }
 
     .player-bar {
       margin-top: 1.5rem;
       display: none;
     }
-
-    .player-bar.visible { display: block; }
-
-    .player-bar audio {
-      width: 100%;
-      height: 36px;
-      filter: invert(1) hue-rotate(180deg) brightness(0.8);
-      opacity: 0.85;
-    }
-
-    .player-now {
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
+    .player-bar.on { display: block; }
+    .now-playing {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
       color: var(--gold);
       margin-bottom: 0.5rem;
-      text-transform: uppercase;
+    }
+    audio {
+      width: 100%;
+      height: 34px;
+      filter: invert(1) hue-rotate(180deg) brightness(0.75);
+      opacity: 0.8;
     }
 
     /* ── VISION ───────────────────────────────────────── */
-    .vision-quote {
+    .vision-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vision-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('pitch-assets/photos/bg_magazine.png');
+      background-size: cover;
+      background-position: center top;
+      opacity: 0.08;
+    }
+
+    .vision-inner {
+      position: relative;
+      z-index: 1;
+      padding: 5rem 8vw;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    blockquote {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+      font-size: clamp(1.5rem, 3.5vw, 2.3rem);
       font-weight: 300;
       font-style: italic;
       color: var(--cream);
       line-height: 1.45;
       border-left: 3px solid var(--gold);
       padding-left: 2rem;
-      margin: 2rem 0 3rem;
-      max-width: 800px;
+      margin: 2.5rem 0 3rem;
+      max-width: 780px;
     }
 
-    /* ── PHOTO STRIP ──────────────────────────────────── */
-    .photo-strip {
+    /* ── IMAGE MOSAIC ─────────────────────────────────── */
+    .mosaic {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.5rem;
-      margin-top: 3rem;
-    }
-
-    .photo-strip img {
-      width: 100%;
-      aspect-ratio: 1;
-      object-fit: cover;
-      object-position: center top;
-      filter: brightness(0.8) grayscale(10%);
-      transition: filter 0.3s;
-    }
-
-    .photo-strip img:hover {
-      filter: brightness(0.95) grayscale(0%);
+      grid-template-columns: 1.4fr 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 3px;
+      max-height: 520px;
+      overflow: hidden;
     }
 
     @media (max-width: 600px) {
-      .photo-strip { grid-template-columns: 1fr 1fr; }
+      .mosaic { grid-template-columns: 1fr 1fr; max-height: none; }
     }
 
-    /* ── CREDENTIALS ──────────────────────────────────── */
-    .creds {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 2rem;
+    .mosaic-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: brightness(0.75) saturate(0.85);
+      transition: filter 0.4s;
+      min-height: 200px;
     }
 
-    .cred-tag {
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid rgba(191,160,90,0.35);
-      padding: 0.4rem 1rem;
+    .mosaic-img:hover { filter: brightness(0.95) saturate(1); }
+
+    .mosaic-img.tall {
+      grid-row: span 2;
+      min-height: 400px;
     }
 
     /* ── CTA ──────────────────────────────────────────── */
-    .cta-section {
+    .cta-wrap {
       text-align: center;
-      padding: 5rem 6vw 6rem;
+      padding: 5rem 8vw 6rem;
     }
 
-    .cta-section h2 {
-      max-width: 600px;
-      margin: 0 auto 1.5rem;
-    }
+    .cta-wrap h2 { max-width: 560px; margin: 0 auto 1.25rem; }
+    .cta-wrap p.body { margin: 0 auto 2.5rem; text-align: center; }
 
-    .cta-section p {
-      margin: 0 auto 2.5rem;
-      max-width: 520px;
-      text-align: center;
-    }
-
-    .cta-btn {
+    .btn {
       display: inline-block;
-      padding: 1rem 2.5rem;
-      background: transparent;
+      padding: 0.9rem 2.4rem;
       border: 1px solid var(--gold);
       color: var(--gold);
       text-decoration: none;
-      font-size: 0.75rem;
-      letter-spacing: 0.25em;
+      font-size: 0.72rem;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
       transition: background 0.25s, color 0.25s;
     }
-
-    .cta-btn:hover {
-      background: var(--gold);
-      color: var(--navy-deep);
-    }
+    .btn:hover { background: var(--gold); color: var(--navy-deep); }
 
     /* ── FOOTER ───────────────────────────────────────── */
     footer {
-      border-top: 1px solid rgba(191,160,90,0.15);
-      padding: 2rem 6vw;
+      border-top: 1px solid rgba(191,160,90,0.12);
+      padding: 2rem 8vw;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 1100px;
-      margin: 0 auto;
       flex-wrap: wrap;
       gap: 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
-    .footer-logo {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1rem;
+    .footer-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
       color: var(--cream-dim);
-      letter-spacing: 0.05em;
     }
 
     .footer-link {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       letter-spacing: 0.15em;
       color: var(--gold);
       text-decoration: none;
@@ -495,191 +535,199 @@
 
   <!-- HERO -->
   <div class="hero">
-    <img class="hero-img" src="niia-4.jpg" alt="Dr. Niia Bishop on Gyrotonic Pulley Tower">
+    <div class="hero-bg"></div>
     <div class="hero-gradient"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">Gyrotonic Certified Trainer &nbsp;·&nbsp; Columbia, SC</p>
-      <h1 class="hero-name">Dr. Nicole<br><em>Bishop</em></h1>
-      <p class="hero-tagline">Educator. Movement practitioner. Digital archivist. Musician.<br>
-      Building the next chapter of Gyrotonic — one layer at a time.</p>
+      <p class="hero-eyebrow">Gyrotonic Certified &nbsp;·&nbsp; Columbia, SC &nbsp;·&nbsp; betterwithniia.com</p>
+      <h1 class="hero-name">
+        Dr. Nicole
+        <em>Bishop</em>
+      </h1>
+      <p class="hero-sub">Educator. Movement practitioner.<br>Digital archivist. Musician.<br>Building the next chapter of Gyrotonic — one layer at a time.</p>
     </div>
-    <p class="hero-scroll">Scroll</p>
   </div>
 
-  <!-- WHO SHE IS -->
-  <section>
-    <p class="section-label">Background</p>
-    <div class="bio-grid">
+  <!-- BIO -->
+  <div class="bio-wrap">
+    <div class="bio-bg"></div>
+    <div class="bio-inner">
       <div>
-        <h2>Where <em>education</em> meets embodiment</h2>
-        <p>Dr. Nicole Bishop holds a Ph.D. from the University of Michigan and has spent her career at the intersection of rigorous academic training and embodied practice. A certified Gyrotonic instructor trained under Justine, she brings the same depth she applies to scholarship to every movement session she teaches.</p>
-        <p>She founded <em>Get Better with Niia</em> in Columbia, SC — a studio and digital platform built around the belief that movement intelligence can be taught, archived, and shared in ways the field hasn't yet explored.</p>
-        <div class="creds">
-          <span class="cred-tag">Ph.D., University of Michigan</span>
-          <span class="cred-tag">Gyrotonic Certified</span>
-          <span class="cred-tag">69+ Teaching Hours Logged</span>
-          <span class="cred-tag">Columbia, SC Studio</span>
+        <p class="label">Background</p>
+        <h2>Where <em>education</em><br>meets embodiment</h2>
+        <p class="body">Dr. Nicole Bishop holds a Ph.D. from the University of Michigan and has built her career at the intersection of rigorous academic training and embodied practice. Certified in Gyrotonic under Justine, she brings the same depth she applies to scholarship to every movement session she teaches.</p>
+        <p class="body">She founded Get Better with Niia in Columbia, SC — a studio and digital platform built around the belief that movement intelligence can be taught, archived, and shared in ways the field hasn't yet fully explored.</p>
+        <div class="tags">
+          <span class="tag">Ph.D. — University of Michigan</span>
+          <span class="tag">Gyrotonic Certified</span>
+          <span class="tag">69+ Teaching Hours</span>
+          <span class="tag">Columbia, SC</span>
         </div>
       </div>
-      <div class="bio-stats">
+      <div class="stats">
         <div class="stat">
-          <div class="stat-number">69</div>
-          <div class="stat-label">Practice hours logged<br>April 2024 – Feb 2026</div>
+          <div class="stat-num">69</div>
+          <div class="stat-lbl">Practice hours logged<br>April 2024 – Feb 2026</div>
         </div>
         <div class="stat">
-          <div class="stat-number">7</div>
-          <div class="stat-label">Full progressions<br>documented in digital archive</div>
+          <div class="stat-num">7</div>
+          <div class="stat-lbl">Full progressions<br>documented in digital archive</div>
         </div>
         <div class="stat">
-          <div class="stat-number">7+</div>
-          <div class="stat-label">Original music tracks<br>composed for Gyrotonic movement</div>
+          <div class="stat-num">12+</div>
+          <div class="stat-lbl">Original tracks composed<br>for movement practice</div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <div class="divider"></div>
+  <div class="rule"></div>
 
-  <!-- DIGITAL WORK -->
-  <section>
-    <p class="section-label">The Digital Work</p>
+  <!-- IMAGE BREAK 1 -->
+  <div class="img-break" style="background-image:url('pitch-assets/photos/bg_single.png'); background-position: center 30%;"></div>
+
+  <!-- TOOLS -->
+  <div class="tools-wrap">
+    <p class="label">The Digital Work</p>
     <h2>A living archive<br>of the <em>method</em></h2>
-    <p>Before anyone asked her to, Dr. Bishop built a digital archive of the full Gyrotonic method — a searchable lookup tool and a styled teaching document spanning all seven series and seven progressions. These weren't class notes. They were built to last.</p>
+    <p class="body">Before anyone asked her to, Dr. Bishop built a digital archive of the full Gyrotonic method — a searchable lookup tool and a styled teaching document spanning all seven series and all seven progressions. These weren't class notes. They were built to last.</p>
 
     <div class="tools-grid">
       <a class="tool-card" href="manual.html" target="_blank">
-        <span class="tool-num">01</span>
+        <span class="tool-n">01</span>
         <div class="tool-title">Exercise Lookup</div>
-        <p class="tool-desc">Fuzzy-search index of every exercise in the Gyrotonic curriculum — by series, progression, and keyword. Built in JavaScript with Levenshtein distance matching and phonetic stemming.</p>
-        <span class="tool-link">Open Lookup →</span>
+        <p class="tool-desc">Fuzzy-search index of every exercise in the Gyrotonic curriculum — by series, progression, and keyword. JavaScript-built with Levenshtein distance matching and phonetic stemming.</p>
+        <span class="tool-arrow">Open Lookup →</span>
       </a>
       <a class="tool-card" href="emanual.html" target="_blank">
-        <span class="tool-num">02</span>
+        <span class="tool-n">02</span>
         <div class="tool-title">Teaching eManual</div>
-        <p class="tool-desc">A fully styled digital teaching reference covering Foundation Steps through Progression 7 — with source page citations, exercise grids, vocabulary, and the suppling principles. Print-ready and mobile-friendly.</p>
-        <span class="tool-link">Open eManual →</span>
+        <p class="tool-desc">Fully styled digital reference covering Foundation Steps through Progression 7 — exercise grids, vocabulary, suppling principles, source citations. Print-ready.</p>
+        <span class="tool-arrow">Open eManual →</span>
       </a>
     </div>
-  </section>
+  </div>
 
-  <div class="divider"></div>
+  <div class="rule"></div>
 
   <!-- MUSIC -->
-  <div class="music-section">
+  <div class="music-wrap">
+    <div class="music-bg"></div>
     <div class="music-inner">
-      <p class="section-label">Music for Movement</p>
-      <h2>Original tracks composed<br>for <em>Gyrotonic</em> practice</h2>
-      <p>During certification, Dr. Bishop listened, recorded, and then composed — original tracks built around the rhythms and breath of the Gyrotonic method. Some are pure energy. Some hold space. All of them move.</p>
+      <p class="label">Music for Movement</p>
+      <h2>Original tracks<br><em>composed for practice</em></h2>
+      <p class="body">During certification, Dr. Bishop listened, recorded, and then composed — building original tracks around the rhythms and breath of Gyrotonic movement. Some carry energy. Some hold space. All of them move.</p>
 
-      <div class="track-list" id="trackList"></div>
+      <div class="track-grid" id="trackList"></div>
       <div class="player-bar" id="playerBar">
-        <div class="player-now" id="playerNow"></div>
-        <audio id="audioPlayer" controls preload="none"></audio>
+        <div class="now-playing" id="nowPlaying"></div>
+        <audio id="audioEl" controls preload="none"></audio>
       </div>
     </div>
   </div>
 
-  <div class="divider"></div>
+  <div class="rule"></div>
+
+  <!-- IMAGE MOSAIC -->
+  <div class="mosaic">
+    <img class="mosaic-img tall" src="pitch-assets/photos/bg_logo_black.png" alt="">
+    <img class="mosaic-img" src="pitch-assets/photos/bg_sc_living.png" alt="">
+    <img class="mosaic-img" src="pitch-assets/photos/bg_62j.png" alt="">
+    <img class="mosaic-img" src="pitch-assets/photos/bg_NZj.png" alt="">
+    <img class="mosaic-img" src="pitch-assets/photos/bg_Pi1.png" alt="">
+  </div>
+
+  <div class="rule"></div>
 
   <!-- VISION -->
-  <section>
-    <p class="section-label">The Invitation</p>
-    <h2>A new chapter <em>deserves</em><br>new infrastructure</h2>
+  <div class="vision-wrap">
+    <div class="vision-bg"></div>
+    <div class="vision-inner">
+      <p class="label">The Invitation</p>
+      <h2>A new chapter<br><em>deserves new infrastructure</em></h2>
 
-    <blockquote class="vision-quote">
-      "The method is extraordinary. What it doesn't yet have is a digital presence that matches its depth. I've started building that — the archive, the tools, the music. I'd love to build it with you."
-    </blockquote>
+      <blockquote>"The method is extraordinary. What it doesn't yet have is a digital presence that matches its depth. I've started building that — the archive, the tools, the music. I'd love to build it with you."</blockquote>
 
-    <p>When a new chapter opens for Gyrotonic, the question isn't just who teaches it — it's who shapes how it's understood, accessed, and transmitted. Dr. Bishop's background in education, her certification training, and her instinct toward documentation and artistry position her uniquely to contribute to exactly that work.</p>
-
-    <p>The tools already exist. The music already exists. The credential is earned. The question is what we build together next.</p>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- PHOTO STRIP -->
-  <div style="max-width:1100px;margin:0 auto;padding:0 6vw 2rem;">
-    <div class="photo-strip">
-      <img src="niia-5.jpg" alt="">
-      <img src="niia-6.jpg" alt="">
-      <img src="niia-7.jpg" alt="">
+      <p class="body">When a new chapter opens for Gyrotonic, the question isn't just who teaches it — it's who shapes how it's understood, accessed, and passed on. Dr. Bishop's background in education, her certification training, and her instinct toward documentation and artistry position her uniquely to contribute to exactly that work.</p>
+      <p class="body">The tools already exist. The music already exists. The credential is earned. The question is what we build together next.</p>
     </div>
   </div>
 
+  <div class="rule"></div>
+
   <!-- CTA -->
-  <div class="cta-section">
+  <div class="cta-wrap">
     <h2>Let's <em>connect</em></h2>
-    <p>If you're shaping where Gyrotonic goes next — in curriculum, technology, or community — I want to be part of that conversation.</p>
-    <a class="cta-btn" href="mailto:bishop.niia@gmail.com?subject=Gyrotonic%20Collaboration">Get in Touch</a>
+    <p class="body">If you're shaping where Gyrotonic goes next — in curriculum, technology, or community — I want to be part of that conversation.</p>
+    <a class="btn" href="mailto:bishop.niia@gmail.com?subject=Gyrotonic%20Collaboration">Get in Touch</a>
   </div>
 
   <!-- FOOTER -->
   <footer>
-    <span class="footer-logo">Get Better with Niia · betterwithniia.com</span>
+    <span class="footer-name">Get Better with Niia &nbsp;·&nbsp; betterwithniia.com</span>
     <a class="footer-link" href="index.html">← Back to Site</a>
   </footer>
 
   <script>
     const tracks = [
-      { name: 'GYROTIME',      file: 'pitch-assets/music-mp3/GYROTIME.mp3' },
-      { name: 'GYROTIME II',   file: 'pitch-assets/music-mp3/GYROTIME-2.mp3' },
-      { name: 'GYRO MOOD',     file: 'pitch-assets/music-mp3/GYRO MOOD.mp3' },
-      { name: 'GO TIME',       file: 'pitch-assets/music-mp3/Go time gyro.mp3' },
-      { name: 'GO TIME II',    file: 'pitch-assets/music-mp3/Go time gyro-2.mp3' },
-      { name: '110 BPM',       file: 'pitch-assets/music-mp3/110 bpm gyro.mp3' },
-      { name: '120 BPM',       file: 'pitch-assets/music-mp3/120 bpm gyro.mp3' },
+      { name: 'Gyrotime',                file: 'pitch-assets/music-mp3/GYROTIME.mp3',                       tag: 'gyro' },
+      { name: 'Gyrotime II',             file: 'pitch-assets/music-mp3/GYROTIME-2.mp3',                     tag: 'gyro' },
+      { name: 'Gyro Mood',               file: 'pitch-assets/music-mp3/GYRO MOOD.mp3',                      tag: 'gyro' },
+      { name: 'Go Time',                 file: 'pitch-assets/music-mp3/Go time gyro.mp3',                   tag: 'gyro' },
+      { name: 'Go Time II',              file: 'pitch-assets/music-mp3/Go time gyro-2.mp3',                 tag: 'gyro' },
+      { name: '110 BPM',                 file: 'pitch-assets/music-mp3/110 bpm gyro.mp3',                   tag: 'gyro' },
+      { name: '120 BPM',                 file: 'pitch-assets/music-mp3/120 bpm gyro.mp3',                   tag: 'gyro' },
+      { name: 'Sweet',                   file: 'pitch-assets/music-mp3/sweet.mp3',                          tag: '' },
+      { name: 'This Is Meant to Be',     file: 'pitch-assets/music-mp3/this-is-meant-to-be.mp3',            tag: '' },
+      { name: 'PJs in My PJ',           file: 'pitch-assets/music-mp3/PJs in My PJ (808 Trap Earworm Remix).mp3', tag: '' },
+      { name: 'The Soapiest of Operas',  file: 'pitch-assets/music-mp3/The Soapiest of Operas.mp3',         tag: '' },
+      { name: '……',                     file: 'pitch-assets/music-mp3/…..mp3',                              tag: '' },
     ];
 
-    const audio = document.getElementById('audioPlayer');
-    const playerBar = document.getElementById('playerBar');
-    const playerNow = document.getElementById('playerNow');
-    const trackList = document.getElementById('trackList');
-    let currentIdx = -1;
+    const audio   = document.getElementById('audioEl');
+    const bar     = document.getElementById('playerBar');
+    const nowEl   = document.getElementById('nowPlaying');
+    const list    = document.getElementById('trackList');
+    let current   = -1;
 
     tracks.forEach((t, i) => {
       const row = document.createElement('div');
       row.className = 'track';
       row.innerHTML = `
-        <button class="track-play" aria-label="Play ${t.name}">▶</button>
+        <button class="play-btn" aria-label="Play ${t.name}">▶</button>
         <span class="track-name">${t.name}</span>
+        ${t.tag === 'gyro' ? '<span class="track-tag">Gyrotonic</span>' : ''}
       `;
-      const btn = row.querySelector('.track-play');
-      btn.addEventListener('click', () => playTrack(i, btn));
-      row.addEventListener('click', e => { if (e.target !== btn) playTrack(i, btn); });
-      trackList.appendChild(row);
+      const btn = row.querySelector('.play-btn');
+      const toggle = () => {
+        if (current === i && !audio.paused) {
+          audio.pause();
+          btn.textContent = '▶';
+          btn.classList.remove('playing');
+          row.classList.remove('active');
+          current = -1;
+          return;
+        }
+        // reset all
+        list.querySelectorAll('.play-btn').forEach(b => { b.textContent = '▶'; b.classList.remove('playing'); });
+        list.querySelectorAll('.track').forEach(r => r.classList.remove('active'));
+        current = i;
+        audio.src = t.file;
+        audio.play();
+        btn.textContent = '⏸';
+        btn.classList.add('playing');
+        row.classList.add('active');
+        nowEl.textContent = 'Now Playing: ' + t.name;
+        bar.classList.add('on');
+      };
+      btn.addEventListener('click', e => { e.stopPropagation(); toggle(); });
+      row.addEventListener('click', toggle);
+      list.appendChild(row);
     });
 
-    function playTrack(i, btn) {
-      // Reset all
-      document.querySelectorAll('.track-play').forEach(b => {
-        b.textContent = '▶';
-        b.classList.remove('playing');
-      });
-      document.querySelectorAll('.track').forEach(r => r.classList.remove('active'));
-
-      if (currentIdx === i && !audio.paused) {
-        audio.pause();
-        currentIdx = -1;
-        return;
-      }
-
-      currentIdx = i;
-      audio.src = tracks[i].file;
-      audio.play();
-      btn.textContent = '⏸';
-      btn.classList.add('playing');
-      btn.closest('.track').classList.add('active');
-      playerNow.textContent = 'Now Playing: ' + tracks[i].name;
-      playerBar.classList.add('visible');
-    }
-
     audio.addEventListener('ended', () => {
-      document.querySelectorAll('.track-play').forEach(b => {
-        b.textContent = '▶';
-        b.classList.remove('playing');
-      });
-      document.querySelectorAll('.track').forEach(r => r.classList.remove('active'));
-      currentIdx = -1;
+      list.querySelectorAll('.play-btn').forEach(b => { b.textContent = '▶'; b.classList.remove('playing'); });
+      list.querySelectorAll('.track').forEach(r => r.classList.remove('active'));
+      current = -1;
     });
   </script>
 </body>

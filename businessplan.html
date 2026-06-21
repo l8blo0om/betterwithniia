@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Better with Niia — Business Plan 2026</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1E3870;
+      --navy-deep: #0e1c3a;
+      --cream: #F7F4EF;
+      --cream-mid: #ede8df;
+      --gold: #BFA05A;
+      --gold-light: #d4b877;
+      --text: #1a1a2e;
+      --text-mid: #3a3a52;
+    }
+
+    @page {
+      size: letter portrait;
+      margin: 0.75in 0.85in;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 400;
+      font-size: 10.5pt;
+      color: var(--text);
+      background: white;
+      line-height: 1.65;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    /* ── COVER PAGE ───────────────────────────────────── */
+    .cover {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 4rem 3rem 3rem;
+      background: var(--navy-deep);
+      color: var(--cream);
+      page-break-after: always;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(to right, var(--gold), var(--gold-light), var(--gold));
+    }
+
+    .cover-top { }
+
+    .cover-logo {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 11pt;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4rem;
+    }
+
+    .cover-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 54pt;
+      font-weight: 300;
+      line-height: 1.0;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+
+    .cover-title em {
+      font-style: italic;
+      color: var(--gold-light);
+      display: block;
+    }
+
+    .cover-sub {
+      font-size: 13pt;
+      font-weight: 300;
+      color: var(--cream);
+      letter-spacing: 0.05em;
+      margin-top: 1rem;
+      opacity: 0.8;
+    }
+
+    .cover-rule {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      margin: 2rem 0;
+      opacity: 0.6;
+    }
+
+    .cover-bottom {
+      border-top: 1px solid rgba(191,160,90,0.25);
+      padding-top: 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .cover-meta-label {
+      font-size: 7pt;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+
+    .cover-meta-val {
+      font-size: 9.5pt;
+      color: var(--cream);
+      font-weight: 300;
+    }
+
+    /* ── SCREEN TOOLBAR ───────────────────────────────── */
+    .toolbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: var(--navy-deep);
+      color: var(--cream);
+      padding: 0.75rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+      border-bottom: 1px solid rgba(191,160,90,0.2);
+    }
+
+    .toolbar-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--gold);
+    }
+
+    .print-btn {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 0.4rem 1.2rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+    .print-btn:hover { background: var(--gold); color: var(--navy-deep); }
+
+    @media print { .toolbar { display: none; } }
+
+    /* ── DOCUMENT BODY ────────────────────────────────── */
+    .doc {
+      padding: 5.5rem 3rem 3rem;
+    }
+
+    @media print { .doc { padding: 0; } }
+
+    /* ── SECTION HEADERS ──────────────────────────────── */
+    .section-break {
+      page-break-before: always;
+      margin-top: 0;
+      padding-top: 2rem;
+    }
+
+    .section-num {
+      font-size: 7.5pt;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 26pt;
+      font-weight: 300;
+      color: var(--navy-deep);
+      line-height: 1.15;
+      margin-bottom: 0.3rem;
+    }
+    h1 em { font-style: italic; color: var(--navy); }
+
+    h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 17pt;
+      font-weight: 400;
+      color: var(--navy-deep);
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 1px solid rgba(30,56,112,0.15);
+    }
+
+    h3 {
+      font-size: 9.5pt;
+      font-weight: 600;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 1.4rem;
+      margin-bottom: 0.35rem;
+    }
+
+    p {
+      margin-bottom: 0.8rem;
+      color: var(--text-mid);
+    }
+
+    .lead {
+      font-size: 11.5pt;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--navy);
+      margin-bottom: 1.25rem;
+      line-height: 1.5;
+    }
+
+    .rule {
+      height: 1px;
+      background: linear-gradient(to right, var(--gold), transparent);
+      opacity: 0.4;
+      margin: 1.5rem 0;
+    }
+
+    /* ── KPI ROW ──────────────────────────────────────── */
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid rgba(30,56,112,0.15);
+      margin: 1.5rem 0;
+    }
+
+    .kpi {
+      padding: 1rem 1.25rem;
+      border-right: 1px solid rgba(30,56,112,0.15);
+    }
+    .kpi:last-child { border-right: none; }
+
+    .kpi-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22pt;
+      font-weight: 300;
+      color: var(--navy-deep);
+      line-height: 1;
+    }
+
+    .kpi-lbl {
+      font-size: 7pt;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      margin-top: 0.2rem;
+    }
+
+    /* ── TABLES ───────────────────────────────────────── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.4rem;
+      font-size: 9.5pt;
+    }
+
+    thead tr {
+      background: var(--navy-deep);
+      color: var(--cream);
+    }
+
+    thead th {
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+      font-weight: 500;
+      font-size: 8pt;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    tbody tr:nth-child(even) { background: rgba(30,56,112,0.04); }
+
+    tbody td {
+      padding: 0.45rem 0.75rem;
+      border-bottom: 1px solid rgba(30,56,112,0.08);
+      color: var(--text-mid);
+    }
+
+    tbody td:first-child { font-weight: 500; color: var(--text); }
+
+    tfoot td {
+      padding: 0.5rem 0.75rem;
+      font-weight: 600;
+      font-size: 9.5pt;
+      color: var(--navy-deep);
+      border-top: 2px solid var(--navy-deep);
+      background: rgba(191,160,90,0.08);
+    }
+
+    /* ── CALLOUT ──────────────────────────────────────── */
+    .callout {
+      border-left: 3px solid var(--gold);
+      background: rgba(191,160,90,0.06);
+      padding: 0.9rem 1.25rem;
+      margin: 1.2rem 0;
+    }
+
+    .callout p { margin-bottom: 0; color: var(--text); font-size: 9.5pt; }
+
+    /* ── TWO-COL ──────────────────────────────────────── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    /* ── TIER CARDS ───────────────────────────────────── */
+    .tier-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .tier-card {
+      border: 1px solid rgba(30,56,112,0.2);
+      padding: 1.1rem;
+    }
+
+    .tier-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14pt;
+      color: var(--navy-deep);
+      margin-bottom: 0.15rem;
+    }
+
+    .tier-price {
+      font-size: 19pt;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .tier-price span {
+      font-size: 9pt;
+      color: var(--text-mid);
+    }
+
+    .tier-includes {
+      font-size: 8.5pt;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    .tier-card.featured {
+      background: var(--navy-deep);
+      border-color: var(--navy-deep);
+    }
+    .tier-card.featured .tier-name,
+    .tier-card.featured .tier-price { color: var(--cream); }
+    .tier-card.featured .tier-price span,
+    .tier-card.featured .tier-includes { color: var(--cream-mid); }
+
+    /* ── TIMELINE ─────────────────────────────────────── */
+    .timeline {
+      margin: 1rem 0;
+    }
+
+    .tl-item {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+      align-items: start;
+    }
+
+    .tl-phase {
+      font-size: 7.5pt;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: white;
+      background: var(--navy-deep);
+      padding: 0.25rem 0.5rem;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .tl-content {
+      font-size: 9pt;
+      color: var(--text-mid);
+      padding-top: 0.1rem;
+    }
+
+    .tl-content strong { color: var(--text); }
+
+    /* ── FOOTER ───────────────────────────────────────── */
+    .doc-footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(30,56,112,0.15);
+      display: flex;
+      justify-content: space-between;
+      font-size: 8pt;
+      color: rgba(30,56,112,0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOOLBAR (screen only) -->
+  <div class="toolbar">
+    <span class="toolbar-name">Get Better with Niia — Business Plan 2026</span>
+    <button class="print-btn" onclick="window.print()">Save / Print PDF</button>
+  </div>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-top">
+      <div class="cover-logo">Get Better with Niia</div>
+      <div class="cover-title">
+        Business<br>
+        <em>Plan</em>
+      </div>
+      <div class="cover-sub">Columbia, South Carolina · 2026</div>
+      <div class="cover-rule"></div>
+      <div style="font-size:9.5pt; color:rgba(247,244,239,0.6); max-width:420px; line-height:1.7;">
+        A boutique holistic wellness studio offering Gyrotonic method training, Pilates, yoga, life coaching, and digital wellness programming — the only dedicated Gyrotonic center in the Columbia metro.
+      </div>
+    </div>
+    <div class="cover-bottom">
+      <div>
+        <div class="cover-meta-label">Founder</div>
+        <div class="cover-meta-val">Dr. Nicole Bishop, Ph.D.</div>
+      </div>
+      <div>
+        <div class="cover-meta-label">Location</div>
+        <div class="cover-meta-val">Columbia, SC</div>
+      </div>
+      <div>
+        <div class="cover-meta-label">Prepared</div>
+        <div class="cover-meta-val">June 2026</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DOCUMENT BODY -->
+  <div class="doc">
+
+    <!-- EXECUTIVE SUMMARY -->
+    <span class="section-num">Section 01</span>
+    <h1>Executive <em>Summary</em></h1>
+
+    <p class="lead">Get Better with Niia is the only dedicated Gyrotonic training center in Columbia, SC — positioned at the intersection of movement science, academic rigor, and holistic wellness.</p>
+
+    <p>Founded and led by Dr. Nicole Bishop, Ph.D. — a University of Michigan–trained educator and certified Gyrotonic instructor — the studio serves a Columbia metro market of 830,000 that currently has no dedicated Gyrotonic offering. This scarcity is the studio's primary pricing and positioning advantage.</p>
+
+    <p>Services include Gyrotonic method training, Reformer and mat Pilates, yoga, life coaching, meditation, and a digital wellness platform already live at betterwithniia.com — including an interactive exercise archive spanning the full Gyrotonic curriculum.</p>
+
+    <div class="kpi-row">
+      <div class="kpi">
+        <div class="kpi-val">$185K</div>
+        <div class="kpi-lbl">Startup Costs</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-val">$326K</div>
+        <div class="kpi-lbl">Year 1 Revenue</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-val">Mo. 14</div>
+        <div class="kpi-lbl">Break-Even</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-val">$490K</div>
+        <div class="kpi-lbl">Year 2 Revenue</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><strong>Competitive position:</strong> Fewer than 3 certified Gyrotonic studios operate statewide in South Carolina. None are exclusively positioned as a Gyrotonic center in the Columbia metro. Get Better with Niia enters as the category-defining studio.</p>
+    </div>
+
+    <div class="rule"></div>
+
+    <!-- MARKET ANALYSIS -->
+    <div class="section-break">
+      <span class="section-num">Section 02</span>
+      <h1>Market <em>Analysis</em></h1>
+
+      <p class="lead">Columbia is a mid-sized capital city with demographics uniquely suited for a premium movement studio: a major university, a large military installation, a growing healthcare sector, and a stable professional class.</p>
+
+      <h2>Columbia, SC Overview</h2>
+
+      <div class="two-col">
+        <div>
+          <h3>Demographics</h3>
+          <table>
+            <tbody>
+              <tr><td>City population</td><td>136,000+</td></tr>
+              <tr><td>Metro (Midlands)</td><td>830,000+</td></tr>
+              <tr><td>USC enrollment</td><td>35,000+</td></tr>
+              <tr><td>Median household income</td><td>~$52,000</td></tr>
+              <tr><td>Population growth rate</td><td>+1.8% annually</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h3>Key Demand Drivers</h3>
+          <p style="font-size:9pt;">
+            <strong>Fort Jackson</strong> — largest U.S. Army training installation; consistent population of service members and families seeking injury recovery and preventive care.<br><br>
+            <strong>USC community</strong> — faculty, staff, and graduate students with awareness of body-based practice and access to wellness benefits.<br><br>
+            <strong>Healthcare workforce</strong> — Prisma Health, MUSC Health, VA — professionals with income and motivation to invest in preventive wellness.
+          </p>
+        </div>
+      </div>
+
+      <h2>The Gyrotonic Opportunity</h2>
+      <p>Gyrotonic instruction requires certified trainers and specialized equipment — barriers that most studios cannot clear. In Columbia, no studio has cleared them. Get Better with Niia's certification and equipment represent a durable competitive moat.</p>
+
+      <h3>Regional Pricing Comparison</h3>
+      <table>
+        <thead>
+          <tr><th>Market</th><th>Private Session</th><th>Small Group</th><th>Source</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Charlotte, NC</td><td>$100–$145</td><td>$65–$85</td><td>Regional survey</td></tr>
+          <tr><td>Atlanta, GA</td><td>$110–$160</td><td>$70–$95</td><td>Regional survey</td></tr>
+          <tr><td>Raleigh, NC</td><td>$95–$135</td><td>$60–$80</td><td>Regional survey</td></tr>
+          <tr style="background:rgba(191,160,90,0.1);"><td><strong>Get Better with Niia</strong></td><td><strong>$95–$125</strong></td><td><strong>$60–$75</strong></td><td>Proposed</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:8.5pt; color:#666;">Priced at the lower end of regional ranges to build volume quickly while retaining premium local positioning. No local Gyrotonic competitor to undercut.</p>
+
+      <h2>Target Client Segments</h2>
+      <div class="two-col">
+        <div>
+          <h3>Primary</h3>
+          <p style="font-size:9pt;"><strong>Active professionals (30–55)</strong> seeking intelligent movement, not just fitness. Budget and motivation to invest in premium sessions.</p>
+          <p style="font-size:9pt;"><strong>Post-PT recovery clients</strong> — physicians and physical therapists refer patients to Gyrotonic specifically for its joint-safe, three-dimensional movement approach.</p>
+          <p style="font-size:9pt;"><strong>Seniors (55+)</strong> — Gyrotonic's spinal mobility and joint decompression work is unmatched for this demographic. Word-of-mouth spreads fast in this group.</p>
+        </div>
+        <div>
+          <h3>Secondary</h3>
+          <p style="font-size:9pt;"><strong>USC faculty and grad students</strong> — university community with fitness benefits, wellness literacy, and flexible schedules.</p>
+          <p style="font-size:9pt;"><strong>Fort Jackson community</strong> — service members and spouses, motivated and physically oriented, seeking movement that addresses overuse and impact injuries.</p>
+          <p style="font-size:9pt;"><strong>Pilates/yoga crossover clients</strong> — existing practitioners ready to progress; natural path to Gyrotonic via the studio's group class offerings.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <!-- SERVICES & PRICING -->
+    <div class="section-break">
+      <span class="section-num">Section 03</span>
+      <h1>Services <em>&amp; Pricing</em></h1>
+
+      <h2>Core Services</h2>
+
+      <table>
+        <thead>
+          <tr><th>Service</th><th>Format</th><th>Price</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Gyrotonic — Private Session</td><td>55 min, 1:1</td><td>$110</td></tr>
+          <tr><td>Gyrotonic — Duet</td><td>55 min, 2 people</td><td>$75/person</td></tr>
+          <tr><td>Gyrotonic — Intro Series</td><td>3 private sessions</td><td>$285 (saves $45)</td></tr>
+          <tr><td>Pilates — Private Session</td><td>55 min, Reformer</td><td>$85</td></tr>
+          <tr><td>Pilates — Small Group</td><td>50 min, 3–5 people</td><td>$35/person</td></tr>
+          <tr><td>Pilates / Yoga — Mat Class</td><td>Drop-in</td><td>$20–$22</td></tr>
+          <tr><td>Life &amp; Wellness Coaching</td><td>50 min, 1:1</td><td>$110</td></tr>
+          <tr><td>Coaching — Intake</td><td>75 min</td><td>$150</td></tr>
+          <tr><td>Coaching — Package</td><td>6 sessions</td><td>$595</td></tr>
+          <tr><td>Meditation / Sound Session</td><td>Group</td><td>$25</td></tr>
+          <tr><td>Online Gyrotonic Orientation</td><td>Self-paced digital</td><td>$49</td></tr>
+          <tr><td>Live Virtual Session</td><td>Zoom, 50 min</td><td>$75</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Membership Tiers</h2>
+      <div class="tier-grid">
+        <div class="tier-card">
+          <div class="tier-name">Movement</div>
+          <div class="tier-price">$129 <span>/month</span></div>
+          <div class="tier-includes">Unlimited mat Pilates + yoga classes. Best for clients building a movement foundation.</div>
+        </div>
+        <div class="tier-card featured">
+          <div class="tier-name">Method</div>
+          <div class="tier-price">$249 <span>/month</span></div>
+          <div class="tier-includes">2 Gyrotonic private sessions + unlimited group classes. Most popular. Saves $71 vs. à la carte.</div>
+        </div>
+        <div class="tier-card">
+          <div class="tier-name">Wholistic</div>
+          <div class="tier-price">$399 <span>/month</span></div>
+          <div class="tier-includes">4 Gyrotonic private sessions + unlimited group + 1 coaching session. Full integration package.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <!-- COMPETITIVE ADVANTAGE -->
+    <div class="section-break">
+      <span class="section-num">Section 04</span>
+      <h1>Competitive <em>Advantage</em></h1>
+
+      <div class="callout">
+        <p><strong>No direct Gyrotonic competitor exists in Columbia.</strong> The method requires a certified instructor and a Gyrotonic Pulley Tower ($12,000–$15,000). These barriers protect the position for years, not months.</p>
+      </div>
+
+      <h3>1. Category Ownership</h3>
+      <p>Get Better with Niia will be the first name Columbia associates with Gyrotonic training. Category-first positioning is the most durable competitive advantage in boutique fitness — and the only studio that can hold it here is the one that opens first with full certification.</p>
+
+      <h3>2. Founder Credentials</h3>
+      <p>A Ph.D. from the University of Michigan combined with Gyrotonic certification signals a level of rigor most boutique studio operators cannot match. Dr. Bishop's academic background in education directly informs curriculum design, instructor development, and client communication — advantages that show in the quality of the work, not just on a website.</p>
+
+      <h3>3. Digital Infrastructure — Already Built</h3>
+      <p>betterwithniia.com hosts an interactive exercise lookup and styled teaching eManual spanning the full Gyrotonic curriculum — Foundation Steps through Progression 7. No competitor in Columbia has anything close to this. These tools convert online discovery to in-person clients and position the studio as a knowledge authority.</p>
+
+      <h3>4. Original Music for Practice</h3>
+      <p>Dr. Bishop has composed original movement soundtracks used in Gyrotonic sessions — creating a studio atmosphere and brand experience that cannot be replicated. This is not a marketing detail; it is a differentiating sensory layer of the client experience.</p>
+
+      <h3>5. Post-PT Referral Pipeline</h3>
+      <p>Gyrotonic is explicitly recommended by physical therapists for clients transitioning out of rehabilitation. Building early relationships with Prisma Health, MUSC Health, and VA physical therapy departments creates a referral pipeline that compounds over time.</p>
+    </div>
+
+    <div class="rule"></div>
+
+    <!-- MARKETING -->
+    <div class="section-break">
+      <span class="section-num">Section 05</span>
+      <h1>Marketing <em>Strategy</em></h1>
+
+      <p class="lead">The goal of Year 1 marketing is to own the phrase "Gyrotonic Columbia" — in search, on social, and in the minds of every physical therapist, trainer, and wellness-curious professional in the city.</p>
+
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-phase">Phase 1<br>Months 1–3</div>
+          <div class="tl-content">
+            <strong>Launch campaign.</strong> Introductory Gyrotonic session at $55 (limit 50). Press outreach to <em>Free Times</em>, <em>Columbia Metropolitan</em>, <em>SC Living</em>, and USC wellness channels. Instagram + TikTok content centered on "what is Gyrotonic?" education. Referral bonus: one free session per new member referred.
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-phase">Phase 2<br>Months 4–12</div>
+          <div class="tl-content">
+            <strong>Corporate and institutional partnerships.</strong> Pitch wellness contracts to USC HR, Fort Jackson family programming, and Prisma/MUSC employee benefit programs. Workshop series: Gyrotonic for runners, Gyrotonic for spinal health, Gyrotonic for seniors. Begin SEO strategy to capture "Gyrotonic Columbia SC" search terms.
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-phase">Phase 3<br>Year 2+</div>
+          <div class="tl-content">
+            <strong>Regional authority positioning.</strong> Launch Gyrotonic teacher training prep program — positions Dr. Bishop as the regional certification resource for SC-area instructors. Expand digital membership with live-streamed classes. Press campaign targeting regional wellness and lifestyle publications.
+          </div>
+        </div>
+      </div>
+
+      <h3>Digital Strategy</h3>
+      <p>betterwithniia.com is already live with full SEO structure. Content strategy focuses on Gyrotonic education — a topic with national search volume and no strong local Columbia competitors. Each educational post builds organic search authority and drives session bookings.</p>
+    </div>
+
+    <div class="rule"></div>
+
+    <!-- FINANCIAL PLAN -->
+    <div class="section-break">
+      <span class="section-num">Section 06</span>
+      <h1>Financial <em>Plan</em></h1>
+
+      <h2>Startup Costs</h2>
+      <table>
+        <thead><tr><th>Item</th><th>Estimated Cost</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Gyrotonic Pulley Tower (1 unit)</td><td>$14,000</td><td>New; used available ~$8K</td></tr>
+          <tr><td>Pilates Reformers (2 units)</td><td>$10,000</td><td>Balanced Body or equivalent</td></tr>
+          <tr><td>Studio build-out / flooring / mirrors</td><td>$40,000</td><td>Assumes raw commercial space</td></tr>
+          <tr><td>Rent deposit + first 3 months</td><td>$18,000</td><td>~$2,000/mo, 1,800–2,200 sq ft</td></tr>
+          <tr><td>Scheduling &amp; payment software</td><td>$2,000</td><td>Mindbody or Pike13, annual</td></tr>
+          <tr><td>Digital platform (already live)</td><td>$1,000</td><td>Ongoing hosting + domain</td></tr>
+          <tr><td>Launch marketing campaign</td><td>$12,000</td><td>Social ads, print, events</td></tr>
+          <tr><td>Insurance (liability + property)</td><td>$4,000</td><td>Annual</td></tr>
+          <tr><td>Miscellaneous / contingency</td><td>$12,000</td><td>10% buffer</td></tr>
+          <tr><td>Working capital (6 months)</td><td>$72,000</td><td>Operations before break-even</td></tr>
+        </tbody>
+        <tfoot><tr><td>Total Startup</td><td>~$185,000</td><td></td></tr></tfoot>
+      </table>
+
+      <h2>Year 1 Revenue Projections</h2>
+      <table>
+        <thead><tr><th>Revenue Stream</th><th>Monthly Avg</th><th>Annual</th></tr></thead>
+        <tbody>
+          <tr><td>Gyrotonic private sessions</td><td>$8,800</td><td>$105,600</td></tr>
+          <tr><td>Gyrotonic duets</td><td>$2,400</td><td>$28,800</td></tr>
+          <tr><td>Pilates group classes</td><td>$3,500</td><td>$42,000</td></tr>
+          <tr><td>Private Pilates / yoga</td><td>$2,200</td><td>$26,400</td></tr>
+          <tr><td>Life coaching sessions</td><td>$2,750</td><td>$33,000</td></tr>
+          <tr><td>Memberships (avg 35 active)</td><td>$3,500</td><td>$42,000</td></tr>
+          <tr><td>Workshops &amp; events</td><td>$1,500</td><td>$18,000</td></tr>
+          <tr><td>Digital programming</td><td>$500</td><td>$6,000</td></tr>
+          <tr><td>Corporate contracts</td><td>$2,000</td><td>$24,000</td></tr>
+        </tbody>
+        <tfoot><tr><td>Total Year 1</td><td>~$27,150</td><td>~$325,800</td></tr></tfoot>
+      </table>
+
+      <h2>Year 2 Projection: $490,000</h2>
+      <p>Driven by: second Gyrotonic tower, second certified instructor, expanded corporate contracts, digital membership growth, and regional press coverage establishing Dr. Bishop as the Gyrotonic authority in South Carolina.</p>
+
+      <h3>Break-Even Analysis</h3>
+      <table>
+        <thead><tr><th>Cost Category</th><th>Monthly</th></tr></thead>
+        <tbody>
+          <tr><td>Rent</td><td>$2,000</td></tr>
+          <tr><td>Staffing (part-time instructor + front desk)</td><td>$5,500</td></tr>
+          <tr><td>Loan service</td><td>$3,800</td></tr>
+          <tr><td>Software + subscriptions</td><td>$500</td></tr>
+          <tr><td>Insurance (monthly)</td><td>$350</td></tr>
+          <tr><td>Marketing (ongoing)</td><td>$1,200</td></tr>
+          <tr><td>Utilities + misc</td><td>$800</td></tr>
+        </tbody>
+        <tfoot><tr><td>Break-Even Revenue Needed</td><td>~$14,150/month</td></tr></tfoot>
+      </table>
+      <p style="font-size:9pt; margin-top:0.5rem;">At projected session volume, break-even is reached at <strong>Month 13–14</strong>. Conservative assumption: 80 Gyrotonic sessions/month at $110 average plus group class revenue.</p>
+    </div>
+
+    <div class="rule"></div>
+
+    <!-- OPERATIONS -->
+    <div class="section-break">
+      <span class="section-num">Section 07</span>
+      <h1>Operations <em>&amp; Management</em></h1>
+
+      <h2>Location</h2>
+      <p>Target neighborhoods: Midtown Columbia, Five Points, Forest Acres, or Devine Street corridor — walkable, professional areas with proximity to USC, healthcare facilities, and discretionary-income households. Ideal square footage: 1,800–2,400 sq ft at $18–$22/sq ft annually.</p>
+
+      <h2>Studio Layout</h2>
+      <div class="two-col">
+        <div>
+          <h3>Movement Spaces</h3>
+          <p style="font-size:9pt;"><strong>Gyrotonic zone:</strong> 1 Pulley Tower with clearance (~350 sq ft). Expandable to 2 units in Year 2.<br><br>
+          <strong>Pilates zone:</strong> 2 Reformers + open mat space (~400 sq ft).<br><br>
+          <strong>Multi-use studio:</strong> Yoga, group mat, meditation, and workshops (~500 sq ft, moveable partition).</p>
+        </div>
+        <div>
+          <h3>Support Spaces</h3>
+          <p style="font-size:9pt;"><strong>Coaching office:</strong> Private room for life coaching and intake sessions (~120 sq ft).<br><br>
+          <strong>Reception + retail:</strong> Branded merchandise, wellness books, scheduling desk (~150 sq ft).<br><br>
+          <strong>Changing + amenities:</strong> Two-room changing area, lockers.</p>
+        </div>
+      </div>
+
+      <h2>Technology Stack</h2>
+      <table>
+        <thead><tr><th>Function</th><th>Tool</th></tr></thead>
+        <tbody>
+          <tr><td>Booking &amp; scheduling</td><td>Mindbody or Pike13</td></tr>
+          <tr><td>Payments</td><td>Stripe (integrated)</td></tr>
+          <tr><td>Digital platform</td><td>betterwithniia.com (live)</td></tr>
+          <tr><td>Exercise archive</td><td>Custom JS lookup + eManual (built)</td></tr>
+          <tr><td>Client communication</td><td>Mailchimp + SMS via scheduling platform</td></tr>
+          <tr><td>Social media</td><td>Instagram, TikTok, YouTube Shorts</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Year 1 Staffing</h2>
+      <table>
+        <thead><tr><th>Role</th><th>Type</th><th>Scope</th></tr></thead>
+        <tbody>
+          <tr><td>Dr. Nicole Bishop — Founder</td><td>Full-time owner</td><td>Lead Gyrotonic instructor, coaching, operations, marketing</td></tr>
+          <tr><td>Yoga / mat Pilates instructor</td><td>Contract (10–15 hrs/wk)</td><td>Group classes, occasional privates</td></tr>
+          <tr><td>Front desk / operations</td><td>Part-time (15–20 hrs/wk)</td><td>Scheduling, client check-in, retail</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Founder Profile</h2>
+      <p>Dr. Nicole Bishop, Ph.D. (University of Michigan) is a certified Gyrotonic instructor, educator, and founder of the Get Better with Niia brand. Her academic background in education directly informs how she designs curriculum, communicates with clients, and trains future instructors. She has 69+ logged Gyrotonic teaching hours, a fully built digital curriculum archive, and original movement music composed for her studio sessions.</p>
+
+      <div class="callout">
+        <p>Recommendation: Retain a small-business finance advisor by Q3 Year 1 to oversee bookkeeping, tax structure, and preparation for Year 2 expansion financing.</p>
+      </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <!-- CONCLUSION -->
+    <div>
+      <span class="section-num">Section 08</span>
+      <h1><em>Conclusion</em></h1>
+
+      <p class="lead">Get Better with Niia enters Columbia with the timing, credentials, and infrastructure that most startups cannot assemble in their first year — let alone before opening.</p>
+
+      <p>The Gyrotonic method is extraordinary and essentially absent from this market. The founder is credentialed beyond what boutique studios typically bring. The digital platform is live. The curriculum is documented. The music is made.</p>
+
+      <p>What remains is the physical space and the first clients. Columbia is ready — and there is no one else here to offer this.</p>
+
+      <div class="callout">
+        <p><strong>Next steps:</strong> Secure studio location · Finalize equipment purchase · File LLC and obtain business license · Launch pre-opening email list · Book first 50 intro sessions.</p>
+      </div>
+    </div>
+
+    <div class="doc-footer">
+      <span>Get Better with Niia · betterwithniia.com · bishop.niia@gmail.com</span>
+      <span>Confidential — June 2026</span>
+    </div>
+
+  </div><!-- /doc -->
+
+</body>
+</html>

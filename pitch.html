@@ -669,18 +669,36 @@
 
   <script>
     const tracks = [
-      { name: 'Gyrotime',                file: 'pitch-assets/music-mp3/GYROTIME.mp3',                       tag: 'gyro' },
-      { name: 'Gyrotime II',             file: 'pitch-assets/music-mp3/GYROTIME-2.mp3',                     tag: 'gyro' },
-      { name: 'Gyro Mood',               file: 'pitch-assets/music-mp3/GYRO MOOD.mp3',                      tag: 'gyro' },
-      { name: 'Go Time',                 file: 'pitch-assets/music-mp3/Go time gyro.mp3',                   tag: 'gyro' },
-      { name: 'Go Time II',              file: 'pitch-assets/music-mp3/Go time gyro-2.mp3',                 tag: 'gyro' },
-      { name: '110 BPM',                 file: 'pitch-assets/music-mp3/110 bpm gyro.mp3',                   tag: 'gyro' },
-      { name: '120 BPM',                 file: 'pitch-assets/music-mp3/120 bpm gyro.mp3',                   tag: 'gyro' },
-      { name: 'Sweet',                   file: 'pitch-assets/music-mp3/sweet.mp3',                          tag: '' },
-      { name: 'This Is Meant to Be',     file: 'pitch-assets/music-mp3/this-is-meant-to-be.mp3',            tag: '' },
-      { name: 'PJs in My PJ',           file: 'pitch-assets/music-mp3/PJs in My PJ (808 Trap Earworm Remix).mp3', tag: '' },
-      { name: 'The Soapiest of Operas',  file: 'pitch-assets/music-mp3/The Soapiest of Operas.mp3',         tag: '' },
-      { name: '……',                     file: 'pitch-assets/music-mp3/…..mp3',                              tag: '' },
+      // — Gyrotonic Movement Tracks —
+      { name: 'Gyrotime',                      file: 'pitch-assets/music-mp3/GYROTIME.mp3',                                                    tag: 'gyro' },
+      { name: 'Gyrotime II',                   file: 'pitch-assets/music-mp3/GYROTIME-2.mp3',                                                  tag: 'gyro' },
+      { name: 'Gyro Mood',                     file: 'pitch-assets/music-mp3/GYRO MOOD.mp3',                                                   tag: 'gyro' },
+      { name: 'Go Time',                       file: 'pitch-assets/music-mp3/Go time gyro.mp3',                                               tag: 'gyro' },
+      { name: 'Go Time II',                    file: 'pitch-assets/music-mp3/Go time gyro-2.mp3',                                             tag: 'gyro' },
+      { name: '110 BPM',                       file: 'pitch-assets/music-mp3/110 bpm gyro.mp3',                                               tag: 'gyro' },
+      { name: '120 BPM',                       file: 'pitch-assets/music-mp3/120 bpm gyro.mp3',                                               tag: 'gyro' },
+      { name: 'Legwork Floor',                 file: 'pitch-assets/music-mp3/legwork-floor.mp3',                                              tag: 'gyro' },
+      { name: 'Legwork Floor II',              file: 'pitch-assets/music-mp3/legwork-floor 2.mp3',                                            tag: 'gyro' },
+      { name: 'Legwork Floor III',             file: 'pitch-assets/music-mp3/legwork-floor 3.mp3',                                            tag: 'gyro' },
+      { name: 'Legwork Floor IV',              file: 'pitch-assets/music-mp3/legwork-floor 4.mp3',                                            tag: 'gyro' },
+      { name: 'Legwork Floor (Japanese Vibe)', file: 'pitch-assets/music-mp3/legwork-floor---japanese-vibe.mp3',                              tag: 'gyro' },
+      { name: 'Sciatic',                       file: 'pitch-assets/music-mp3/sciatic.mp3',                                                    tag: 'gyro' },
+      { name: 'Got Heat',                      file: 'pitch-assets/music-mp3/got-heat.mp3',                                                   tag: 'gyro' },
+      { name: 'Got Heat (67 BPM)',             file: 'pitch-assets/music-mp3/got-heat-(67-bpm-mix).mp3',                                      tag: 'gyro' },
+      { name: 'Pull Up (Midnight Dreams)',     file: 'pitch-assets/music-mp3/pull-up-(midnight-dreams).mp3',                                  tag: 'gyro' },
+      { name: 'Percolating',                   file: 'pitch-assets/music-mp3/percolating.-pull-up---chcecl-2-(cover)-(cover)-(cover).mp3',    tag: 'gyro' },
+      { name: 'Rain Makes the Flowers Grow',   file: 'pitch-assets/music-mp3/rain-makes-the-flowers-grow 3.mp3',                              tag: 'gyro' },
+      { name: 'Lost in My Moody Love',         file: 'pitch-assets/music-mp3/lost-in-my-moody-love.mp3',                                     tag: 'gyro' },
+      { name: 'Easy Bake',                     file: 'pitch-assets/music-mp3/easy-bake-(cover).mp3',                                          tag: 'gyro' },
+      { name: 'Easy Bake (Smooth)',            file: 'pitch-assets/music-mp3/easy-bake-(smooth-cover).mp3',                                   tag: 'gyro' },
+      // — L8 Blo0om Originals —
+      { name: 'Sweet',                         file: 'pitch-assets/music-mp3/sweet.mp3',                                                       tag: '' },
+      { name: 'This Is Meant to Be',           file: 'pitch-assets/music-mp3/this-is-meant-to-be.mp3',                                        tag: '' },
+      { name: 'PJs in My PJ',                 file: 'pitch-assets/music-mp3/PJs in My PJ (808 Trap Earworm Remix).mp3',                       tag: '' },
+      { name: 'The Soapiest of Operas',        file: 'pitch-assets/music-mp3/The Soapiest of Operas.mp3',                                     tag: '' },
+      { name: 'Breech',                        file: 'pitch-assets/music-mp3/Breech - L8 Blo0om.mp3',                                         tag: '' },
+      { name: 'DADDY',                         file: 'pitch-assets/music-mp3/DADDY.mp3',                                                       tag: '' },
+      { name: '……',                           file: 'pitch-assets/music-mp3/…..mp3',                                                          tag: '' },
     ];
 
     const audio   = document.getElementById('audioEl');

@@ -1,2 +1,21 @@
 .DS_Store
 pitch-assets/music/
+
+# Junk images not used on site
+pitch-assets/photos/branded*.png
+pitch-assets/photos/ai*.png
+pitch-assets/photos/ai*.jpg
+pitch-assets/photos/photo*.jpg
+pitch-assets/photos/action1.jpg
+
+# Local working files not for deployment
+*.docx
+*.pdf
+GYROTONIC -Logos/
+.claude/
+pic1.png
+pic2.png
+A9A650D7-4580-47E8-8666-6940B1696ED5.JPG
+IMG_5772.jpg
+Gyrotonic_Manual.html
+gyrotonic_lookup.html

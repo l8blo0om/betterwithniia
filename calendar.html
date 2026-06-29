@@ -10,7 +10,6 @@
     --ink:#26352f; --mut:#6f7c76;
     --line:#d7e3dc; --bg:#f4f8f5; --card:#ffffff;
     --gold:#e0a93b; --gold-l:#fbf2dc; --rose:#c2607a;
-    --mediator:#4a9d8e; --advocate:#5e8c4f;
     --shadow:0 1px 3px rgba(30,60,45,.08),0 8px 24px rgba(30,60,45,.06);
   }
   *{box-sizing:border-box}
@@ -22,14 +21,14 @@
   .wrap{max-width:1080px;margin:0 auto;padding:0 20px 80px}
   header.top{
     background:linear-gradient(135deg,var(--green) 0%,var(--green-d) 100%);
-    color:#fff;padding:34px 0 30px;margin-bottom:0;
+    color:#fff;padding:34px 0 30px;margin-bottom:0;transition:background .25s;
   }
   .top .wrap{padding-bottom:0}
   .top h1{margin:0;font-size:26px;font-weight:800;letter-spacing:-.3px}
   .top p{margin:6px 0 0;opacity:.92;font-size:14.5px;max-width:680px}
 
   /* person toggle */
-  .toggle{display:inline-flex;background:rgba(255,255,255,.16);border-radius:40px;padding:5px;margin-top:20px;gap:4px}
+  .toggle{display:inline-flex;flex-wrap:wrap;background:rgba(255,255,255,.16);border-radius:40px;padding:5px;margin-top:20px;gap:4px}
   .toggle button{
     border:0;background:transparent;color:#eafaf2;font-size:14px;font-weight:600;
     padding:9px 20px;border-radius:30px;cursor:pointer;transition:.18s;display:flex;flex-direction:column;align-items:flex-start;line-height:1.15
@@ -87,7 +86,7 @@
     border:0;border-radius:10px;padding:10px 16px;font-size:14px;font-weight:650;cursor:pointer;
     background:var(--green);color:#fff;transition:.15s;white-space:nowrap
   }
-  .btn:hover{background:var(--green-d)}
+  .btn:hover{filter:brightness(.94)}
   .btn.ghost{background:#eef3f0;color:var(--green-d)}
   .btn.ghost:hover{background:#e1ebe5}
   .btn.sm{padding:7px 12px;font-size:13px}
@@ -119,7 +118,7 @@
   .bd-align-lbl{font-size:11px;color:var(--mut);text-align:center;min-width:52px}
 
   .top3{
-    margin-top:18px;background:var(--green);color:#fff;border-radius:14px;padding:18px 20px
+    margin-top:18px;background:var(--green);color:#fff;border-radius:14px;padding:18px 20px;transition:background .25s
   }
   .top3 h3{margin:0 0 4px;font-size:15px;font-weight:750;display:flex;align-items:center;gap:8px}
   .top3 .t3-sub{font-size:12.5px;opacity:.85;margin-bottom:12px}
@@ -132,7 +131,6 @@
   .week{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
   .day{background:#fbfdfc;border:1px solid var(--line);border-radius:12px;padding:10px}
   .day h4{margin:0 0 7px;font-size:12.5px;font-weight:750;color:var(--green-d);text-transform:uppercase;letter-spacing:.5px;display:flex;justify-content:space-between;align-items:center}
-  .day .anchor{font-size:9px;color:var(--mut);font-weight:600;background:#eef3f0;padding:2px 6px;border-radius:8px}
   .day textarea{min-height:84px;font-size:13px;border-color:#e4ece7;background:#fff}
   @media(max-width:880px){.week{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:520px){.week{grid-template-columns:1fr}.bd{grid-template-columns:1fr;gap:6px}.toggle button{padding:8px 14px}}
@@ -180,6 +178,7 @@
     <div class="toggle" id="toggle">
       <button data-p="mediator" class="active"><span>Mediator</span><span class="who">INFP-A</span></button>
       <button data-p="advocate"><span>Advocate</span><span class="who">INFJ</span></button>
+      <button data-p="logician"><span>Logician</span><span class="who">INTP</span></button>
     </div>
     <div class="banner" id="banner"></div>
   </div>
@@ -190,16 +189,16 @@
   <!-- 1. NORTH STAR + VALUES -->
   <section class="card">
     <div class="sec-head"><span class="sec-num">1</span><h2>North Star &amp; Core Values</h2></div>
-    <p class="sec-sub">Diplomats plan best from meaning outward. Set the "why" first — every priority below should trace back here.</p>
+    <p class="sec-sub">Plan from meaning outward. Set the "why" first — every priority below should trace back here.</p>
     <div class="northstar">
       <label class="fld" for="northstar">This season's guiding intention</label>
-      <input type="text" id="northstar" placeholder="e.g. Build a calmer, more connected home life while finishing my writing project">
+      <input type="text" id="northstar" placeholder="e.g. Build a calmer, more focused life while finishing my big project">
     </div>
     <div style="margin-top:16px">
       <label class="fld">Core values (your non-negotiables)</label>
       <div class="chips" id="valueChips"></div>
       <div class="add-row">
-        <input type="text" id="valueInput" placeholder="Add a value — e.g. Authenticity, Connection, Growth, Calm…">
+        <input type="text" id="valueInput" placeholder="Add a value — e.g. Authenticity, Autonomy, Growth, Truth…">
         <button class="btn" id="addValue">Add</button>
       </div>
     </div>
@@ -219,7 +218,7 @@
     <div class="sec-head"><span class="sec-num">3</span><h2>This Week's Priorities</h2></div>
     <p class="sec-sub">The heart of this planner. Brain-dump everything on your mind, rate how much each <em>aligns with your values &amp; goals</em>, then commit to just three.</p>
     <div class="prio-intro">
-      💡 <b>Why only three?</b> Mediators and Advocates both tend to fall in love with too many meaningful possibilities at once — then scatter. Choosing three "musts" protects your energy and turns idealism into finished things.
+      💡 <b>Why only three?</b> It's easy to fall in love with too many possibilities at once — then scatter across all of them. Choosing three "musts" protects your energy and turns ideas into finished things.
     </div>
     <label class="fld">Brain dump — everything pulling at you this week</label>
     <div class="bd-list" id="bdList"></div>
@@ -256,7 +255,7 @@
   <!-- 6. REFLECTION -->
   <section class="card">
     <div class="sec-head"><span class="sec-num">6</span><h2>Weekly Reflection</h2></div>
-    <p class="sec-sub">Diplomats grow through reflection. Five quiet minutes at week's end is where the real planning happens.</p>
+    <p class="sec-sub">Reflection is where the real planning happens. Five quiet minutes at week's end is plenty.</p>
     <div class="ref-grid">
       <div><label class="fld"><span class="fld-ico">🌟</span>Wins &amp; what felt alive</label><textarea id="ref_wins" placeholder="What went well? When did you feel most yourself?"></textarea></div>
       <div><label class="fld"><span class="fld-ico">🧭</span>What aligned with my values</label><textarea id="ref_aligned" placeholder="Where did my time match what I say matters?"></textarea></div>
@@ -271,8 +270,8 @@
   </div>
   <div class="save-note"><span class="dot"></span> Saved automatically in this browser. Each profile is kept separately.</div>
   <div class="foot">
-    Built around the 16Personalities <b>Mediator (INFP-A)</b> and <b>Advocate (INFJ)</b> types.<br>
-    Planning from the heart — with just enough structure to land the dream.
+    Built around the 16Personalities <b>Mediator (INFP-A)</b>, <b>Advocate (INFJ)</b>, and <b>Logician (INTP)</b> types.<br>
+    Planning from the heart and the head — with just enough structure to land the dream.
   </div>
 </div>
 
@@ -284,7 +283,7 @@
 
   var PROFILE={
     mediator:{
-      label:"Mediator", who:"INFP-A", emoji:"🦋", color:"#4a9d8e",
+      label:"Mediator", who:"INFP-A", emoji:"🦋", color:"#4a9d8e", colorD:"#357a6d",
       banner:"<span class='badge'>🦋</span><div class='b-txt'><b>Mediator — INFP-A.</b> You run on meaning and possibility. This planner keeps you flexible but helps you <b>finish</b> by tying each priority to something you actually care about.</div>",
       tips:"<b>How Mediators (INFP-A) plan best:</b><ul>"+
            "<li><b>Lead with the 'why.'</b> A task tied to a value gets done; a task on a generic to-do list quietly dies.</li>"+
@@ -297,7 +296,7 @@
       starHint:"How much does this align with who I want to be?"
     },
     advocate:{
-      label:"Advocate", who:"INFJ", emoji:"🔮", color:"#5e8c4f",
+      label:"Advocate", who:"INFJ", emoji:"🔮", color:"#5e8c4f", colorD:"#46693a",
       banner:"<span class='badge'>🔮</span><div class='b-txt'><b>Advocate — INFJ.</b> Visionary and driven, with a real planning gift. This planner channels that drive — and guards against over-committing and burning out for everyone else.</div>",
       tips:"<b>How Advocates (INFJ) plan best:</b><ul>"+
            "<li><b>Decide, then close the loop.</b> Your inner debate can loop forever. Once three musts are chosen, commit and stop re-litigating.</li>"+
@@ -308,6 +307,19 @@
       seedValues:["Integrity","Purpose","Harmony","Depth"],
       seedHabits:["Protected quiet / recharge","Move my body","Step toward the big vision"],
       starHint:"Does this serve my vision — or just other people's urgency?"
+    },
+    logician:{
+      label:"Logician", who:"INTP", emoji:"🔭", color:"#8a6fb0", colorD:"#5f4a87",
+      banner:"<span class='badge'>🔭</span><div class='b-txt'><b>Logician — INTP.</b> Endlessly curious and idea-rich. This planner helps you turn open questions into <b>shipped things</b> — without a rabbit hole quietly eating the week.</div>",
+      tips:"<b>How Logicians (INTP) plan best:</b><ul>"+
+           "<li><b>Pick by 'important,' not just 'interesting.'</b> The fun problem and the necessary task aren't the same — make sure at least one must is genuinely important, even if it's dull.</li>"+
+           "<li><b>Set a 'good enough to act' line.</b> Analysis can run forever. Decide the threshold, ship a rough draft, refine later.</li>"+
+           "<li><b>Externalize every open loop.</b> Your mind keeps too many tabs open — dump them all below so none run silently in the background.</li>"+
+           "<li><b>Time-box the rabbit holes.</b> Give exploration a real slot so curiosity doesn't swallow the whole day.</li>"+
+           "<li><b>Pair boring with interesting.</b> Bolt one admin or maintenance task onto each thing you're genuinely excited about.</li></ul>",
+      seedValues:["Competence","Autonomy","Truth","Curiosity"],
+      seedHabits:["Ship one rough draft","Close an open loop","Move my body"],
+      starHint:"Is this genuinely important — or just the most interesting rabbit hole?"
     }
   };
 
@@ -325,9 +337,19 @@
       ref:{wins:"",aligned:"",release:""}
     };
   }
+  function defaults(){
+    var o={};Object.keys(PROFILE).forEach(function(k){o[k]=blank(k);});return o;
+  }
   function load(){
-    try{var d=JSON.parse(localStorage.getItem(STORE));if(d&&d.mediator&&d.advocate)return d;}catch(e){}
-    return {mediator:blank("mediator"),advocate:blank("advocate")};
+    var def=defaults();
+    try{
+      var d=JSON.parse(localStorage.getItem(STORE));
+      if(d && typeof d==="object"){
+        Object.keys(def).forEach(function(k){ if(!d[k]) d[k]=def[k]; });
+        return d;
+      }
+    }catch(e){}
+    return def;
   }
   function save(){ try{localStorage.setItem(STORE,JSON.stringify(data));}catch(e){} }
   function d(){ return data[current]; }
@@ -335,9 +357,11 @@
 
   /* ---------- render ---------- */
   function renderAll(){
-    document.documentElement.style.setProperty('--green', PROFILE[current].color);
-    $("banner").innerHTML=PROFILE[current].banner;
-    $("tipsBody").innerHTML=PROFILE[current].tips;
+    var P=PROFILE[current];
+    document.documentElement.style.setProperty('--green', P.color);
+    document.documentElement.style.setProperty('--green-d', P.colorD);
+    $("banner").innerHTML=P.banner;
+    $("tipsBody").innerHTML=P.tips;
     $("northstar").value=d().northStar;
     $("weekOf").value=d().weekOf;
     $("ref_wins").value=d().ref.wins;
@@ -390,7 +414,6 @@
       var row=document.createElement("div");row.className="bd";
       var t=document.createElement("input");t.type="text";t.value=b.text;t.style.border="0";t.style.background="transparent";t.style.fontWeight="600";
       t.oninput=function(){b.text=t.value;save();renderTop3();};
-      // stars
       var sw=document.createElement("div");sw.style.textAlign="center";
       var sd=document.createElement("div");sd.className="stars";sd.title=hint;
       for(var s=1;s<=3;s++){(function(s){
@@ -401,13 +424,11 @@
       var al=document.createElement("div");al.className="bd-align-lbl";
       al.textContent=["—","low","medium","high"][b.align||0]+" fit";
       sw.appendChild(sd);sw.appendChild(al);
-      // must
       var mb=document.createElement("button");mb.className="must-btn"+(b.must?" on":"");
       mb.textContent=b.must?"✓ Must":"Must";
       var full=mustCount()>=3 && !b.must;
       if(full){mb.className+=" disabled";mb.title="You already have three musts — that's the point!";}
       mb.onclick=function(){ if(!b.must && mustCount()>=3){flashWarn();return;} b.must=!b.must;save();renderBrainDump();renderTop3();};
-      // remove
       var x=document.createElement("button");x.className="row-x";x.textContent="×";
       x.onclick=function(){d().brainDump.splice(i,1);save();renderBrainDump();renderTop3();};
       row.appendChild(t);row.appendChild(sw);row.appendChild(mb);row.appendChild(x);
@@ -430,7 +451,6 @@
     }else{
       musts.forEach(function(b){var li=document.createElement("li");li.textContent=b.text;ol.appendChild(li);});
     }
-    // suggestion: highlight a high-fit item not chosen
     var w=$("top3Warn");w.innerHTML="";
     var suggest=d().brainDump.filter(function(b){return !b.must && b.align===3 && b.text.trim();});
     if(musts.length<3 && suggest.length){
@@ -450,7 +470,6 @@
       c.appendChild(ta);
       box.appendChild(c);
     });
-    // little reminder of musts under the grid
     if(musts.length){
       var note=document.createElement("div");
       note.style.cssText="grid-column:1/-1;font-size:12.5px;color:var(--mut);margin-top:4px";

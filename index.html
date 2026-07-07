@@ -1,540 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Get Better with Niia — Gyrotonic Studio on Farrow Road, Columbia SC</title>
-<meta name="description" content="Boutique fitness studio and wellness community in Columbia, SC. Pilates, Gyrotonic, elite personal training, and challenges designed for every body.">
-<meta property="og:image" content="https://betterwithniia.com/GETBETTER.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Get Better with Niia">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://betterwithniia.com/GETBETTER.png">
-<link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Gyrotonic — Better with Niia</title>
+<style>
+:root{--plum:#6e3551;--clay:#a4583a;--ink:#3d3733;--soft:#7c726a;--cream:#faf6f0;--card:#fffdf9;--line:#e7ddd2}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,'Times New Roman',serif;font-size:16px;line-height:1.55}
+.wrap{max-width:640px;margin:0 auto;padding:34px 18px 70px}
+header{text-align:center;padding:8px 0 6px}
+.mark{letter-spacing:.28em;font-size:12px;color:var(--clay);text-transform:uppercase;margin-top:6px}
+h1{font-size:30px;margin:.2em 0 0}
+.sub{font-style:italic;color:var(--soft);font-size:15px;margin-top:6px}
+.cards{margin-top:26px;display:flex;flex-direction:column;gap:14px}
+a.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;text-decoration:none;color:var(--ink)}
+a.tile:active{transform:translateY(1px)}
+.tname{font-size:19px;font-weight:700;color:var(--plum)}
+.tdesc{font-size:14.5px;color:var(--soft);margin-top:6px}
+.tgo{font-size:13px;color:var(--clay);margin-top:10px;font-weight:600;letter-spacing:.06em}
+footer{text-align:center;font-size:12px;color:var(--soft);font-style:italic;margin-top:40px}
+</style>
 </head>
 <body>
+<div class="wrap">
+  <header>
+    <svg width="38" height="38" viewBox="0 0 40 40" fill="none" stroke="#6e3551" stroke-width="1.4">
+      <path d="M20 20 m0 0 a2 2 0 1 1 3 -1 a5 5 0 1 1 -8 1 a9 9 0 1 1 14 2 a13 13 0 1 1 -20 -3" stroke-linecap="round"/>
+    </svg>
+    <div class="mark">Better with Niia</div>
+    <h1>Gyrotonic</h1>
+    <div class="sub">the method, carded, searchable, and taught — seven series · 99 exercises · the full progression ladder</div>
+  </header>
 
-<!-- SPLASH SCREEN -->
-<div id="splash" style="
-  position:fixed;inset:0;z-index:9999;
-  background:#0e1c3a;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:40px 24px;
-  transition:opacity 0.7s ease;
-">
-  <div style="margin-bottom:32px;">
-    <div style="
-      width:72px;height:72px;border-radius:50%;
-      border:1px solid rgba(191,160,90,0.5);
-      display:flex;flex-direction:column;align-items:center;justify-content:center;
-      margin:0 auto 24px;line-height:1;
-    ">
-      <span style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:11px;color:rgba(191,160,90,0.8);">Get</span>
-      <span style="font-family:'Inter',sans-serif;font-weight:900;font-size:13px;color:#fff;letter-spacing:-0.02em;">BETTER</span>
-      <span style="font-family:'Inter',sans-serif;font-size:7px;font-weight:600;letter-spacing:0.1em;color:rgba(191,160,90,0.5);text-transform:uppercase;">WITH NIIA</span>
-    </div>
-    <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.1rem;color:rgba(221,228,240,0.5);letter-spacing:0.04em;margin-bottom:4px;">welcome to</p>
-    <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.2rem,6vw,3.8rem);color:#dde4f0;line-height:1.1;margin-bottom:8px;">Get Better with Niia</h1>
-    <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1rem;color:rgba(191,160,90,0.7);">Gyrotonic · Pilates · Personal Training · Columbia, SC</p>
-  </div>
-
-  <div style="width:48px;height:1px;background:rgba(191,160,90,0.4);margin:0 auto 36px;"></div>
-
-  <div style="display:flex;flex-direction:column;gap:14px;width:100%;max-width:320px;">
-    <button onclick="enterWithMusic()" style="
-      background:var(--ageless-gold,#BFA05A);border:2px solid #BFA05A;
-      color:#0e1c3a;font-family:'Inter',sans-serif;font-weight:700;
-      font-size:0.85rem;letter-spacing:0.12em;text-transform:uppercase;
-      padding:16px 32px;cursor:pointer;border-radius:4px;
-      transition:all 0.2s;
-    ">♫ Enter with Music</button>
-    <button onclick="enterSilent()" style="
-      background:none;border:1px solid rgba(221,228,240,0.2);
-      color:rgba(221,228,240,0.45);font-family:'Inter',sans-serif;
-      font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;
-      padding:12px 32px;cursor:pointer;border-radius:4px;
-      transition:all 0.2s;
-    ">Enter quietly →</button>
-  </div>
-
-  <!-- Hidden Spotify embed, activated on music entry -->
-  <div id="splash-player" style="display:none;margin-top:32px;width:100%;max-width:380px;">
-    <iframe id="spotify-frame"
-      src="https://open.spotify.com/embed/album/3CGev6tR6bTQakJfLLsTHV?utm_source=generator&theme=0"
-      width="100%" height="80" frameBorder="0"
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      loading="lazy" style="border-radius:8px;">
-    </iframe>
-  </div>
-</div>
-
-<script>
-function enterWithMusic() {
-  document.getElementById('splash-player').style.display = 'block';
-  // Short pause so player loads, then fade out
-  setTimeout(function() { dismissSplash(true); }, 1800);
-}
-function enterSilent() { dismissSplash(false); }
-function dismissSplash(withMusic) {
-  var s = document.getElementById('splash');
-  s.style.opacity = '0';
-  setTimeout(function() {
-    s.style.display = 'none';
-    if (withMusic) {
-      // Show the bottom music bar expanded
-      var wrap = document.getElementById('musicIframe');
-      if (wrap) wrap.classList.add('open');
-      var btn = document.querySelector('.music-player-toggle');
-      if (btn) btn.textContent = '✕';
-    }
-  }, 700);
-  sessionStorage.setItem('splashSeen', '1');
-}
-// Skip splash if already seen this session
-if (sessionStorage.getItem('splashSeen')) {
-  document.getElementById('splash').style.display = 'none';
-}
-</script>
-
-<!-- LANGUAGE BAR -->
-<div class="lang-bar" id="langBar">
-  <button onclick="setLang('en')" title="English" class="active">🇺🇸</button>
-  <button onclick="setLang('es')" title="Español">🇪🇸</button>
-  <button onclick="setLang('pt')" title="Português">🇵🇹</button>
-  <button onclick="setLang('fr')" title="Français">🇫🇷</button>
-  <button onclick="setLang('de')" title="Deutsch">🇩🇪</button>
-  <button onclick="setLang('zh-CN')" title="中文">🇨🇳</button>
-  <button onclick="setLang('ja')" title="日本語">🇯🇵</button>
-  <button onclick="setLang('hi')" title="हिन्दी">🇮🇳</button>
-  <button onclick="setLang('ko')" title="한국어">🇰🇷</button>
-  <button onclick="setLang('ar')" title="العربية">🇸🇦</button>
-</div>
-<div id="google_translate_element"></div>
-
-<!-- NAV -->
-<nav class="nav" id="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <div class="logo-mark"><span class="lg-get">Get</span><span class="lg-better">BETTER</span><span class="lg-with">WITH NIIA</span></div>
+  <div class="cards">
+    <a class="tile" href="lookup.html">
+      <div class="tname">Gyrotonic Lookup</div>
+      <div class="tdesc">The reference. Type any exercise or principle — spelling forgiven — and get its full teaching card: setup, movement, breath, cues, common errors and corrections, hands-on, modifications.</div>
+      <div class="tgo">OPEN THE LOOKUP →</div>
     </a>
-    <ul class="nav-links">
-      <li><a href="about.html">About</a></li>
-      <li><a href="classes.html">Classes</a></li>
-      <li><a href="challenges.html">Challenges</a></li>
-      <li><a href="plans.html">Plans</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="ageless.html" style="color:var(--gold);">Ageless</a></li>
-    </ul>
-    <a href="classes.html" class="btn btn-primary nav-cta">Book a Class</a>
-    <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menu">☰</button>
-  </div>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="about.html">About</a>
-    <a href="classes.html">Classes</a>
-    <a href="challenges.html">Challenges</a>
-    <a href="plans.html">Plans</a>
-    <a href="contact.html">Contact</a>
-    <a href="ageless.html" style="color:var(--gold);">Ageless ↗</a>
-    <a href="classes.html" class="btn btn-primary">Book a Class</a>
-  </div>
-</nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-texture"></div>
-  <video class="hero-video" autoplay muted loop playsinline>
-    <source src="HERO.mp4" type="video/mp4">
-  </video>
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <span class="hero-script">Get</span>
-    <h1><strong>BETTER</strong></h1>
-    <span class="hero-with">with Niia</span>
-    <p class="hero-tagline">Columbia's newest Gyrotonic&reg; studio.<br>Boutique fitness on Farrow Road, Columbia, SC.</p>
-    <div class="hero-btns">
-      <a href="classes.html" class="btn btn-white">Book a Class</a>
-      <a href="about.html" class="btn btn-outline-white">Our Story</a>
-    </div>
-  </div>
-  <div class="hero-scroll">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
-  </div>
-</section>
+    <a class="tile" href="teach.html">
+      <div class="tname">Learning to Teach</div>
+      <div class="tdesc">The journey. Six Foundation steps and two progressions as lessons — each with its principle, what enters in teaching order, the four-cycle teaching frame, homework to assign, and readiness checkpoints. Plus a drill deck of 276 practice cards built from the method itself.</div>
+      <div class="tgo">BEGIN THE PATH →</div>
+    </a>
 
-<!-- TAGLINE STRIP -->
-<div class="tagline-strip">
-  <div class="container">
-    <p>
-      Feel better <span class="tagline-sep">·</span>
-      Play better <span class="tagline-sep">·</span>
-      Breathe better <span class="tagline-sep">·</span>
-      Live better
-    </p>
+    <a class="tile" href="gyrotonic-manual.docx" download>
+      <div class="tname">The Manual</div>
+      <div class="tdesc">The complete teaching manual as a Word document — all seven series carded in full, the progression grids, and the vocabulary. 47 pages.</div>
+      <div class="tgo">DOWNLOAD (.DOCX) →</div>
+    </a>
   </div>
+
+  <footer>Better with Niia · unlisted page — shared by invitation</footer>
 </div>
-
-<!-- INTRO -->
-<section class="section">
-  <div class="container">
-    <div class="intro-grid">
-      <div class="intro-image-block">
-        <div class="img-block img-tall">
-          <img src="niia-5.jpg" alt="Training session">
-        </div>
-        <div class="intro-image-accent"></div>
-      </div>
-      <div class="intro-text">
-        <img src="GETBETTER.png" alt="Get Better with Niia" style="height:110px;width:auto;object-fit:contain;margin-bottom:24px;display:block;">
-        <p class="eyebrow">Columbia's Newest Gyrotonic&reg; Studio</p>
-        <h2>Boutique fitness on Farrow Road, Columbia, SC.</h2>
-        <div class="divider"></div>
-        <p>Get Better with Niia is a boutique fitness and wellness studio on Farrow Road in Columbia, SC. We lead with the <strong>Gyrotonic&reg; Method</strong> — one of the most effective and least available movement systems in the Midlands — alongside a full suite of wellness offerings designed to restore, strengthen, and elevate every part of you.</p>
-        <p>This is not a gym. This is a personal wellness practice with Niia as your guide.</p>
-        <div class="stat-row">
-          <div class="stat">
-            <div class="stat-num">1:1</div>
-            <div class="stat-label">Personal Attention</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num">11+</div>
-            <div class="stat-label">Offerings</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num">Columbia</div>
-            <div class="stat-label">South Carolina</div>
-          </div>
-        </div>
-        <a href="about.html" class="btn btn-primary">Meet Niia</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- GYROTONIC FEATURE -->
-<section class="section section-navy">
-  <div class="container">
-    <div class="intro-grid">
-      <div class="intro-text">
-        <p class="eyebrow" style="color:var(--gold);">Signature Offering</p>
-        <h2 style="color:white;">The Gyrotonic Method — rare in Columbia. Powerful everywhere.</h2>
-        <div class="divider divider-gold"></div>
-        <p style="color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:16px;">The Gyrotonic Method is a movement system built on circular, spiraling patterns — the way your body actually wants to move. It strengthens, stretches, and mobilizes simultaneously, targeting the spine, joints, and fascia in ways traditional exercise can't reach.</p>
-        <p style="color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:28px;">Get Better with Niia is one of Columbia's premier destinations for Gyrotonic and Pilates. Chronic pain, limited mobility, a body in recovery — or simply ready to move differently. This is your method.</p>
-        <a href="classes.html" class="btn btn-white">Book a Session</a>
-      </div>
-      <div class="intro-image-block">
-        <div class="img-block img-tall">
-          <img src="niia-3.jpg" alt="Movement session">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FULL SERVICES -->
-<section class="section section-cream">
-  <div class="container">
-    <div class="section-header text-center">
-      <p class="eyebrow">Everything We Offer</p>
-      <h2>One studio. A complete wellness practice.</h2>
-      <div class="divider divider-center"></div>
-      <p>From movement to recovery to mindset — every offering is available standalone or woven into your personalized program.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
-      <div style="background:white;padding:24px;border-radius:4px;border:1px solid var(--cream-warm);display:flex;align-items:flex-start;gap:14px;">
-        <div style="font-size:1.5rem;flex-shrink:0;">🌀</div>
-        <div><h4 style="font-family:var(--font-display);font-size:1.05rem;margin-bottom:5px;">Gyrotonic Method</h4><p style="color:var(--gray);font-size:0.82rem;line-height:1.6;">Circular 3D movement for the spine, joints &amp; fascia. Columbia's rarest offering.</p></div>
-      </div>
-      <div style="background:white;padding:24px;border-radius:4px;border:1px solid var(--cream-warm);display:flex;align-items:flex-start;gap:14px;">
-        <div style="font-size:1.5rem;flex-shrink:0;">🧘</div>
-        <div><h4 style="font-family:var(--font-display);font-size:1.05rem;margin-bottom:5px;">Pilates</h4><p style="color:var(--gray);font-size:0.82rem;line-height:1.6;">Deep core, posture &amp; controlled movement on the reformer.</p></div>
-      </div>
-      <div style="background:white;padding:24px;border-radius:4px;border:1px solid var(--cream-warm);display:flex;align-items:flex-start;gap:14px;">
-        <div style="font-size:1.5rem;flex-shrink:0;">🌬️</div>
-        <div><h4 style="font-family:var(--font-display);font-size:1.05rem;margin-bottom:5px;">Breathing Techniques</h4><p style="color:var(--gray);font-size:0.82rem;line-height:1.6;">Nervous system regulation, performance, and calm through intentional breath.</p></div>
-      </div>
-      <div style="background:white;padding:24px;border-radius:4px;border:1px solid var(--cream-warm);display:flex;align-items:flex-start;gap:14px;">
-        <div style="font-size:1.5rem;flex-shrink:0;">👍</div>
-        <div><h4 style="font-family:var(--font-display);font-size:1.05rem;margin-bottom:5px;">Thumb Pulling</h4><p style="color:var(--gray);font-size:0.82rem;line-height:1.6;">Structural release for hands, wrists &amp; upper body. Powerful for desk workers and athletes.</p></div>
-      </div>
-      <div style="background:white;padding:24px;border-radius:4px;border:1px solid var(--cream-warm);display:flex;align-items:flex-start;gap:14px;">
-        <div style="font-size:1.5rem;flex-shrink:0;">🧠</div>
-        <div><h4 style="font-family:var(--font-display);font-size:1.05rem;margin-bottom:5px;">Meditation</h4><p style="color:var(--gray);font-size:0.82rem;line-height:1.6;">Guided practice for clarity, recovery &amp; presence — integrated into your sessions.</p></div>
-      </div>
-      <div style="background:white;padding:24px;border-radius:4px;border:1px solid var(--cream-warm);display:flex;align-items:flex-start;gap:14px;">
-        <div style="font-size:1.5rem;flex-shrink:0;">🗣️</div>
-        <div><h4 style="font-family:var(--font-display);font-size:1.05rem;margin-bottom:5px;">Affirmations</h4><p style="color:var(--gray);font-size:0.82rem;line-height:1.6;">Mindset work woven into training — because the body follows what the mind believes.</p></div>
-      </div>
-      <div style="background:white;padding:24px;border-radius:4px;border:1px solid var(--cream-warm);display:flex;align-items:flex-start;gap:14px;">
-        <div style="font-size:1.5rem;flex-shrink:0;">🚴</div>
-        <div><h4 style="font-family:var(--font-display);font-size:1.05rem;margin-bottom:5px;">Peloton</h4><p style="color:var(--gray);font-size:0.82rem;line-height:1.6;">Low-impact cardio for warmup, endurance &amp; active recovery.</p></div>
-      </div>
-      <div style="background:white;padding:24px;border-radius:4px;border:1px solid var(--cream-warm);display:flex;align-items:flex-start;gap:14px;">
-        <div style="font-size:1.5rem;flex-shrink:0;">🤸</div>
-        <div><h4 style="font-family:var(--font-display);font-size:1.05rem;margin-bottom:5px;">Stretching</h4><p style="color:var(--gray);font-size:0.82rem;line-height:1.6;">Assisted &amp; guided flexibility work to open the body and reduce injury risk.</p></div>
-      </div>
-      <div style="background:white;padding:24px;border-radius:4px;border:1px solid var(--cream-warm);display:flex;align-items:flex-start;gap:14px;">
-        <div style="font-size:1.5rem;flex-shrink:0;">📋</div>
-        <div><h4 style="font-family:var(--font-display);font-size:1.05rem;margin-bottom:5px;">Homework Programs</h4><p style="color:var(--gray);font-size:0.82rem;line-height:1.6;">Customized take-home routines so your progress continues between sessions.</p></div>
-      </div>
-      <div style="background:white;padding:24px;border-radius:4px;border:1px solid var(--cream-warm);display:flex;align-items:flex-start;gap:14px;">
-        <div style="font-size:1.5rem;flex-shrink:0;">🔥</div>
-        <div><h4 style="font-family:var(--font-display);font-size:1.05rem;margin-bottom:5px;">Sauna</h4><p style="color:var(--gray);font-size:0.82rem;line-height:1.6;">Heat therapy for recovery, detox &amp; deep relaxation before or after your session.</p></div>
-      </div>
-      <div style="background:white;padding:24px;border-radius:4px;border:1px solid var(--cream-warm);display:flex;align-items:flex-start;gap:14px;">
-        <div style="font-size:1.5rem;flex-shrink:0;">♨️</div>
-        <div><h4 style="font-family:var(--font-display);font-size:1.05rem;margin-bottom:5px;">Hot Tub</h4><p style="color:var(--gray);font-size:0.82rem;line-height:1.6;">Hydrotherapy for muscle recovery, joint relief &amp; post-session restoration.</p></div>
-      </div>
-      <div style="background:white;padding:24px;border-radius:4px;border:1px solid var(--cream-warm);display:flex;align-items:flex-start;gap:14px;">
-        <div style="font-size:1.5rem;flex-shrink:0;">💡</div>
-        <div><h4 style="font-family:var(--font-display);font-size:1.05rem;margin-bottom:5px;">Red Light Therapy</h4><p style="color:var(--gray);font-size:0.82rem;line-height:1.6;">Photobiomodulation for cellular recovery, skin rejuvenation, pain relief &amp; energy.</p></div>
-      </div>
-      <div style="background:white;padding:24px;border-radius:4px;border:1px solid var(--cream-warm);display:flex;align-items:flex-start;gap:14px;opacity:0.75;">
-        <div style="font-size:1.5rem;flex-shrink:0;">🧊</div>
-        <div><h4 style="font-family:var(--font-display);font-size:1.05rem;margin-bottom:5px;">Cold Plunge <span style="font-size:0.62rem;font-family:var(--font-body);letter-spacing:0.1em;color:var(--navy);font-weight:600;text-transform:uppercase;">Coming Soon</span></h4><p style="color:var(--gray);font-size:0.82rem;line-height:1.6;">Cold immersion for inflammation, circulation &amp; mental resilience.</p></div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:48px;">
-      <a href="classes.html" class="btn btn-primary">See Sessions &amp; Pricing</a>
-    </div>
-  </div>
-</section>
-
-<!-- CHALLENGES -->
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <p class="eyebrow">Stay Motivated</p>
-      <h2>Step-by-step challenges to keep you strong.</h2>
-      <div class="divider"></div>
-      <p>Short, structured, effective. Our challenges are built to push you forward — whether you're brand new or coming back stronger.</p>
-    </div>
-    <div class="cards-grid">
-      <div class="challenge-card">
-        <div class="challenge-icon challenge-icon-1">💪</div>
-        <div class="challenge-body">
-          <p class="eyebrow" style="margin-bottom:8px;">Full Body</p>
-          <h3>Be Full Body Strong</h3>
-          <p>A comprehensive strength-building program that targets every major muscle group. Build the kind of strength that carries you through real life — not just the gym.</p>
-          <a href="challenges.html" class="btn btn-primary">View Challenge</a>
-        </div>
-      </div>
-      <div class="challenge-card">
-        <div class="challenge-icon challenge-icon-2">🏋️</div>
-        <div class="challenge-body">
-          <p class="eyebrow" style="margin-bottom:8px;">Upper Body</p>
-          <h3>Arms, Arms, Arms!</h3>
-          <p>A focused upper-body challenge to sculpt, tone, and define your arms. Results-driven with progressive overload built in from day one.</p>
-          <a href="challenges.html" class="btn btn-primary">View Challenge</a>
-        </div>
-      </div>
-      <div class="challenge-card">
-        <div class="challenge-icon challenge-icon-3">🔥</div>
-        <div class="challenge-body">
-          <p class="eyebrow" style="margin-bottom:8px;">10 Days</p>
-          <h3>10 Day Squat Challenge</h3>
-          <p>Short, intense, and effective. Ten days to stronger legs and glutes — with progressions that build each session into the next. Anyone can do this.</p>
-          <a href="challenges.html" class="btn btn-primary">View Challenge</a>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:48px;">
-      <a href="challenges.html" class="btn btn-outline">See All Challenges</a>
-    </div>
-  </div>
-</section>
-
-<!-- WHO WE SERVE -->
-<section class="section section-navy">
-  <div class="container">
-    <div class="section-header text-center light">
-      <p class="eyebrow">Designed for Every Body</p>
-      <h2>Whoever you are, you belong here.</h2>
-      <div class="divider divider-center divider-gold"></div>
-      <p>Our clients range from teen athletes to seniors, post-op patients to corporate professionals. This is a no-judgment space on Farrow Road where progress looks different for everyone — and that's the point.</p>
-    </div>
-    <div class="cards-grid" style="margin-top:24px;">
-      <div style="padding:32px;background:rgba(255,255,255,0.07);border-radius:4px;border:1px solid rgba(255,255,255,0.12);">
-        <div style="font-size:2rem;margin-bottom:16px;">🏃</div>
-        <h4 style="color:#fff;margin-bottom:10px;font-family:var(--font-display);font-size:1.2rem;">Teen Athletes</h4>
-        <p style="color:rgba(255,255,255,0.6);font-size:0.88rem;line-height:1.7;">Performance training and injury prevention for young athletes who want a competitive edge — built safely and sustainably.</p>
-      </div>
-      <div style="padding:32px;background:rgba(255,255,255,0.07);border-radius:4px;border:1px solid rgba(255,255,255,0.12);">
-        <div style="font-size:2rem;margin-bottom:16px;">💼</div>
-        <h4 style="color:#fff;margin-bottom:10px;font-family:var(--font-display);font-size:1.2rem;">Midlife Professionals</h4>
-        <p style="color:rgba(255,255,255,0.6);font-size:0.88rem;line-height:1.7;">Reclaim your body without sacrificing your schedule. Efficient, targeted training for busy people who want results they can feel.</p>
-      </div>
-      <div style="padding:32px;background:rgba(255,255,255,0.07);border-radius:4px;border:1px solid rgba(255,255,255,0.12);">
-        <div style="font-size:2rem;margin-bottom:16px;">🩺</div>
-        <h4 style="color:#fff;margin-bottom:10px;font-family:var(--font-display);font-size:1.2rem;">Post-Op & PT Clients</h4>
-        <p style="color:rgba(255,255,255,0.6);font-size:0.88rem;line-height:1.7;">Thoughtful, careful training for bodies in recovery. We work with your physical therapist's plan — not against it.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="section section-cream">
-  <div class="container">
-    <div class="section-header text-center">
-      <p class="eyebrow">Community</p>
-      <h2>What our clients say.</h2>
-      <div class="divider divider-center"></div>
-    </div>
-    <div class="testimonials-grid">
-      <div class="testimonial">
-        <div class="testimonial-text">I came in post-surgery barely able to lift my arms. Six weeks later I'm stronger than I was before my injury. Niia sees your body in a way that no other trainer has.</div>
-        <div class="testimonial-author">
-          <div class="author-avatar">M</div>
-          <div>
-            <div class="author-name">Michelle T.</div>
-            <div class="author-title">Post-op client · Concord, NC</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial">
-        <div class="testimonial-text">It's unlike anything I've experienced. It's peaceful, it's personal, and it actually works. My back pain is gone for the first time in years.</div>
-        <div class="testimonial-author">
-          <div class="author-avatar">R</div>
-          <div>
-            <div class="author-name">Robert K.</div>
-            <div class="author-title">Corporate client · Charlotte, NC</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial">
-        <div class="testimonial-text">My daughter has improved her athletic performance dramatically. She's more confident, less prone to injury, and actually excited about training. That's everything.</div>
-        <div class="testimonial-author">
-          <div class="author-avatar">D</div>
-          <div>
-            <div class="author-name">Danielle S.</div>
-            <div class="author-title">Parent of teen athlete · Columbia, SC</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section">
-  <div class="container">
-    <span class="script">You.</span>
-    <h2>But Better.</h2>
-    <p>Start with a trial class and feel the difference. No commitment required — just show up, move, and see what your body can do.</p>
-    <div class="cta-btns">
-      <a href="classes.html" class="btn btn-white">Book a Trial Class</a>
-      <a href="plans.html" class="btn btn-outline-white">View Memberships</a>
-    </div>
-  </div>
-</section>
-
-<!-- NEWSLETTER -->
-<section class="newsletter">
-  <div class="container">
-    <p class="eyebrow" style="margin-bottom:12px;">Stay Connected</p>
-    <h2>Join the community.</h2>
-    <p>Wellness tips, challenge announcements, and event invites — straight to your inbox.</p>
-    <form class="newsletter-form" onsubmit="return false;">
-      <input type="email" placeholder="Your email address">
-      <button type="submit" class="btn btn-primary">Subscribe</button>
-    </form>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-logo">
-        <div class="logo-mark"><span class="lg-get">Get</span><span class="lg-better">BETTER</span><span class="lg-with">WITH NIIA</span></div>
-        <p class="footer-tagline">Columbia, SC — Gyrotonic, sauna, hot tub, meditation, Peloton & more.</p>
-        <div class="social-links">
-          <a href="https://instagram.com/betterwithniia" target="_blank" class="social-link" aria-label="Instagram">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Niia</a></li>
-          <li><a href="classes.html">Classes</a></li>
-          <li><a href="challenges.html">Challenges</a></li>
-          <li><a href="plans.html">Membership Plans</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="classes.html">Elite Performance Training</a></li>
-          <li><a href="classes.html">21 Peaks Package</a></li>
-          <li><a href="classes.html">Duo Sessions</a></li>
-          <li><a href="classes.html">Corporate Wellness</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Visit Us</h4>
-        <div class="footer-address">
-          5113 Farrow Rd<br>
-          Columbia, SC 29203<br>
-          <a href="tel:+18038816626" style="color:rgba(255,255,255,0.55);">1 (803) 881-6626</a><br><br>
-          <a href="contact.html" style="color:rgba(255,255,255,0.55);">Get Directions →</a><br><br>
-          <a href="https://instagram.com/betterwithniia" target="_blank" style="color:rgba(255,255,255,0.55);">@betterwithniia</a><br>
-          <a href="contact.html" style="color:rgba(255,255,255,0.55);">Contact Us</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 Get Better with Niia. All rights reserved.</p>
-      <p>Get Better with Niia · Columbia, SC</p>
-    </div>
-  </div>
-</footer>
-
-<script>
-function toggleMenu() {
-  document.getElementById('mobileMenu').classList.toggle('open');
-}
-window.addEventListener('scroll', () => {
-  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
-});
-</script>
-<script>
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({ pageLanguage: "en", includedLanguages: "es,fr,pt,de,zh-CN,ja,hi,ko,ar", autoDisplay: false }, "google_translate_element");
-}
-function setLang(lang) {
-  document.querySelectorAll(".lang-bar button").forEach(function(b){ b.classList.remove("active"); });
-  if(window.event && window.event.target) window.event.target.classList.add("active");
-  if (lang === "en") { document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"; location.reload(); return; }
-  var sel = document.querySelector(".goog-te-combo");
-  if (sel) { sel.value = lang; sel.dispatchEvent(new Event("change")); }
-  else { setTimeout(function(){ setLang(lang); }, 600); }
-}
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<!-- MUSIC PLAYER -->
-<div class="music-player" id="musicPlayer">
-  <div class="music-player-bar">
-    <span class="music-player-welcome">Welcome to Get Better with Niia</span>
-    <button class="music-player-toggle" onclick="togglePlayer()" title="Play ambient music">♫</button>
-  </div>
-  <div class="music-player-iframe-wrap" id="musicIframe">
-    <iframe src="https://open.spotify.com/embed/album/3DtUmSSk0nbugBhsQfzBYL?utm_source=generator&theme=0" width="100%" height="100" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="border-radius:0;"></iframe>
-  </div>
-</div>
-<script>
-function togglePlayer() {
-  var wrap = document.getElementById("musicIframe");
-  var b = document.querySelector(".music-player-toggle");
-  wrap.classList.toggle("open");
-  b.textContent = wrap.classList.contains("open") ? "✕" : "♫";
-}
-</script>
 </body>
 </html>

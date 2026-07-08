@@ -25,9 +25,15 @@
   transition:opacity 0.7s ease;
 ">
   <div style="margin-bottom:32px;">
-    <div style="margin:0 auto 24px;">
+    <div style="
+      width:120px;height:120px;border-radius:50%;
+      background:#F7F4EF;
+      overflow:hidden;
+      margin:0 auto 24px;
+      box-shadow:0 0 0 1px rgba(191,160,90,0.35),0 12px 40px rgba(0,0,0,0.3);
+    ">
       <img src="logo.png" alt="Get Better with Niia"
-        style="width:110px;height:110px;object-fit:contain;mix-blend-mode:screen;display:block;margin:0 auto;">
+        style="width:100%;height:100%;object-fit:contain;display:block;">
     </div>
     <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.1rem;color:rgba(221,228,240,0.5);letter-spacing:0.04em;margin-bottom:4px;">welcome to</p>
     <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.2rem,6vw,3.8rem);color:#dde4f0;line-height:1.1;margin-bottom:8px;">Get Better with Niia</h1>
@@ -111,7 +117,7 @@ if (sessionStorage.getItem('splashSeen')) {
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <div class="logo-mark"><span class="lg-get">Get</span><span class="lg-better">BETTER</span><span class="lg-with">WITH NIIA</span></div>
+      <img src="logo.png" alt="Get Better with Niia" class="nav-logo-img">
     </a>
     <ul class="nav-links">
       <li><a href="about.html">About</a></li>
@@ -238,51 +244,51 @@ if (sessionStorage.getItem('splashSeen')) {
       <p>From movement to recovery to mindset — every offering is available standalone or woven into your personalized program.</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
-      <div style="background:white;padding:24px;border-radius:4px;border:1px solid var(--cream-warm);display:flex;align-items:flex-start;gap:14px;">
+      <div class="service-icon-card">
         <div style="font-size:1.5rem;flex-shrink:0;">🌀</div>
         <div><h4 style="font-family:var(--font-display);font-size:1.05rem;margin-bottom:5px;">Gyrotonic Method</h4><p style="color:var(--gray);font-size:0.82rem;line-height:1.6;">Circular 3D movement for the spine, joints &amp; fascia. Columbia's rarest offering.</p></div>
       </div>
-      <div style="background:white;padding:24px;border-radius:4px;border:1px solid var(--cream-warm);display:flex;align-items:flex-start;gap:14px;">
+      <div class="service-icon-card">
         <div style="font-size:1.5rem;flex-shrink:0;">🧘</div>
         <div><h4 style="font-family:var(--font-display);font-size:1.05rem;margin-bottom:5px;">Pilates</h4><p style="color:var(--gray);font-size:0.82rem;line-height:1.6;">Deep core, posture &amp; controlled movement on the reformer.</p></div>
       </div>
-      <div style="background:white;padding:24px;border-radius:4px;border:1px solid var(--cream-warm);display:flex;align-items:flex-start;gap:14px;">
+      <div class="service-icon-card">
         <div style="font-size:1.5rem;flex-shrink:0;">🌬️</div>
         <div><h4 style="font-family:var(--font-display);font-size:1.05rem;margin-bottom:5px;">Breathing Techniques</h4><p style="color:var(--gray);font-size:0.82rem;line-height:1.6;">Nervous system regulation, performance, and calm through intentional breath.</p></div>
       </div>
-      <div style="background:white;padding:24px;border-radius:4px;border:1px solid var(--cream-warm);display:flex;align-items:flex-start;gap:14px;">
+      <div class="service-icon-card">
         <div style="font-size:1.5rem;flex-shrink:0;">👍</div>
         <div><h4 style="font-family:var(--font-display);font-size:1.05rem;margin-bottom:5px;">Thumb Pulling</h4><p style="color:var(--gray);font-size:0.82rem;line-height:1.6;">Structural release for hands, wrists &amp; upper body. Powerful for desk workers and athletes.</p></div>
       </div>
-      <div style="background:white;padding:24px;border-radius:4px;border:1px solid var(--cream-warm);display:flex;align-items:flex-start;gap:14px;">
+      <div class="service-icon-card">
         <div style="font-size:1.5rem;flex-shrink:0;">🧠</div>
         <div><h4 style="font-family:var(--font-display);font-size:1.05rem;margin-bottom:5px;">Meditation</h4><p style="color:var(--gray);font-size:0.82rem;line-height:1.6;">Guided practice for clarity, recovery &amp; presence — integrated into your sessions.</p></div>
       </div>
-      <div style="background:white;padding:24px;border-radius:4px;border:1px solid var(--cream-warm);display:flex;align-items:flex-start;gap:14px;">
+      <div class="service-icon-card">
         <div style="font-size:1.5rem;flex-shrink:0;">🗣️</div>
         <div><h4 style="font-family:var(--font-display);font-size:1.05rem;margin-bottom:5px;">Affirmations</h4><p style="color:var(--gray);font-size:0.82rem;line-height:1.6;">Mindset work woven into training — because the body follows what the mind believes.</p></div>
       </div>
-      <div style="background:white;padding:24px;border-radius:4px;border:1px solid var(--cream-warm);display:flex;align-items:flex-start;gap:14px;">
+      <div class="service-icon-card">
         <div style="font-size:1.5rem;flex-shrink:0;">🚴</div>
         <div><h4 style="font-family:var(--font-display);font-size:1.05rem;margin-bottom:5px;">Peloton</h4><p style="color:var(--gray);font-size:0.82rem;line-height:1.6;">Low-impact cardio for warmup, endurance &amp; active recovery.</p></div>
       </div>
-      <div style="background:white;padding:24px;border-radius:4px;border:1px solid var(--cream-warm);display:flex;align-items:flex-start;gap:14px;">
+      <div class="service-icon-card">
         <div style="font-size:1.5rem;flex-shrink:0;">🤸</div>
         <div><h4 style="font-family:var(--font-display);font-size:1.05rem;margin-bottom:5px;">Stretching</h4><p style="color:var(--gray);font-size:0.82rem;line-height:1.6;">Assisted &amp; guided flexibility work to open the body and reduce injury risk.</p></div>
       </div>
-      <div style="background:white;padding:24px;border-radius:4px;border:1px solid var(--cream-warm);display:flex;align-items:flex-start;gap:14px;">
+      <div class="service-icon-card">
         <div style="font-size:1.5rem;flex-shrink:0;">📋</div>
         <div><h4 style="font-family:var(--font-display);font-size:1.05rem;margin-bottom:5px;">Homework Programs</h4><p style="color:var(--gray);font-size:0.82rem;line-height:1.6;">Customized take-home routines so your progress continues between sessions.</p></div>
       </div>
-      <div style="background:white;padding:24px;border-radius:4px;border:1px solid var(--cream-warm);display:flex;align-items:flex-start;gap:14px;">
+      <div class="service-icon-card">
         <div style="font-size:1.5rem;flex-shrink:0;">🔥</div>
         <div><h4 style="font-family:var(--font-display);font-size:1.05rem;margin-bottom:5px;">Sauna</h4><p style="color:var(--gray);font-size:0.82rem;line-height:1.6;">Heat therapy for recovery, detox &amp; deep relaxation before or after your session.</p></div>
       </div>
-      <div style="background:white;padding:24px;border-radius:4px;border:1px solid var(--cream-warm);display:flex;align-items:flex-start;gap:14px;">
+      <div class="service-icon-card">
         <div style="font-size:1.5rem;flex-shrink:0;">♨️</div>
         <div><h4 style="font-family:var(--font-display);font-size:1.05rem;margin-bottom:5px;">Hot Tub</h4><p style="color:var(--gray);font-size:0.82rem;line-height:1.6;">Hydrotherapy for muscle recovery, joint relief &amp; post-session restoration.</p></div>
       </div>
-      <div style="background:white;padding:24px;border-radius:4px;border:1px solid var(--cream-warm);display:flex;align-items:flex-start;gap:14px;">
+      <div class="service-icon-card">
         <div style="font-size:1.5rem;flex-shrink:0;">💡</div>
         <div><h4 style="font-family:var(--font-display);font-size:1.05rem;margin-bottom:5px;">Red Light Therapy</h4><p style="color:var(--gray);font-size:0.82rem;line-height:1.6;">Photobiomodulation for cellular recovery, skin rejuvenation, pain relief &amp; energy.</p></div>
       </div>
@@ -308,7 +314,7 @@ if (sessionStorage.getItem('splashSeen')) {
     </div>
     <div class="cards-grid">
       <div class="challenge-card">
-        <div class="challenge-icon challenge-icon-1">💪</div>
+        <div class="challenge-icon challenge-icon-1"><span class="ch-emoji">💪</span></div>
         <div class="challenge-body">
           <p class="eyebrow" style="margin-bottom:8px;">Full Body</p>
           <h3>Be Full Body Strong</h3>
@@ -317,7 +323,7 @@ if (sessionStorage.getItem('splashSeen')) {
         </div>
       </div>
       <div class="challenge-card">
-        <div class="challenge-icon challenge-icon-2">🏋️</div>
+        <div class="challenge-icon challenge-icon-2"><span class="ch-emoji">🏋️</span></div>
         <div class="challenge-body">
           <p class="eyebrow" style="margin-bottom:8px;">Upper Body</p>
           <h3>Arms, Arms, Arms!</h3>
@@ -326,7 +332,7 @@ if (sessionStorage.getItem('splashSeen')) {
         </div>
       </div>
       <div class="challenge-card">
-        <div class="challenge-icon challenge-icon-3">🔥</div>
+        <div class="challenge-icon challenge-icon-3"><span class="ch-emoji">🔥</span></div>
         <div class="challenge-body">
           <p class="eyebrow" style="margin-bottom:8px;">10 Days</p>
           <h3>10 Day Squat Challenge</h3>

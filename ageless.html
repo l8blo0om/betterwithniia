@@ -374,7 +374,34 @@
   display: block;
 }
 .ag-module p { color: var(--ag-dim); font-size: 0.88rem; line-height: 1.82; margin-bottom: 16px; }
-.ag-mod-art { margin: 14px 0 18px; opacity: 0.5; line-height: 0; }
+.ag-mod-art { display: none; }
+.ag-mod-photo {
+  margin: -28px -22px 22px;
+  height: 210px;
+  overflow: hidden;
+  border-radius: var(--ag-radius) var(--ag-radius) 0 0;
+  position: relative;
+  flex-shrink: 0;
+}
+.ag-mod-photo::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 50%;
+  background: linear-gradient(to bottom, transparent, rgba(6,13,26,0.72));
+  pointer-events: none;
+}
+.ag-mod-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 32%;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.ag-module:hover .ag-mod-photo img { transform: scale(1.04); }
+.ag-mod-photo-wide { height: 260px; }
+@media (min-width: 768px) { .ag-mod-photo-wide { height: 320px; object-position: center 30%; } }
 .ag-mod-list { list-style: none; padding: 0; margin: 0; }
 .ag-mod-list li {
   font-size: 0.83rem;
@@ -808,6 +835,7 @@
   .ag-wrap { padding: 0 40px; }
   .ag-hero-mark { width: 280px; }
   .ag-module { padding: 36px 32px; }
+  .ag-mod-photo { margin: -36px -32px 26px; height: 230px; }
   .ag-instructor-layout { grid-template-columns: 420px 1fr; }
   .ag-instructor-bio { padding: 60px 56px; }
   .ag-movement-overlay { padding: 0 56px; }
@@ -960,22 +988,12 @@
 
         <!-- 01 -->
         <div class="ag-module reveal">
+          <div class="ag-mod-photo">
+            <img src="ageless-mod01-foundation.jpg" alt="Facial anatomy — understanding the architecture of your face" loading="lazy" style="object-position: center 28%;">
+          </div>
           <span class="ag-mod-num">01</span>
           <span class="ag-mod-eye">Foundation</span>
           <h3 class="ag-h3">The Map of Your Face</h3>
-          <div class="ag-mod-art">
-            <svg viewBox="0 0 200 100" width="150" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <ellipse cx="88" cy="52" rx="44" ry="50" stroke="#BFA05A" stroke-width="0.8" stroke-dasharray="3 2"/>
-              <path d="M68 34 Q88 18 108 34" stroke="#BFA05A" stroke-width="0.7" stroke-linecap="round"/>
-              <circle cx="76" cy="46" r="4" stroke="#BFA05A" stroke-width="0.7"/>
-              <circle cx="100" cy="46" r="4" stroke="#BFA05A" stroke-width="0.7"/>
-              <path d="M78 68 Q88 76 98 68" stroke="#BFA05A" stroke-width="0.8" stroke-linecap="round"/>
-              <line x1="88" y1="100" x2="88" y2="90" stroke="#BFA05A" stroke-width="0.5"/>
-              <path d="M58 92 Q88 104 118 92" stroke="#BFA05A" stroke-width="0.5" stroke-linecap="round"/>
-              <line x1="150" y1="28" x2="160" y2="20" stroke="#BFA05A" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.5"/>
-              <circle cx="165" cy="17" r="6" stroke="#BFA05A" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.5"/>
-            </svg>
-          </div>
           <p>Before you can release anything, you need to understand the architecture underneath. Module 1 covers facial and cranial anatomy — the muscles, fascia, and bones that determine how your face looks and moves.</p>
           <ul class="ag-mod-list">
             <li>Facial muscle anatomy for non-clinicians</li>
@@ -987,20 +1005,12 @@
 
         <!-- 02 -->
         <div class="ag-module reveal rv1">
+          <div class="ag-mod-photo">
+            <img src="ageless-mod02-jaw.jpg" alt="Hands performing jaw and TMJ myofascial release" loading="lazy" style="object-position: center 22%;">
+          </div>
           <span class="ag-mod-num">02</span>
           <span class="ag-mod-eye">Cranial & Jaw Release</span>
           <h3 class="ag-h3">Skull, Jaw & Cranial Decompression</h3>
-          <div class="ag-mod-art">
-            <svg viewBox="0 0 200 100" width="150" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M58 26 Q88 8 118 26 Q144 44 144 72 Q144 94 128 98 L108 101 Q88 104 68 101 L48 98 Q32 94 32 72 Q32 44 58 26Z" stroke="#BFA05A" stroke-width="0.8"/>
-              <path d="M68 98 L68 106 M88 101 L88 109 M108 98 L108 106" stroke="#BFA05A" stroke-width="0.6" stroke-linecap="round"/>
-              <path d="M53 62 Q60 66 68 62" stroke="#BFA05A" stroke-width="0.7" stroke-linecap="round"/>
-              <path d="M108 62 Q116 66 124 62" stroke="#BFA05A" stroke-width="0.7" stroke-linecap="round"/>
-              <ellipse cx="88" cy="88" rx="20" ry="7" stroke="#BFA05A" stroke-width="0.6" stroke-dasharray="2 2"/>
-              <circle cx="158" cy="26" r="8" stroke="#BFA05A" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.55"/>
-              <path d="M143 40 Q149 33 152 28" stroke="#BFA05A" stroke-width="0.4" stroke-dasharray="2 2" opacity="0.55"/>
-            </svg>
-          </div>
           <p>Module 2 addresses the jaw, temporomandibular joint, and cranial fascia — the structural roots of tension that show up on the surface as lines, asymmetry, and fatigue.</p>
           <ul class="ag-mod-list">
             <li>Masseter and temporalis release</li>
@@ -1013,19 +1023,12 @@
 
         <!-- 03 -->
         <div class="ag-module reveal">
+          <div class="ag-mod-photo">
+            <img src="ageless-mod03-neck.jpg" alt="Elegant neck and décolletage — platysma fascial release" loading="lazy" style="object-position: center 38%;">
+          </div>
           <span class="ag-mod-num">03</span>
           <span class="ag-mod-eye">Neck & Décolletage</span>
           <h3 class="ag-h3">The Platysma Protocol</h3>
-          <div class="ag-mod-art">
-            <svg viewBox="0 0 200 100" width="150" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M73 8 Q88 4 103 8 L107 34 Q107 54 88 58 Q69 54 69 34 Z" stroke="#BFA05A" stroke-width="0.8"/>
-              <path d="M69 34 L54 72 Q50 90 42 104" stroke="#BFA05A" stroke-width="0.6" stroke-linecap="round"/>
-              <path d="M107 34 L122 72 Q126 90 134 104" stroke="#BFA05A" stroke-width="0.6" stroke-linecap="round"/>
-              <path d="M78 58 Q88 65 98 58" stroke="#BFA05A" stroke-width="0.6" stroke-linecap="round"/>
-              <path d="M66 74 Q88 84 110 74" stroke="#BFA05A" stroke-width="0.5" stroke-dasharray="2 2"/>
-              <path d="M60 90 Q88 102 116 90" stroke="#BFA05A" stroke-width="0.4" stroke-dasharray="2 2"/>
-            </svg>
-          </div>
           <p>The platysma is the thin muscle of the neck that most women feel pulling — and most practitioners ignore. Module 3 addresses the front-of-body tension that ages the lower face and neck faster than almost anything else.</p>
           <ul class="ag-mod-list">
             <li>Platysma anatomy and release sequence</li>
@@ -1037,25 +1040,12 @@
 
         <!-- 04 -->
         <div class="ag-module reveal rv1">
+          <div class="ag-mod-photo">
+            <img src="ageless-mod04-activation.jpg" alt="Face yoga and facial toning exercises for ageless results" loading="lazy" style="object-position: center 35%;">
+          </div>
           <span class="ag-mod-num">04</span>
           <span class="ag-mod-eye">Activation & Toning</span>
           <h3 class="ag-h3">Face Yoga & Facial Exercises</h3>
-          <div class="ag-mod-art">
-            <svg viewBox="0 0 200 100" width="150" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <ellipse cx="88" cy="52" rx="42" ry="48" stroke="#BFA05A" stroke-width="0.8"/>
-              <circle cx="76" cy="44" r="3.5" stroke="#BFA05A" stroke-width="0.7"/>
-              <circle cx="100" cy="44" r="3.5" stroke="#BFA05A" stroke-width="0.7"/>
-              <path d="M79 68 Q88 76 97 68" stroke="#BFA05A" stroke-width="0.9" stroke-linecap="round"/>
-              <path d="M28 52 L23 44" stroke="#BFA05A" stroke-width="0.7" stroke-linecap="round"/>
-              <path d="M23 44 L26 50 M23 44 L20 50" stroke="#BFA05A" stroke-width="0.6" stroke-linecap="round"/>
-              <path d="M148 52 L153 44" stroke="#BFA05A" stroke-width="0.7" stroke-linecap="round"/>
-              <path d="M153 44 L150 50 M153 44 L156 50" stroke="#BFA05A" stroke-width="0.6" stroke-linecap="round"/>
-              <path d="M55 14 L50 6" stroke="#BFA05A" stroke-width="0.7" stroke-linecap="round"/>
-              <path d="M50 6 L53 12 M50 6 L47 12" stroke="#BFA05A" stroke-width="0.6" stroke-linecap="round"/>
-              <path d="M121 14 L126 6" stroke="#BFA05A" stroke-width="0.7" stroke-linecap="round"/>
-              <path d="M126 6 L123 12 M126 6 L129 12" stroke="#BFA05A" stroke-width="0.6" stroke-linecap="round"/>
-            </svg>
-          </div>
           <p>Now that the tissue is released and the fascia is mobile, Module 4 introduces targeted facial exercises in the correct sequence — activation after release. This is what makes the results last.</p>
           <ul class="ag-mod-list">
             <li>Face yoga fundamentals</li>
@@ -1067,22 +1057,12 @@
 
         <!-- 05 — full width -->
         <div class="ag-module ag-mod-5 reveal" style="border-top-color:var(--ag-gold-lt);">
+          <div class="ag-mod-photo ag-mod-photo-wide">
+            <img src="ageless-mod05-integration.jpg" alt="Peaceful morning integration ritual — your daily ageless practice" loading="lazy" style="object-position: center 30%;">
+          </div>
           <span class="ag-mod-num">05</span>
           <span class="ag-mod-eye">Integration</span>
           <h3 class="ag-h3">Your Daily Ageless Practice</h3>
-          <div class="ag-mod-art">
-            <svg viewBox="0 0 300 80" width="200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <line x1="20" y1="56" x2="280" y2="56" stroke="#BFA05A" stroke-width="0.5" opacity="0.3"/>
-              <circle cx="150" cy="36" r="12" stroke="#BFA05A" stroke-width="0.6" opacity="0.55"/>
-              <path d="M150 22 L150 16 M165 27 L170 23 M172 40 L178 40 M165 53 L170 57 M135 27 L130 23 M128 40 L122 40" stroke="#BFA05A" stroke-width="0.5" stroke-linecap="round" opacity="0.45"/>
-              <circle cx="72" cy="42" r="6" stroke="#BFA05A" stroke-width="0.6"/>
-              <line x1="72" y1="48" x2="72" y2="63" stroke="#BFA05A" stroke-width="0.7" stroke-linecap="round"/>
-              <path d="M58 55 Q65 51 72 56 Q79 51 86 55" stroke="#BFA05A" stroke-width="0.6" stroke-linecap="round"/>
-              <circle cx="228" cy="42" r="6" stroke="#BFA05A" stroke-width="0.6"/>
-              <line x1="228" y1="48" x2="228" y2="63" stroke="#BFA05A" stroke-width="0.7" stroke-linecap="round"/>
-              <path d="M214 55 Q221 51 228 56 Q235 51 242 55" stroke="#BFA05A" stroke-width="0.6" stroke-linecap="round"/>
-            </svg>
-          </div>
           <p>The final module brings everything together into a sustainable daily ritual you can actually maintain. You'll leave with a personalized 10-minute morning protocol and a longer weekly practice.</p>
           <ul class="ag-mod-list">
             <li>The 10-minute morning face sequence</li>

@@ -68,6 +68,37 @@
 <body>
 
 <!-- SPLASH SCREEN -->
+<style>
+.splash-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+.splash-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
+  animation: splashDrift 26s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes splashDrift {
+  from { transform: scale(1.02) translate(0, 0); }
+  to   { transform: scale(1.14) translate(-1.5%, -2.5%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .splash-bg img { animation: none; }
+}
+.splash-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(175deg, rgba(8,17,38,0.82) 0%, rgba(8,17,38,0.68) 45%, rgba(8,17,38,0.9) 100%);
+}
+#splash > *:not(.splash-bg) { position: relative; z-index: 1; }
+</style>
 <div id="splash" style="
   position:fixed;inset:0;z-index:9999;
   background:#0e1c3a;
@@ -75,6 +106,9 @@
   text-align:center;padding:40px 24px;
   transition:opacity 0.7s ease;
 ">
+  <div class="splash-bg" aria-hidden="true">
+    <img src="splash-bg.jpg" alt="" fetchpriority="high">
+  </div>
   <div style="margin-bottom:32px;">
     <div style="
       width:120px;height:120px;border-radius:50%;
@@ -585,10 +619,24 @@ if (sessionStorage.getItem('splashSeen')) {
     </div>
     <div class="footer-bottom">
       <p>© 2026 Get Better with Niia. All rights reserved. <a href="pages.html" style="color:inherit;opacity:0.3;font-size:0.7em;margin-left:8px;text-decoration:none;" title="Admin">⚙</a></p>
-      <p>Get Better with Niia · Columbia, SC</p>
+      <p>Get Better with Niia · Columbia, SC <span id="visit-count" style="display:none;opacity:0.35;font-size:0.85em;margin-left:10px;"></span></p>
     </div>
   </div>
 </footer>
+<script>
+(function() {
+  fetch('https://betterwithniia.goatcounter.com/counter/TOTAL.json')
+    .then(function(r) { return r.ok ? r.json() : null; })
+    .then(function(d) {
+      if (d && d.count) {
+        var el = document.getElementById('visit-count');
+        el.textContent = '· ' + d.count.trim() + ' visits';
+        el.style.display = 'inline';
+      }
+    })
+    .catch(function() {});
+})();
+</script>
 
 <script>
 function toggleMenu() {
@@ -630,5 +678,6 @@ function togglePlayer() {
   b.textContent = wrap.classList.contains("open") ? "✕" : "♫";
 }
 </script>
+<script data-goatcounter="https://betterwithniia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

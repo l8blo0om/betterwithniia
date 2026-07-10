@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+Disallow: /businessplan
+Disallow: /businessplan.html
+Disallow: /pitch
+Disallow: /pitch.html
+Disallow: /manual
+Disallow: /manual.html
+Disallow: /emanual
+Disallow: /emanual.html
+Disallow: /lookup
+Disallow: /lookup.html
+Disallow: /teach
+Disallow: /teach.html
+Disallow: /teaching_log
+Disallow: /teaching_log.html
+Disallow: /calendar
+Disallow: /calendar.html
+Disallow: /pages
+Disallow: /pages.html
+
+Sitemap: https://betterwithniia.com/sitemap.xml

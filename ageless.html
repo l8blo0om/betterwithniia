@@ -600,8 +600,38 @@
   color: rgba(191,160,90,0.65);
   flex-shrink: 0;
 }
+.ag-testi-av img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
 .ag-testi-name { font-size: 0.83rem; font-weight: 600; color: var(--ag-text); }
 .ag-testi-loc { font-size: 0.73rem; color: var(--ag-muted); margin-top: 1px; }
+
+/* ════════════════════════
+   INFINITY BAND
+════════════════════════ */
+.ag-band {
+  position: relative;
+  height: clamp(200px, 34vw, 340px);
+  overflow: hidden;
+}
+.ag-band img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.ag-band-caption {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 26px;
+  background: linear-gradient(to bottom, rgba(6,13,26,0.15), rgba(6,13,26,0.55));
+}
+.ag-band-caption span {
+  font-family: var(--font-script);
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
+  color: var(--ag-gold-lt);
+  letter-spacing: 0.02em;
+}
 
 /* ════════════════════════
    PRICING
@@ -694,6 +724,18 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+.ag-trust-photo {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--ag-border);
+  height: 190px;
+}
+.ag-trust-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 60%;
+  display: block;
 }
 .ag-trust-quote-box {
   background: rgba(247,244,239,0.035);
@@ -1237,7 +1279,7 @@
         <div class="ag-testi reveal rv2">
           <p class="ag-testi-q">"Three weeks into the platysma protocol and my jawline is different. Not dramatically — but unmistakably. People keep asking what I changed."</p>
           <div class="ag-testi-author">
-            <div class="ag-testi-av">S</div>
+            <div class="ag-testi-av"><img src="ageless-testi-sandra.jpg" alt="" loading="lazy"></div>
             <div>
               <div class="ag-testi-name">Sandra M.</div>
               <div class="ag-testi-loc">61 · Columbia, SC</div>
@@ -1249,6 +1291,14 @@
     </div>
   </div>
 </section>
+
+<!-- ══════════════════════════════
+     INFINITY BAND
+══════════════════════════════ -->
+<div class="ag-band reveal">
+  <img src="ageless-infinity-band.jpg" alt="Gold silk infinity over dark water — the Ageless mark" loading="lazy">
+  <div class="ag-band-caption"><span>Ageless is a practice, not a product.</span></div>
+</div>
 
 <!-- ══════════════════════════════
      PRICING
@@ -1284,6 +1334,10 @@
         </div>
 
         <div class="ag-trust-panel reveal rv1">
+
+          <div class="ag-trust-photo">
+            <img src="ageless-tools-flatlay.jpg" alt="Curated practice tools — gua sha, jade roller, face oil" loading="lazy">
+          </div>
 
           <div class="ag-trust-quote-box">
             <p class="ag-trust-q">"This isn't another wellness course. This is the first course that treated my face like the rest of my body — with structural intelligence."</p>

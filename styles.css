@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Dancing+Script:wght@600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Dancing+Script:wght@600;700&family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
   --navy: #1E3870;
@@ -1296,3 +1296,60 @@ body { top: 0 !important; }
   .plans-grid { grid-template-columns: 1fr; }
   .hero-btns { flex-direction: column; align-items: center; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   BRAND SYSTEM v2 — "the dark room is the practice,
+   the blue light is the result."
+   Warm amber (practice) ↔ electric cobalt/teal (result).
+   Appended override layer — repoints the palette + adds
+   athletic display type and breathing glow across the site.
+═══════════════════════════════════════════════════════════ */
+:root{
+  --gold:#c8903a;                 /* was gold → warm amber */
+  --amber:#c8903a; --amber-lt:#e0b471;
+  --cobalt:#2f6fe0; --cobalt-lt:#5a90f0; --teal:#18b8a0;
+}
+::selection{background:var(--cobalt);color:#fff}
+
+/* Athletic display type — bold, condensed, uppercase */
+h1,h2{font-family:'Anton',Impact,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.01em;line-height:1.04;}
+h3{font-family:var(--font-display);}                 /* keep serif warmth for sub-heads */
+.eyebrow{color:var(--cobalt) !important}
+.section-header.light .eyebrow,.section-navy .eyebrow{color:var(--amber-lt) !important}
+[style*="var(--gold)"].eyebrow,.eyebrow[style*="--gold"]{color:var(--amber-lt) !important}
+
+/* Dividers */
+.divider{background:linear-gradient(90deg,var(--cobalt),var(--cobalt-lt))}
+.divider-gold{background:linear-gradient(90deg,var(--amber),var(--amber-lt))}
+
+/* Primary CTA — electric cobalt that breathes */
+.btn-primary{background:var(--cobalt);border-color:var(--cobalt);
+  box-shadow:0 0 0 1px var(--cobalt),0 0 22px rgba(47,111,224,.30);
+  animation:breatheCTA 3s ease-in-out infinite}
+.btn-primary:hover{background:var(--cobalt-lt);border-color:var(--cobalt-lt);
+  box-shadow:0 0 0 1px var(--cobalt),0 0 34px rgba(47,111,224,.55);transform:translateY(-1px)}
+@keyframes breatheCTA{0%,100%{box-shadow:0 0 0 1px var(--cobalt),0 0 16px rgba(47,111,224,.26)}
+  50%{box-shadow:0 0 0 1px var(--cobalt),0 0 30px rgba(47,111,224,.5)}}
+@media(prefers-reduced-motion:reduce){.btn-primary{animation:none}}
+.btn-outline{color:var(--cobalt);border-color:var(--cobalt)}
+.btn-outline:hover{background:var(--cobalt);color:#fff}
+
+/* Stat numbers → electric */
+.stat-num{color:var(--cobalt)}
+
+/* Dark sections → warm-deep "practice room" with a hint of blue */
+.section-navy{background:linear-gradient(160deg,#0d1526 0%,#0b1220 60%,#0c0f18 100%)}
+.section-navy-dark{background:#080b12}
+
+/* HERO — cobalt glow on BETTER, amber script */
+.hero{background:#0b0f18}
+.hero-script{color:var(--amber-lt)}
+.hero-content h1{letter-spacing:.03em}
+.hero-content h1 strong{color:#fff;text-shadow:0 0 34px rgba(47,111,224,.55)}
+
+/* Tagline strip accent */
+.tagline-strip{background:#0d1526;color:#fff}
+.tagline-sep{color:var(--cobalt-lt)}
+
+/* Nav "Book a Class" already uses btn-primary → glows.
+   Ageless nav link uses inline var(--gold) → now amber. */
